@@ -73,3 +73,8 @@ crashlytics-build.properties
 
 # Temporary PowerPoint files
 ~$*
+
+# Our files
+[Pp]refabs/*.meta
+[Ss]rc/*.meta
+[Tt]st/*.meta
