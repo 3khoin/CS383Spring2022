@@ -16,6 +16,8 @@ Overview of Feature
 Coding Tasks
 
 * Create standard NPC classes
+  * NPC stats
+  * Variery of types
 * Working with Overworld/Player designers to build NPC interactions
   * Quest tracking
   * Give/remove items/statuses from player
