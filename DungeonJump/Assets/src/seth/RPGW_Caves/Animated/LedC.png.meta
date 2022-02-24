@@ -120,7 +120,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -881,39 +880,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      LedC_6: 21300012
-      LedC_5: 21300010
-      LedC_31: 21300062
-      LedC_15: 21300030
-      LedC_16: 21300032
-      LedC_18: 21300036
-      LedC_12: 21300024
-      LedC_11: 21300022
-      LedC_28: 21300056
-      LedC_3: 21300006
-      LedC_9: 21300018
-      LedC_2: 21300004
-      LedC_13: 21300026
-      LedC_8: 21300016
-      LedC_19: 21300038
-      LedC_23: 21300046
-      LedC_7: 21300014
-      LedC_4: 21300008
-      LedC_0: 21300000
-      LedC_10: 21300020
-      LedC_25: 21300050
-      LedC_27: 21300054
-      LedC_21: 21300042
-      LedC_17: 21300034
-      LedC_20: 21300040
-      LedC_26: 21300052
-      LedC_29: 21300058
-      LedC_22: 21300044
-      LedC_1: 21300002
-      LedC_14: 21300028
-      LedC_30: 21300060
-      LedC_24: 21300048
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
