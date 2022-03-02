@@ -16,7 +16,14 @@ public class CheckPlayerBounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //fill spawn position:
+        spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform;
+
+        //fill all boundary positions: (w/ objs already in scene)
+        leftmostPnt = GameObject.FindGameObjectWithTag("left").transform;
+        rightmostPnt = GameObject.FindGameObjectWithTag("right").transform;
+        topmostPnt = GameObject.FindGameObjectWithTag("top").transform;
+        botmostPnt = GameObject.FindGameObjectWithTag("bot").transform;
     }
 
     // Update is called once per frame
@@ -28,10 +35,16 @@ public class CheckPlayerBounds : MonoBehaviour
             (topmostPnt.position.y) < (transform.position.y) ||
             (botmostPnt.position.y) > (transform.position.y))
         {
+
+            Debug.LogWarning("Player caught outside of map boundaries at: " + transform.position);
+            //print(transform.position);
+
             //teleport player back to spawn pnt:
             transform.position = spawnPnt.position;
 
-            Debug.LogWarning("Player caught outside of map boundaries.");
+            print("Player position changed to: " + transform.position);
+            //print(transform.position);
+
         }
 
     }

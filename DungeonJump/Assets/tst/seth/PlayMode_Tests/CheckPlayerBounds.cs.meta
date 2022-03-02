@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 35714e6a9f18b6643bf0bb4638fe7702
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spawnPnt: {fileID: 6414203013160608512, guid: 193ca92c292982d43b641c52096acfe1,
+      type: 3}
+  - leftmostPnt: {fileID: 3970126750167035845, guid: 8db0bd987884e294fa2a4bcdc39ebe8b,
+      type: 3}
+  - rightmostPnt: {fileID: 8440909620642143323, guid: 084492365d0b8924583b33589b33f0c0,
+      type: 3}
+  - topmostPnt: {fileID: 3970126750167035845, guid: 8db0bd987884e294fa2a4bcdc39ebe8b,
+      type: 3}
+  - botmostPnt: {fileID: 4020434097233739693, guid: bd0bd2eab1fdd9e49a4297a0fc38bf4a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
