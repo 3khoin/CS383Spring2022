@@ -179,5 +179,6 @@ public class BoundaryTests //: MonoBehaviour //need monobehavior for 'GameObject
         //GameObject.Destroy(gameObject, 5); 
 
         //should unload scene?
+        //SceneManager.UnloadSceneAsync(0);
     }
 }
