@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld Levels/Overworld Spawn Area.unity
     guid: 2c1f0b3c81851fe40b5f9fbe6e05896c
   - enabled: 1
-    path: Assets/Scenes/PlatformerDungeon.unity
+    path: Assets/Scenes/Platformer Levels/PlatformerDungeon.unity
     guid: 3ef346042d3607542b1662962243c584
   - enabled: 1
     path: Assets/Scenes/Overworld Levels/Overworld Demo Scene.unity
