@@ -3,50 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
-public class friendlyNPC : MonoBehaviour
+public class FriendlyNPC : MonoBehaviour
 {
-    [SerializeField] public GameObject dialogueWindow;
-    [SerializeField] private string type;
-    // Start is called before the first frame update
-    void Start()
+    //public FriendlyNPC Friend;
+    private int posx;
+    private int posy;
+    
+    //FriendlyNPC friend1 = Instantiate(Friend);
+
+    public void Init(int x, int y)
     {
-        //text = "This is sample text, press enter to leave";
+        Vector2 pos = Vector2.zero;
+        pos = new Vector2(x, y);
+
+        transform.position = pos;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void OnTriggerEnter2D(Collider2D col)
     {
-        if (Input.GetKeyDown("c")) // help menu
-        {
-            if (Time.timeScale == 0)
-            {
-                dialogueWindow.SetActive(false);
-                Time.timeScale = 1;
-            }
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
+        Debug.Log("Enter");
         Debug.Log(col.gameObject.tag);
-        if (col.gameObject.tag != "Player") return; // if not player collision end
-        if (type == "liar")
-        {
-            dialogueWindow.GetComponentInChildren<TextMeshProUGUI>().text = "I always tell the truth. Alt+F4 will close the dialogue window.";
-        }
-
-        if (type == "truther")
-        {
-            dialogueWindow.GetComponentInChildren<TextMeshProUGUI>().text = "I cannot tell a lie. Press C to close this dialogue window.";
-        }
-        
-        if (type == "default")
-        {
-            dialogueWindow.GetComponentInChildren<TextMeshProUGUI>().text = "No type set.";
-        }
-        
-        Time.timeScale = 0;
-        dialogueWindow.SetActive(true);
+        if (!col.gameObject.CompareTag("Player")) return; // if not player collision end
+    }
+    
+    public virtual void OnTriggerExit2D(Collider2D col)
+    {
+        Debug.Log("Exit");
+        Debug.Log(col.gameObject.tag);
+        if (!col.gameObject.CompareTag("Player")) return; // if not player collision end
     }
 }
