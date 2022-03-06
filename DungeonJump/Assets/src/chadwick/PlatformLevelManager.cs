@@ -33,19 +33,29 @@ public class PlatformLevelManager : MonoBehaviour
     void PlayerWithinBounds (){
         if (leftPnt.position.x >    player.transform.position.x){
             Debug.Log("Player exceeded level boundary: " + leftPnt.transform.position);
+            //tele player to spawn
+            player.transform.position = spawnPnt.position;
+            Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
         }
         else if (rightPnt.position.x < player.transform.position.x){
             Debug.Log("Player exceeded level boundary: " + rightPnt.transform.position);
+            //tele player to spawn
+            player.transform.position = spawnPnt.position;
+            Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
         }
         else if (topPnt.position.y <   player.transform.position.y){
             Debug.Log("Player exceeded level boundary: " + topPnt.transform.position);
+            //tele player to spawn
+            player.transform.position = spawnPnt.position;
+            Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
         }
         else if (botPnt.position.y >   player.transform.position.y){
             Debug.Log("Player exceeded level boundary: " + botPnt.transform.position);
+            //tele player to spawn
+            player.transform.position = spawnPnt.position;
+            Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
         }
 
-        //tele player to spawn
-        player.transform.position = spawnPnt.position;
-        Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
+
     }
 }
