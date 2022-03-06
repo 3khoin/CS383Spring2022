@@ -9,6 +9,8 @@ public class PlayerDialogue : Dialogue
     protected override void Display(int id) 
     {
         Debug.Log("Player Dialogue");
-        dialogueWindow.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id);
+        PlayerUI1.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id);
+        PlayerUI2.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id);
+        PlayerUI3.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id);
     }
 }

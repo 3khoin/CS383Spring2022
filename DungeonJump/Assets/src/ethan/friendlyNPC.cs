@@ -3,15 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class FriendlyNPC : MonoBehaviour
 {
+    //public FriendlyNPC Friend;
+    private int posx;
+    private int posy;
+    
+    //FriendlyNPC friend1 = Instantiate(Friend);
 
-    //protected bool interact;
-    // Start is called before the first frame update
-    void Start()
+    public void Init(int x, int y)
     {
-        //interact = false;
+        Vector2 pos = Vector2.zero;
+        pos = new Vector2(x, y);
+
+        transform.position = pos;
     }
 
     public virtual void OnTriggerEnter2D(Collider2D col)
