@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
-// record 16070
+// record 16070 before freezing
 
 public class SpawnNPCStress
 {
