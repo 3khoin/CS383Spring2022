@@ -6,6 +6,7 @@ using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
+// Ethan Hinkle NPC boundary test for if NPCs are on a valid tile
 
 public class OutsideBoundsNPC
 {
