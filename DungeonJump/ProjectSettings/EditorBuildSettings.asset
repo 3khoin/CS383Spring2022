@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Overworld Levels/Overworld Spawn Area.unity
-    guid: 2c1f0b3c81851fe40b5f9fbe6e05896c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Platformer Levels/PlatformerDungeon.unity
     guid: 3ef346042d3607542b1662962243c584
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld Levels/StressTest.unity
     guid: 2eee2196adc6da942b04b2fe63efccb1
+  - enabled: 1
+    path: Assets/Scenes/Platformer Levels/CGStressTest.unity
+    guid: ad27350f1d1aaf547853078f4ccc1bdb
   m_configObjects: {}
