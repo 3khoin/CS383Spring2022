@@ -9,6 +9,7 @@ TagManager:
   - right
   - top
   - bot
+  - FriendlyNPC
   layers:
   - Default
   - TransparentFX

@@ -30007,13 +30007,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3062286893405127719, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
+      propertyPath: dialogueID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062286893405127719, guid: 383bb59679f640342aca27bba01d62d1,
+        type: 3}
       propertyPath: dialogueWindow
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5370012566506081005, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_Name
-      value: NPCFriendly (1)
+      value: Green NPC
       objectReference: {fileID: 0}
     - target: {fileID: 7699887346588269802, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
@@ -30856,7 +30861,7 @@ PrefabInstance:
     - target: {fileID: 5370012566506081005, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_Name
-      value: NPCFriendly
+      value: Red NPC
       objectReference: {fileID: 0}
     - target: {fileID: 8105322392052091008, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
@@ -30940,13 +30945,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3062286893405127719, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
+      propertyPath: dialogueID
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062286893405127719, guid: 383bb59679f640342aca27bba01d62d1,
+        type: 3}
       propertyPath: dialogueWindow
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5370012566506081005, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_Name
-      value: NPCFriendly (2)
+      value: Blue NPC
       objectReference: {fileID: 0}
     - target: {fileID: 7699887346588269802, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
