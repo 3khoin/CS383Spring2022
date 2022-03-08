@@ -14,14 +14,7 @@ public class PlatformLevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        player = GameObject.FindGameObjectWithTag("Player");
-        spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform;
-        topPnt = GameObject.FindGameObjectWithTag("top").transform;
-        botPnt = GameObject.FindGameObjectWithTag("bot").transform;
-        leftPnt = GameObject.FindGameObjectWithTag("left").transform;
-        rightPnt = GameObject.FindGameObjectWithTag("right").transform;
-        player.transform.position = spawnPnt.position;
+        LevelInit(); 
     }
 
     // Update is called once per frame
@@ -55,7 +48,21 @@ public class PlatformLevelManager : MonoBehaviour
             player.transform.position = spawnPnt.position;
             Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
         }
+    }
 
+    void LevelInit(){
+        spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform;
+        topPnt = GameObject.FindGameObjectWithTag("top").transform;
+        botPnt = GameObject.FindGameObjectWithTag("bot").transform;
+        leftPnt = GameObject.FindGameObjectWithTag("left").transform;
+        rightPnt = GameObject.FindGameObjectWithTag("right").transform;
 
+        // find the player and set the position to the spawn point
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = spawnPnt.position;
+
+        // find the camera and center it to the player
+        GameObject cam  = GameObject.FindGameObjectWithTag("MainCamera");
+        cam.transform.position = player.transform.position;
     }
 }
