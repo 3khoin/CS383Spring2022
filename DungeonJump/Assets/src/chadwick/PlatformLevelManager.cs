@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformLevelManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject cam;
     public Transform spawnPnt;
     public Transform topPnt;
     public Transform botPnt;
@@ -62,7 +63,8 @@ public class PlatformLevelManager : MonoBehaviour
         player.transform.position = spawnPnt.position;
 
         // find the camera and center it to the player
-        GameObject cam  = GameObject.FindGameObjectWithTag("MainCamera");
-        cam.transform.position = player.transform.position;
+        cam  = GameObject.FindGameObjectWithTag("MainCamera");
+        Vector3 camPos = cam.GetComponent<Transform>().position;
+        camPos = player.transform.position;
     }
 }
