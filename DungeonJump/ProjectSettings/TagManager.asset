@@ -10,6 +10,8 @@ TagManager:
   - top
   - bot
   - FriendlyNPC
+  - HealthBar
+  - Canvas
   layers:
   - Default
   - TransparentFX

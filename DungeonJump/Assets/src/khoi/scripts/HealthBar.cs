@@ -21,8 +21,8 @@ public class HealthBar : MonoBehaviour
         //fill.fillAmount = playerHP;
         if (Time.timeScale == 1)
         {
-            if (playerHP <= 1f && playerHP > 0f) UpdateHP(-0.002f);
-            if (playerHP == 0f) UpdateHP(1f);
+            //if (playerHP <= 1f && playerHP > 0f) UpdateHP(-0.002f);
+            //if (playerHP == 0f) UpdateHP(1f);
 
             // Check that player HP does not exceed bounds
             if (playerHP < 0f) playerHP = 0f;
