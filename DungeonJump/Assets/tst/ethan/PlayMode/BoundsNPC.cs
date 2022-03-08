@@ -27,9 +27,9 @@ public class OutsideBoundsNPC
         int count = NPC.Length; // see how many NPCs there are
         for (int i = 0; i < count; i++){
             Vector3 pos = NPC[i].transform.position; // get NPC position
-            if (Tile.GetCellCenterWorld(Tile.WorldToCell(pos)) != null) Assert.IsTrue(true);
-            else Assert.IsTrue(false);
+            if (Tile.GetCellCenterWorld(Tile.WorldToCell(pos)) == null) Assert.IsTrue(false); // if tile is null then outside bounds
         }
+        Assert.IsTrue(true); // if no tiles were false
     }
 
     [TearDown]
