@@ -9,7 +9,7 @@ public class CGBoundaryTest
 {
     [SetUp]
     public void Setup(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         // objects created in setup are destroyed upon exit of function
     }
 
