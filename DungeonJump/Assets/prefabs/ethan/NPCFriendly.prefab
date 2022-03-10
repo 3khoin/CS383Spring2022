@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8105322392052091008}
   - component: {fileID: 7699887346588269802}
   - component: {fileID: 158798746968429365}
-  - component: {fileID: 1081825553443115247}
   - component: {fileID: 3062286893405127719}
   m_Layer: 0
   m_Name: NPCFriendly
@@ -112,18 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &1081825553443115247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370012566506081005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729eb2ee41b28a54b982c4cee62d9018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3062286893405127719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,21 +123,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d4fb827f178804e983e1e2ba6245d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueID: 0
-  dialogueArr:
-  - This is my initial dialogue
-  - '[1] This is a positive response'
-  - '[2] This is a neutral response'
-  - '[3] This is a negative response'
-  - This is a positive response
-  - '[1] This is a positive response'
-  - '[2] This is a neutral response'
-  - '[3] This is a negative response'
-  - This is a neutral response
-  - '[1] This is a positive response'
-  - '[2] This is a neutral response'
-  - '[3] This is a negative response'
-  - This is a negative response
-  - '[1] This is a positive response'
-  - '[2] This is a neutral response'
-  - '[3] This is a negative response'

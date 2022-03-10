@@ -7,11 +7,8 @@ using UnityEngine.PlayerLoop;
 
 public class FriendlyNPC : MonoBehaviour
 {
-    //public FriendlyNPC Friend;
     private int posx;
     private int posy;
-    
-    //FriendlyNPC friend1 = Instantiate(Friend);
 
     public void Init(int x, int y)
     {
@@ -23,15 +20,11 @@ public class FriendlyNPC : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Enter");
-        Debug.Log(col.gameObject.tag);
-        if (!col.gameObject.CompareTag("Player")) return; // if not player collision end
+        Debug.Log("Enter " + col.gameObject.tag);
     }
     
     public virtual void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log("Exit");
-        Debug.Log(col.gameObject.tag);
-        if (!col.gameObject.CompareTag("Player")) return; // if not player collision end
+        Debug.Log("Exit " + col.gameObject.tag);
     }
 }

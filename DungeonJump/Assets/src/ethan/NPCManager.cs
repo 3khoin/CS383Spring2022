@@ -10,6 +10,7 @@ public class NPCManager : MonoBehaviour
     public static GameObject PlayerUI2;
     public static GameObject PlayerUI3;
     // Start is called before the first frame update
+    
     private void Awake()
     {
         Debug.Log("awaken");
