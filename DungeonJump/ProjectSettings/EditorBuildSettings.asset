@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld Levels/UIStressTest.unity
     guid: 5f12ebd9d8f078140b1ca9a79a1ffb09
+  - enabled: 1
+    path: Assets/Scenes/Overworld Levels/Overworld Spawn Area.unity
+    guid: 2c1f0b3c81851fe40b5f9fbe6e05896c
   m_configObjects: {}

@@ -53,10 +53,12 @@ public class PlatformLevelManager : MonoBehaviour
 
     void LevelInit(){
         spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform;
+        /*
         topPnt = GameObject.FindGameObjectWithTag("top").transform;
         botPnt = GameObject.FindGameObjectWithTag("bot").transform;
         leftPnt = GameObject.FindGameObjectWithTag("left").transform;
         rightPnt = GameObject.FindGameObjectWithTag("right").transform;
+        */
 
         // find the player and set the position to the spawn point
         player = GameObject.FindGameObjectWithTag("Player");
@@ -64,7 +66,8 @@ public class PlatformLevelManager : MonoBehaviour
 
         // find the camera and center it to the player
         cam  = GameObject.FindGameObjectWithTag("MainCamera");
-        Vector3 camPos = cam.GetComponent<Transform>().position;
-        camPos = player.transform.position;
+        //Vector3 camPos = cam.GetComponent<Transform>().position;
+        cam.transform.position = player.transform.position + new Vector3 (0f, 0f, -10f);
+        Debug.Log("Cam position should be changed");
     }
 }
