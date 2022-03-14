@@ -17,7 +17,7 @@ public class BoundaryTests //: MonoBehaviour //need monobehavior for 'GameObject
         distanceOutsideBounds = 1;
 
         //testing starting scene:
-        SceneManager.LoadScene(6); //needed for boundary pnts?
+        SceneManager.LoadScene(0); //needed for boundary pnts?
 
         //cant do in setup for some reason: (bc has to be def'd above?)
         //GameObject playerObj = new GameObject("TestPlayer");

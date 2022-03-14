@@ -9,6 +9,7 @@ namespace Cainos.PixelArtTopDown_Basic
     {
         public Transform target;
         public float lerpSpeed = 2.5f;
+        public float camOffset;
 
         private Vector3 offset;
 
@@ -18,7 +19,11 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             if (target == null) return;
 
-            offset = transform.position - target.position;
+            //snap cam to target w/ offset:
+            transform.position = new Vector3( target.position.x, target.position.y, target.position.z + camOffset);
+
+            offset = transform.position - target.position; //establish offset for updating
+
         }
 
         private void Update()

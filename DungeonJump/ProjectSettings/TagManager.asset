@@ -12,6 +12,7 @@ TagManager:
   - FriendlyNPC
   - HealthBar
   - Canvas
+  - ProgBlock
   layers:
   - Default
   - TransparentFX
