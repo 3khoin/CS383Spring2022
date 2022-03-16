@@ -7,8 +7,8 @@ public class Entryway : MonoBehaviour
     public GameObject openDoor; //public AnimationClip openAnim;
     public GameObject closedDoor; //public AnimationClip closeAnim;
     public AudioSource interactSound;
-    public bool playerEntered = false;
-    public GameObject cieling;
+    //public bool playerEntered = false;
+    //public GameObject cieling;
 
     private bool open = false;
     private bool entrywayInteractable = false;
@@ -58,7 +58,7 @@ public class Entryway : MonoBehaviour
             closedDoor.SetActive(true); //activate closed door
 
             //make cieling opaque:
-            cieling.SetActive(true);
+            //cieling.SetActive(true);
 
             open = false;
         }
@@ -70,7 +70,7 @@ public class Entryway : MonoBehaviour
             closedDoor.SetActive(false);
 
             //make cieling transparent:
-            cieling.SetActive(false);
+            //cieling.SetActive(false);
 
             open = true;
         }
