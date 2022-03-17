@@ -17,7 +17,11 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Start()
         {
-            if (target == null) return;
+            //if not manually filled, find player at startup:
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
 
             //snap cam to target w/ offset:
             transform.position = new Vector3( target.position.x, target.position.y, target.position.z + camOffset);

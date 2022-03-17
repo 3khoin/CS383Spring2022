@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
                     mnger.name = "LevelManager";
                     instance = mnger.AddComponent<LevelManager>();
 
-                    print("new manager created");
+                    print("new (level) manager created");
 
                     DontDestroyOnLoad(mnger); //make sure not destroyed w/ change scenes
                 }
@@ -97,14 +97,14 @@ public class LevelManager : MonoBehaviour
         progressBlocks = GameObject.FindGameObjectsWithTag("ProgBlock");
 
         //no prog blocks found:
-        if (progressBlocks == null)
+        if (progressBlocks == null || progressBlocks.Length == 0)
             Debug.Log("No progress blocks found in current scene.");
-
-        print("found progress block: " + progressBlocks[0].name); //debugging
 
         //walk thru all prog blocks:
         for(int i = 0; i < progressBlocks.Length; i++)
         {
+            print("removed progress block: " + progressBlocks[i].name); //debugging
+
             //turn off visibility of prog block:
             progressBlocks[i].SetActive(false);
         }
