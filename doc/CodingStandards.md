@@ -10,10 +10,17 @@ Rules for use of Whitespace in code
 2. All logic/arithmentic operations done in code should have variables and operators seperated by one space
 3. 
 ## Comments
-
+Comment Prefabs
+Name: Semi generic
+Summary: include keywords
+Description: more detail, troubleshooting guide, integration instructions, ect. videos(to make BC happy)(will be graded)
 ## Class/Struct
 All classes or structs should follow the PascalCasing format, where the first name of every word is capitalized. No spaces, underscores, numbers, or special characters are used in the name. The name of the class should match the name of the file it resides in.
 ## Functions
 All functions should follow the PascalCasing format. No spaces, underscores, numbers, or special characters are used in the name.
 ## Varaibles
 All varaibles should follow the camelCasing format, where the first word of the variable is lower case, and all other words capitalized.
+## Error Handling
+
+## Other
+### Debug Log
