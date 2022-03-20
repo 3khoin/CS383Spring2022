@@ -4348,6 +4348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 131123482}
   lerpSpeed: 2.5
+  camOffset: 0
 --- !u!1 &1570181082
 GameObject:
   m_ObjectHideFlags: 0

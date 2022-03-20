@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, Interactable
 {
-    public Color highlightColor;
+    //public Color highlightColor;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +28,12 @@ public class Item : MonoBehaviour
         }
     }
 
-    private void PlayerPickup()
+    public void PlayerPickup()
     {
+        //Add to LevelManager player's currItems:
+        LevelManager.Instance.playerCurrItems.Add(gameObject); 
+
         //make item dissapear:
         gameObject.SetActive(false);
-
-        //Add to LevelManager currItems
     }
 }

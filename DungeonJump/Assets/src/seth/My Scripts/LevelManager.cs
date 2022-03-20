@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public Vector2 playerRespawnPos;
 
     //need to be filled by outside scripts as items found:
-    public GameObject[] playerCurrItems;     //public int currItems;
+    public List<GameObject> playerCurrItems = new List<GameObject>();     //public int currItems;
     private int totItems = 10; //10 has no meaning
 
     private int progZone = 1;
@@ -75,7 +75,7 @@ public class LevelManager : MonoBehaviour
 
         if (playerCurrItems != null)
             //calc progPercentage thru ratio of player items and tot items:
-            progPercentage = (playerCurrItems.Length / totItems) * 100;
+            progPercentage = (playerCurrItems.Count / totItems) * 100;
         else
             progPercentage = 0;
 
