@@ -9,6 +9,14 @@ public class FriendlyNPC : MonoBehaviour
 {
     private int posx;
     private int posy;
+    protected bool interact;
+
+    void Start()
+    {
+        interact = false;
+        posx = 0;
+        posy = 0;
+    }
 
     public void Init(int x, int y)
     {
@@ -20,11 +28,13 @@ public class FriendlyNPC : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
+        interact = true;
         Debug.Log("Enter " + col.gameObject.tag);
     }
     
     public virtual void OnTriggerExit2D(Collider2D col)
     {
+        interact = false;
         Debug.Log("Exit " + col.gameObject.tag);
     }
 }

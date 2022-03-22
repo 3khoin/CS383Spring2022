@@ -88,6 +88,7 @@ public class Dialogue : FriendlyNPC
 
     private void Update()
     {
+        if (!interact) return;
         if (Input.GetKeyDown("1"))
         {
             Debug.Log("Choice 1");
