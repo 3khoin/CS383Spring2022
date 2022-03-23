@@ -13,6 +13,7 @@ TagManager:
   - HealthBar
   - Canvas
   - ProgBlock
+  - Boundary
   layers:
   - Default
   - TransparentFX

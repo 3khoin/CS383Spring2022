@@ -11,5 +11,10 @@ public class Hazard : MonoBehaviour
     {
         print("hazard trigger entered");
     }
-    
+
+    virtual public void OnTriggerExit2D(Collider2D collision)
+    {
+        print("hazard trigger exited");
+    }
+
 }

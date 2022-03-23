@@ -18,15 +18,29 @@ public class LaunchHazard : Hazard
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    public override void OnTriggerEnter2D(Collider2D collision)
+    }
+    /*doesnt work very well, acts like force field
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //if collide w a boundary:
+        if (collision.gameObject.tag == "Boundary")
+        {
+            //ignore collision:
+            Physics2D.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider2D>());
+        }
+    }
+    */
+    
+    
+public override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
 
         if( collision.gameObject.tag == "Player")
         {
+            print("triggered w/ player");
+
             //start the launch delay coroutine:
             StartCoroutine(LaunchDelay());
 
@@ -49,4 +63,8 @@ public class LaunchHazard : Hazard
         //add force to player's rigidbody:
         player.GetComponent<Rigidbody2D>().AddForce(launchDir * launchForce);
     }
+
+    private void ChangeLayer(GameObject player)
+    { }
+    
 }

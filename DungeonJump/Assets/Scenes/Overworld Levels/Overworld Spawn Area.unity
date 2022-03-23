@@ -7129,6 +7129,55 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &390577601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390577602}
+  - component: {fileID: 390577603}
+  m_Layer: 21
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &390577602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390577601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 732150469}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390577603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390577601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e44c8ddd68a50949b80068f705574b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxX: 20
+  minX: 7
+  maxY: 90
+  minY: 80
+  spawnSpeed: 1
+  hazard: {fileID: 7827572933343989178, guid: b7e75bce93d45484585053e640b98f0d, type: 3}
 --- !u!1001 &395552609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9821,6 +9870,7 @@ Transform:
   - {fileID: 113647669}
   - {fileID: 1080671479}
   - {fileID: 455880721}
+  - {fileID: 390577602}
   m_Father: {fileID: 907140597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9982,7 +10032,7 @@ PrefabInstance:
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55.2
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
@@ -18211,7 +18261,7 @@ GameObject:
   - component: {fileID: 1831316725}
   m_Layer: 21
   m_Name: Tilemap_BlackBorder
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22801,6 +22851,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3532383930265893806, guid: 18c51afa8ee6add478c63e0600856f6c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532383930265893806, guid: 18c51afa8ee6add478c63e0600856f6c,
+        type: 3}
+      propertyPath: m_RefResolutionX
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532383930265893806, guid: 18c51afa8ee6add478c63e0600856f6c,
+        type: 3}
+      propertyPath: m_RefResolutionY
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 3532383930265893808, guid: 18c51afa8ee6add478c63e0600856f6c,
         type: 3}
       propertyPath: m_RootOrder
@@ -22860,6 +22925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532383930265893811, guid: 18c51afa8ee6add478c63e0600856f6c,
+        type: 3}
+      propertyPath: orthographic size
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 3532383930265893813, guid: 18c51afa8ee6add478c63e0600856f6c,
         type: 3}

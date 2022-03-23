@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class StaticDmgHazard : Hazard
 {
-    public int dmg;
-    public int redDmgDelay;
+    public float dmg;
+    public float redDmgDelay = 0.5f;
+
+    private GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +28,39 @@ public class StaticDmgHazard : Hazard
         //if collid w/ player:
         if( collision.gameObject.tag == "Player")
         {
+            //store player to damage:
+            target = collision.gameObject;
+
             //damage player immediately
-            DamagePlayer(collision.gameObject);
+            DamagePlayer();
         }
     }
 
-    private void DamagePlayer(GameObject player)
+    public override void OnTriggerExit2D(Collider2D collision)
     {
+        base.OnTriggerExit2D(collision);
+
+        //if collide w/ player exiting:
+        if (collision.gameObject.tag == "Player")
+        {
+            //clear player so not re-damaged:
+            target = null;
+        }
+    }
+
+    private void DamagePlayer()
+    {
+        //if target exited:
+        if (target == null)
+        {
+            return; //dont damage
+        }
+
         //dmg player
-        //player.GetComponent<SomeType>().DmgPlayer(); or player.getComponent<SomeType>().health -= dmg;
+        //target.GetComponent<SomeType>().DmgPlayer(); or target.getComponent<SomeType>().health -= dmg;
         print("Damage Player");
+
+        //try damaging player again in 0.5s:
+        Invoke("DamagePlayer", redDmgDelay);
     }
 }
