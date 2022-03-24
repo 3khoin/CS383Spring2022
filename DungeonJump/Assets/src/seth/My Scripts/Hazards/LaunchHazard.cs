@@ -63,8 +63,8 @@ public override void OnTriggerEnter2D(Collider2D collision)
         //add force to player's rigidbody:
         player.GetComponent<Rigidbody2D>().AddForce(launchDir * launchForce);
     }
-
+    /*
     private void ChangeLayer(GameObject player)
     { }
-    
+    */
 }

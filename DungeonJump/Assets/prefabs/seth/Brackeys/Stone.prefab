@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9216353267280740780}
   - component: {fileID: 6937843354766045690}
   - component: {fileID: 794858785964866258}
-  - component: {fileID: -7105883552854776960}
+  - component: {fileID: -1604389926276947548}
   m_Layer: 21
   m_Name: Stone
   m_TagString: Untagged
@@ -139,7 +139,7 @@ PolygonCollider2D:
       - {x: 0.5457511, y: -0.42913055}
       - {x: 0.58512545, y: 0.42175293}
       - {x: 0.4360013, y: 0.60137177}
---- !u!114 &-7105883552854776960
+--- !u!114 &-1604389926276947548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,11 +148,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7827572933343989178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9640eb1d583f2f34ea0a93fa06b0e5a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 47af5d781d7ceca43be969f334c1ff69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardSound: {fileID: 0}
-  launchDir: {x: 0, y: -5}
-  launchForce: 5
-  hazardAnim: {fileID: 0}
-  activationDelay: 0.5
