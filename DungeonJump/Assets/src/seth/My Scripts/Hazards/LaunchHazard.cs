@@ -20,7 +20,8 @@ public class LaunchHazard : Hazard
     {
 
     }
-    /*doesnt work very well, acts like force field
+
+    /*doesnt work very well, acts like force field for falling rocks
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //if collide w a boundary:
@@ -39,7 +40,6 @@ public override void OnTriggerEnter2D(Collider2D collision)
 
         if( collision.gameObject.tag == "Player")
         {
-            print("triggered w/ player");
 
             //start the launch delay coroutine:
             StartCoroutine(LaunchDelay());
@@ -63,8 +63,5 @@ public override void OnTriggerEnter2D(Collider2D collision)
         //add force to player's rigidbody:
         player.GetComponent<Rigidbody2D>().AddForce(launchDir * launchForce);
     }
-    /*
-    private void ChangeLayer(GameObject player)
-    { }
-    */
+
 }

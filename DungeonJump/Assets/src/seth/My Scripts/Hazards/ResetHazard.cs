@@ -19,6 +19,8 @@ public class ResetHazard : Hazard
 
     override public void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
+
         if( collision.gameObject.tag == "Player")
         {
             print("Scene should be reset");

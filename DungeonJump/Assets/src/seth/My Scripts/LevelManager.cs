@@ -77,7 +77,7 @@ public class LevelManager : MonoBehaviour
 
     public void CheckProgress() 
     {
-        print("Prog being checked");
+        print("Progress being checked");
 
         if (playerCurrItems != null)
             //calc progPercentage thru ratio of player items and tot items:
