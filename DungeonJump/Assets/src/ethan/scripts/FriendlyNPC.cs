@@ -8,13 +8,16 @@ using UnityEngine.PlayerLoop;
 public class FriendlyNPC : MonoBehaviour
 {
     protected bool interact;
-
+    protected bool quest;
+    
+    
     void Start()
     {
         interact = false;
+        quest = false;
     }
 
-    public void Init(int x, int y)
+    public void Move(int x, int y)
     {
         Vector2 pos = Vector2.zero;
         pos = new Vector2(x, y);
@@ -24,13 +27,11 @@ public class FriendlyNPC : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
-        interact = true;
         Debug.Log("Enter " + col.gameObject.tag);
     }
     
     public virtual void OnTriggerExit2D(Collider2D col)
     {
-        interact = false;
         Debug.Log("Exit " + col.gameObject.tag);
     }
 }
