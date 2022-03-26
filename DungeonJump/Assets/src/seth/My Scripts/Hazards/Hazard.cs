@@ -9,12 +9,14 @@ public class Hazard : MonoBehaviour
     
     virtual public void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hazard trigger entered");
+        if(collision.gameObject.tag == "Player")
+            print("hazard triggered by player entering");    
     }
 
     virtual public void OnTriggerExit2D(Collider2D collision)
     {
-        print("hazard trigger exited");
+        if (collision.gameObject.tag == "Player")
+            print("hazard triggered by player exiting");
     }
 
 }

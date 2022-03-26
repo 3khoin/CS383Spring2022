@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelGate : MonoBehaviour
 {
-    //public int level_Index = 0;
-    public string level_name = "Overworld Spawn Area";
+    public string levelName = "Overworld Spawn Area";
     public AnimationClip warpAnim;
     public AudioSource warpSound;
 
@@ -48,7 +47,7 @@ public class LevelGate : MonoBehaviour
         //change scene to appropriate lvl+build index
         //SceneManager.LoadScene( level_Index );
 
-        SceneManager.LoadScene(level_name);
+        SceneManager.LoadScene(levelName);
     }
 
     //cosmetic functionality assoc'd with Level Gates:

@@ -1,3 +1,9 @@
+/*
+ * 
+ * 
+ * 
+ * 
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,7 +66,7 @@ public class LevelManager : MonoBehaviour
         InvokeRepeating("CheckProgress", 10, 10);
 
         //test removing the first blocks:
-        Remove_PBlocks();
+        RemoveProgressBlocks();
     }
 
     // Update is called once per frame
@@ -71,7 +77,7 @@ public class LevelManager : MonoBehaviour
 
     public void CheckProgress() 
     {
-        print("Prog being checked");
+        print("Progress being checked");
 
         if (playerCurrItems != null)
             //calc progPercentage thru ratio of player items and tot items:
@@ -84,14 +90,14 @@ public class LevelManager : MonoBehaviour
             progPercentage >= 50 && progZone == 2 ||
             progPercentage >= 75 && progZone == 3)
         {
-            Remove_PBlocks();
+            RemoveProgressBlocks();
 
             progZone++; //incr to nxt prog zone
         }
     }
 
     //remove specified prog block:
-    private void Remove_PBlocks()
+    private void RemoveProgressBlocks()
     {
         //get all progress blocks in current scene: (need to do everytime they needa be cleared)
         progressBlocks = GameObject.FindGameObjectsWithTag("ProgBlock");
