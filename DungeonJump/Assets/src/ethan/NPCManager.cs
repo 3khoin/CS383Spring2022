@@ -10,7 +10,9 @@ public class NPCManager : MonoBehaviour
     public static GameObject PlayerUI2;
     public static GameObject PlayerUI3;
     // Start is called before the first frame update
-    
+
+    [SerializeField] public FriendlyNPC Talking;
+
     private void Awake()
     {
         Debug.Log("awaken");

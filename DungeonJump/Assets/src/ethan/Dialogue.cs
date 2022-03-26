@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class Dialogue : FriendlyNPC
 {
-    //[SerializeField] public GameObject dialogueWindow; 
     private int dialogueID;
     protected string[,] dialogueArr =
     {
@@ -21,12 +20,10 @@ public class Dialogue : FriendlyNPC
     protected GameObject PlayerUI1;
     protected GameObject PlayerUI2;
     protected GameObject PlayerUI3;
-    //public NPCDialogue npcDialogue;
 
     void Start()
     {
         dialogueID = 0;
-        //dialogueArr = npcDialogue.array;
         NPCUI = NPCManager.NPCUI;
         PlayerUI1 = NPCManager.PlayerUI1;
         PlayerUI2 = NPCManager.PlayerUI2;
@@ -54,7 +51,8 @@ public class Dialogue : FriendlyNPC
         base.OnTriggerEnter2D(col);
         if (col.gameObject.CompareTag("Player")) // if player collision end
         { 
-            EnableUI();
+            PlayerUIDisable();
+            NPCUIDisable();
             Display(dialogueID);
         }
     }
@@ -64,28 +62,31 @@ public class Dialogue : FriendlyNPC
         base.OnTriggerExit2D(col);
         if (col.gameObject.CompareTag("Player")) // if player collision end
         {
-            DisableUI();
+            PlayerUIDisable();
+            NPCUIDisable();
         }
     }
     
-    private void EnableUI()
+    public virtual void PlayerUIEnable()
     {
-        Debug.Log("Conversation Enable");
-        NPCUI.SetActive(true);
-        PlayerUI1.SetActive(true);
-        PlayerUI2.SetActive(true);
-        PlayerUI3.SetActive(true);
+        Debug.Log("Player UI Enable");
     }
 
-    private void DisableUI()
+    public virtual void PlayerUIDisable()
     {
-        Debug.Log("Conversation Disable");
-        NPCUI.SetActive(false);
-        PlayerUI1.SetActive(false);
-        PlayerUI2.SetActive(false);
-        PlayerUI3.SetActive(false);
+        Debug.Log("Player UI Disable");
     }
 
+    public virtual void NPCUIEnable()
+    {
+        Debug.Log("NPC UI Enable");
+    }
+
+    public virtual void NPCUIDisable()
+    {
+        Debug.Log("NPC UI Disable");
+    }
+    
     private void Update()
     {
         if (!interact) return;
