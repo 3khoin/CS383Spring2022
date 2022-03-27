@@ -10,8 +10,8 @@ public class LightBandit : MonoBehaviour {
 
 
 
-    [SerializeField] float      m_speed = 4.0f;
-    [SerializeField] float      m_jumpForce = 7.5f;
+    public float      m_speed = 4.0f;
+    public float      m_jumpForce = 7.5f;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;

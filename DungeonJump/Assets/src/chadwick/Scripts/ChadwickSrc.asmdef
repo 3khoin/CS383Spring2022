@@ -1,0 +1,16 @@
+{
+    "name": "ChadwickSrc",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9cc802647e071ef409a590fe8f032ddc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
