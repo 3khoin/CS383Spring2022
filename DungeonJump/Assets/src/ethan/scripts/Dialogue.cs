@@ -16,6 +16,8 @@ public class Dialogue : FriendlyNPC
         {"Yes, quite beige.","0"}, {"But it is so positively colorful today.","4"}, {"Yes, quite.","8"}, {"Yes, DARK BEIGE!","12"},
         {"Well I say!","0"}, {"Sorry, just had to balance out the good.","4"}, {"Life is meaningless.","8"}, {"I am sure you say!","12"}
     };
+    protected bool input;
+    protected string key;
     protected GameObject npcUI;
     protected GameObject playerUI1;
     protected GameObject playerUI2;
@@ -25,16 +27,11 @@ public class Dialogue : FriendlyNPC
     void Start()
     {
         dialogueID = 0;
+        input = true;
         npcUI = NPCManager.npcUI;
         playerUI1 = NPCManager.playerUI1;
         playerUI2 = NPCManager.playerUI2;
         playerUI3 = NPCManager.playerUI3;
-    }
-    
-    
-    protected virtual void NPCDisplay(int id)
-    {
-        Debug.Log("Default NPC Display");
     }
     
     
@@ -75,8 +72,8 @@ public class Dialogue : FriendlyNPC
             PlayerUIDisable();
         }
     }
-    
-    
+
+
     public virtual void PlayerUIEnable()
     {
         Debug.Log("Default Player UI Enable");
@@ -87,39 +84,23 @@ public class Dialogue : FriendlyNPC
         Debug.Log("Default Player UI Disable");
     }
 
-    public virtual void NPCUIEnable()
-    {
-        Debug.Log("Default NPC UI Enable");
+    protected void NPCDisplay(int id) 
+    { 
+        Debug.Log("NPC Dialogue"); 
+        npcUI.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id);
     }
 
-    public virtual void NPCUIDisable()
-    {
-        Debug.Log("Default NPC UI Disable");
-    }
     
-    private void Update()
+    public void NPCUIEnable()
     {
-        if (!interact) return;
-        if (Input.GetKeyDown("1"))
-        {
-            Debug.Log("Choice 1");
-            dialogueID = 4;
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
-        } 
-        else if (Input.GetKeyDown("2"))
-        {
-            Debug.Log("Choice 2");
-            dialogueID = 8;
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
-        } 
-        else if (Input.GetKeyDown("3"))
-        {
-            Debug.Log("Choice 3");
-            dialogueID = 12;
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
-        }
+        Debug.Log("NPC UI Enable");
+        npcUI.SetActive(true);
+    }
+
+    
+    public void NPCUIDisable()
+    {
+        Debug.Log("NPC UI Disable");
+        npcUI.SetActive(false);
     }
 }

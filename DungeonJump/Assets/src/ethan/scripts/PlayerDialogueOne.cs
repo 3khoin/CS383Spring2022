@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerDialogueOne : Dialogue
 {
+    
+    
     protected override void PlayerDisplay(int id) 
     {
         Debug.Log("Player Dialogue One");
@@ -30,5 +32,19 @@ public class PlayerDialogueOne : Dialogue
         bool isParsable = Int32.TryParse(dialogueArr[id,1], out response);
         if (isParsable) return response;
         else return -1;
+    }
+    
+    
+    private void Update()
+    {
+        
+        if (!interact) return;
+        if (Input.GetKeyDown("1"))
+        {
+            Debug.Log("Choice 1");
+            dialogueID = GetResponse(dialogueID + 1);
+            NPCDisplay(dialogueID);
+            PlayerDisplay(dialogueID);
+        }
     }
 }

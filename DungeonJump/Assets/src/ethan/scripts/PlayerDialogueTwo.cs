@@ -34,4 +34,25 @@ public class PlayerDialogueTwo : Dialogue
         if (isParsable) return response;
         else return -1;
     }
+    
+    
+    private void Update()
+    {
+        
+        if (!interact) return;
+        if (Input.GetKeyDown("1"))
+        {
+            Debug.Log("Choice 1");
+            dialogueID = GetResponse(dialogueID + 1);
+            NPCDisplay(dialogueID);
+            PlayerDisplay(dialogueID);
+        } 
+        else if (Input.GetKeyDown("2"))
+        {
+            Debug.Log("Choice 2");
+            dialogueID = GetResponse(dialogueID + 2);
+            NPCDisplay(dialogueID);
+            PlayerDisplay(dialogueID);
+        }
+    }
 }

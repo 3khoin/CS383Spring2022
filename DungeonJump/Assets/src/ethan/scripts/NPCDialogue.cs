@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NPCDialogue : Dialogue
 {
-    
+    /*
     
     protected override void NPCDisplay(int id) 
     { 
@@ -27,4 +27,5 @@ public class NPCDialogue : Dialogue
         Debug.Log("NPC UI Disable");
         npcUI.SetActive(false);
     }
+    */
 }

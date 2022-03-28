@@ -6,6 +6,7 @@ public class Quest : FriendlyNPC
 {
     public bool questAccept;
     public bool questComplete;
+    [SerializeField] private GameObject questBlocker;
     [SerializeField] private GameObject questHazard;
     [SerializeField] private GameObject questItem;
 
@@ -20,19 +21,36 @@ public class Quest : FriendlyNPC
 
     private bool IsComplete()
     {
-        if (questItem.activeSelf == true) return false;
-        else return false;
+        return questItem.activeSelf;
     }
 
 
+    private void GiveQuest()
+    {
+        questBlocker.SetActive(false);
+    }
+    
     private void CompleteQuest()
     {
         questHazard.SetActive(false);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (!interact)
+        {
+            if (!questAccept)
+            {
+                questAccept = true;
+                GiveQuest();
+            }
+
+            if (IsComplete())
+            {
+                questComplete = true;
+                CompleteQuest();
+            }
+        }
     }
 }
