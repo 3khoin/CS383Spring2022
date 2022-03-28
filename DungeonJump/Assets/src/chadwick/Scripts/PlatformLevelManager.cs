@@ -21,11 +21,12 @@ public class PlatformLevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // PlayerWithinBounds();
+       PlayerWithinBounds();
     }
 
 
     void PlayerWithinBounds (){
+        player = GameObject.FindGameObjectWithTag("Player");
         if (leftPnt.position.x >    player.transform.position.x){
             Debug.Log("Player exceeded level boundary: " + leftPnt.transform.position);
             //tele player to spawn
