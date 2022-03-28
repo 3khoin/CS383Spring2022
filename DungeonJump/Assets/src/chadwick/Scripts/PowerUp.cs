@@ -11,6 +11,8 @@ public class PowerUp : MonoBehaviour
     public powerUpTypes powerUpType;
     public float multiplier = 1.67f;
     public float duration = 30f;
+    public float speedBalancer = .47f;
+    public float jumpBalancer = .1f;
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.CompareTag("Player")){
@@ -33,9 +35,9 @@ public class PowerUp : MonoBehaviour
                 stats.m_speed *= multiplier;
             break;
             case powerUpTypes.Jump :
-                stats.m_jumpForce *= multiplier - .1f;
+                stats.m_jumpForce *= multiplier - jumpBalancer;
                 // modify speed as well to add a balanced feel of movement
-                stats.m_speed *= (multiplier - 0.47f);
+                stats.m_speed *= (multiplier - speedBalancer);
             break;
             case powerUpTypes.Health :
                 // do nothing
@@ -58,8 +60,8 @@ public class PowerUp : MonoBehaviour
                 stats.m_speed /= multiplier;
             break;
             case powerUpTypes.Jump :
-                stats.m_jumpForce /= multiplier - .1f;
-                stats.m_speed /= (multiplier - 0.47f);
+                stats.m_jumpForce /= multiplier - jumpBalancer;
+                stats.m_speed /= (multiplier - speedBalancer);
             break;
             case powerUpTypes.Health :
                 // do nothing
