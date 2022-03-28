@@ -17,7 +17,7 @@ public class FriendlyNPC : MonoBehaviour
         quest = false;
     }
 
-    public void Move(int x, int y)
+    public void Init(int x, int y)
     {
         Vector2 pos = Vector2.zero;
         pos = new Vector2(x, y);

@@ -16,18 +16,14 @@ public class Dialogue : FriendlyNPC
         {"Yes, quite beige.","0"}, {"But it is so positively colorful today.","4"}, {"Yes, quite.","8"}, {"Yes, DARK BEIGE!","12"},
         {"Well I say!","0"}, {"Sorry, just had to balance out the good.","4"}, {"Life is meaningless.","8"}, {"I am sure you say!","12"}
     };
-    protected bool input;
-    protected string key;
     protected GameObject npcUI;
     protected GameObject playerUI1;
     protected GameObject playerUI2;
     protected GameObject playerUI3;
 
-    
     void Start()
     {
         dialogueID = 0;
-        input = true;
         npcUI = NPCManager.npcUI;
         playerUI1 = NPCManager.playerUI1;
         playerUI2 = NPCManager.playerUI2;
