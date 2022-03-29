@@ -1,8 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Filename: CheckPlayerBounds.cs 
+ * Developer: Seth Cram
+ * Purpose: File teleports gameobject back to spawnpoint if outside of bounds. 
+ * 
+ */
+
 using UnityEngine;
 
-//should be attached to player in overworld
+/*
+ * Summary: Class teleports gameobject back to spawnpoint if outside of bounds. 
+ *          Should be attached to player in overworld.
+ * 
+ * Member Variables:
+ * spawnPnt - Transform for player spawn point.
+ * leftmostPnt - Transform for leftmost point a player should go.
+ * rightmostPnt - Transform for rightmost point a player should go.
+ * topmostPnt - Transform for topmost point a player should go.
+ * botmostPnt - Transform for botmost point a player should go.
+ */
 public class CheckPlayerBounds : MonoBehaviour
 {
     public Transform spawnPnt;
@@ -13,7 +28,9 @@ public class CheckPlayerBounds : MonoBehaviour
     public Transform topmostPnt;
     public Transform botmostPnt;
 
-    // Start is called before the first frame update
+    /*
+     * Summary: Fills spawnpoint and boundary fields of current scene.
+     */
     void Start()
     {
         //fill spawn position:
@@ -26,7 +43,10 @@ public class CheckPlayerBounds : MonoBehaviour
         botmostPnt = GameObject.FindGameObjectWithTag("bot").transform;
     }
 
-    // Update is called once per frame
+    /*
+     * Summary: If player is out of bounds, teleports them to the spawn point.
+     * 
+     */
     void Update()
     {
         //if player out of bounds (have to use abs vals incase negative):
