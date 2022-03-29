@@ -8826,7 +8826,7 @@ PrefabInstance:
     - target: {fileID: 2881559497522254695, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: moveSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6727454380400180790, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
@@ -9606,9 +9606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73751a56427a09a4aa3292a17b6aa48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Overworld Grungie Area
-  warpAnim: {fileID: 0}
-  warpSound: {fileID: 0}
+  levelName: OverworldGrungieArea
 --- !u!1001 &492121342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10783,9 +10781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73751a56427a09a4aa3292a17b6aa48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: CavePlatformer
-  warpAnim: {fileID: 0}
-  warpSound: {fileID: 0}
+  levelName: CoconutCave
 --- !u!61 &817913907
 BoxCollider2D:
   m_ObjectHideFlags: 0

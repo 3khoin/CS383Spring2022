@@ -16,7 +16,7 @@ using UnityEngine.SceneManagement;
  */
 public class LevelGate : MonoBehaviour
 {
-    public string levelName = "Overworld Spawn Area";
+    public string levelName = "OverworldSpawnArea";
     //public AnimationClip warpAnim;
     //public AudioSource warpSound;
 
@@ -42,9 +42,11 @@ public class LevelGate : MonoBehaviour
         //if collided w/ the player:
         if( collision.gameObject.tag == "Player")
         {
+
             //store player position for respawn:
+            //have to shift y-pos down 1 so don't trigger statue
             lvlMngerInstance.playerRespawnPos = new Vector2( collision.gameObject.transform.position.x, 
-                                                             collision.gameObject.transform.position.y - 1); //have to shift y-pos down 1 so don't trigger statue
+                                                             collision.gameObject.transform.position.y - 1); 
 
             //cosmetic effects:
             //Cosmetics();

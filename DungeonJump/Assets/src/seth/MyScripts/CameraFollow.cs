@@ -1,4 +1,10 @@
 ﻿/*
+ * name: MainCamera
+ * Summary: Camera will follow any given target transform at given lerp speed.
+ * Description: If not target is specified, the camera automatically targets the GameObject tagged as "Player".
+ */
+
+/*
  * Filename: CameraFollow.cs 
  * Developer: Seth Cram + Cainos
  * Purpose: File to let camera follow target.

@@ -1,0 +1,3 @@
+Name: NextLvlTrigger
+Summary: Upon triggering, loads the specified scene by name.
+Description: A triggerable box collider is attached to an empty GameObject.
