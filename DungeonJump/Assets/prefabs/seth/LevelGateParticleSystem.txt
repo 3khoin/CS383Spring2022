@@ -1,0 +1,4 @@
+Name: LevelGateParticleSystem
+Summary: A particle system with an upward, constant flow of small particles.
+Description: The particle system particles don't last for very long. 
+	     The particles also come out rather quickly. 

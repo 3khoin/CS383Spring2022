@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Overworld Levels/Overworld Demo Scene.unity
+    path: Assets/Scenes/OverworldLevels/OverworldDemoScene.unity
     guid: 86e89bd9e4a9c5245a015cf17e3c0aae
   - enabled: 1
     path: Assets/Scenes/Platformer Levels/CoconutCave.unity
@@ -18,18 +18,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Platformer Levels/DungeonPlatformer.unity
     guid: 3ef346042d3607542b1662962243c584
   - enabled: 1
-    path: Assets/Scenes/Overworld Levels/StressTest.unity
+    path: Assets/Scenes/OverworldLevels/StressTest.unity
     guid: 2eee2196adc6da942b04b2fe63efccb1
   - enabled: 1
     path: Assets/Scenes/Platformer Levels/CGStressTest.unity
     guid: ad27350f1d1aaf547853078f4ccc1bdb
   - enabled: 1
-    path: Assets/Scenes/Overworld Levels/UIStressTest.unity
+    path: Assets/Scenes/OverworldLevels/UIStressTest.unity
     guid: 5f12ebd9d8f078140b1ca9a79a1ffb09
   - enabled: 1
-    path: Assets/Scenes/Overworld Levels/Overworld Spawn Area.unity
+    path: Assets/Scenes/OverworldLevels/OverworldSpawnArea.unity
     guid: 2c1f0b3c81851fe40b5f9fbe6e05896c
   - enabled: 1
-    path: Assets/Scenes/Overworld Levels/Overworld Caves.unity
+    path: Assets/Scenes/OverworldLevels/Unused/OverworldCaves.unity
     guid: 82103706ac5750944b83b46380a33638
+  - enabled: 1
+    path: Assets/Scenes/OverworldLevels/OverworldAlienScape.unity
+    guid: a9f5d0c832a47014ea0c784897c0e39e
+  - enabled: 1
+    path: Assets/Scenes/OverworldLevels/OverworldGrungieArea.unity
+    guid: 5df2eb20519a38743a6ce07d213014b4
+  - enabled: 1
+    path: Assets/Scenes/Platformer Levels/PostWaterfall.unity
+    guid: be895fbb64f5e244ebd3714266c19c03
+  - enabled: 1
+    path: Assets/Scenes/Platformer Levels/SunnyForest.unity
+    guid: 5538968116282b04e9e4b8907277d791
   m_configObjects: {}

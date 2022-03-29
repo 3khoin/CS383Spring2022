@@ -1,0 +1,4 @@
+Name: Boundaries
+Summary: Empty GameObject containing four other empty GameObjects.
+Description: Four children empty GameObjects should be used to 
+	     dynamically mark boundaries in scene according to their name.

@@ -1,34 +1,52 @@
+/*
+ * Filename: TilemapStress.cs 
+ * Developer: Seth Cram
+ * Purpose: File repeatedly spawns tilemaps every frame until the max int is reached.
+ *          Spawned within a specified StressTest scene. 
+ * 
+ */
+
 using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
-using UnityEngine.Tilemaps; //for tilemap usage
+using UnityEngine.Tilemaps; 
 
-//TAKES 3 MINUTES TO FREEZE UNITY (USE WITH CAUTION)
+/*
+ * Summary: Class repeatedly spawns tilemaps every frame until the max int is reached.
+ *          Spawned within a specified StressTest scene.
+ * 
+ * Notes:
+ * TAKES 3 MINUTES TO FREEZE UNITY (USE WITH CAUTION)
+ * 
+ */
 public class TilemapStress : MonoBehaviour
 {
+    /*
+     * Summary: Loads the StressTest scene.
+     * 
+     */
     [SetUp]
     public void setup()
     {
         SceneManager.LoadScene("StressTest");
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
+    /*
+     * Summary: Repeatedly spawns tilemaps every frame until the max int is reached.  
+     * 
+     */
     [UnityTest]
     public IEnumerator TilemapStressTest()
     {
         //arrange
         GameObject tilemapObj = new GameObject("Tilemap Obj", typeof(Tilemap), typeof(TilemapCollider2D), 
                                                 typeof(Rigidbody2D), typeof(CompositeCollider2D));
-        int i = 1;
-
-        //yield return new WaitForSeconds(1); //give user a second to navigate to the 
+        int i = 1;  
 
         //act 
-        while( i < int.MaxValue )
+        while ( i < int.MaxValue )
         {
             Instantiate(tilemapObj);
 
@@ -42,10 +60,15 @@ public class TilemapStress : MonoBehaviour
         yield return null;
 
         //assert
-        Assert.True(false); //failed if it made it to this point
+        //failed if it made it to this point
+        Assert.True(false); 
 
     }
-
+    
+    /*
+     * Summary: unloads StressTest scene.
+     * 
+     */
     [TearDown]
     public void teardown()
     {
