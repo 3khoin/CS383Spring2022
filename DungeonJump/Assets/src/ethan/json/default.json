@@ -1,0 +1,12 @@
+{
+  "dialogs": [
+    {
+      "npcText": "NPC Dialogue",
+      "pOneText": "[1] Option 1",
+      "pTwoText": "[2] Option 2",
+      "pThreeText": "[3] Option 3",
+      "next": [0, 0, 0],
+      "quest": [false, false, false]
+    }
+  ]
+}

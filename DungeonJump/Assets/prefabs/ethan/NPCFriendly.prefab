@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7699887346588269802}
   - component: {fileID: 158798746968429365}
   - component: {fileID: -5952459110754287524}
-  - component: {fileID: 6804067768894421048}
   m_Layer: 0
   m_Name: NPCFriendly
   m_TagString: FriendlyNPC
@@ -122,17 +121,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 729eb2ee41b28a54b982c4cee62d9018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6804067768894421048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370012566506081005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d4fb827f178804e983e1e2ba6245d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

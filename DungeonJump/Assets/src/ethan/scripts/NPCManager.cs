@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
-    public static NPCManager NPCM;
+    public static FileWrapper FW;
     public static GameObject npcUI;
     public static GameObject playerUI1;
     public static GameObject playerUI2;
@@ -21,6 +21,7 @@ public class NPCManager : MonoBehaviour
         playerUI1 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(1)").gameObject;
         playerUI2 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(2)").gameObject;
         playerUI3 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(3)").gameObject;
+        FW = FindObjectOfType<FileWrapper>();
     }
     
 }

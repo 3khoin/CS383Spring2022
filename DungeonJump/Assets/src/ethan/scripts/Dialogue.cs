@@ -8,6 +8,10 @@ using UnityEngine;
 
 public class Dialogue : FriendlyNPC
 {
+    public Dialog[] dialogs;
+    //public Dialog dialog;
+    public TextAsset dialogueJson;
+
     protected int dialogueID;
     protected string[,] dialogueArr =
     {
@@ -28,6 +32,11 @@ public class Dialogue : FriendlyNPC
         playerUI1 = NPCManager.playerUI1;
         playerUI2 = NPCManager.playerUI2;
         playerUI3 = NPCManager.playerUI3;
+        dialogs = NPCManager.FW.ReadFile(dialogueJson);
+        foreach (Dialog employee in dialogs)
+        {
+            Debug.Log("Found text: " + employee.npcText + " " + employee.pOneText);
+        }
     }
     
     
