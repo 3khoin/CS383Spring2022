@@ -1,7 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Filename: Spawner.cs 
+ * Developer: Seth Cram
+ * Purpose: This file duplicates and spawns the provided hazard randomly within the provided bounds. 
+ * 
+ */
+
 using UnityEngine;
 
+/*
+ * Summary: This class duplicates and spawns the provided hazard randomly within the provided bounds.
+ * 
+ * Member Variables:
+ * maxX, minX, maxY, minY - Floats used to determine the bounds of spawning.
+ * spawnSpeed - Float to change how quickly hazards are spawned.
+ * hazard - GameObject spawned into the scene.
+ */
 public class Spawner : MonoBehaviour
 {
     public float maxX = 10;
@@ -12,19 +25,19 @@ public class Spawner : MonoBehaviour
 
     public GameObject hazard;
 
-    // Start is called before the first frame update
+    /*
+     * Summary: Repeatedly calls a function to spawn a hazard dependent on spawnSpeed.
+     */
     void Start()
     {
-        //spawn a hazard every second:
+        //repeatedly spawn a hazard:
         InvokeRepeating("SpawnHazard", 0, 1/spawnSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /*
+     * Summary: Randomly spawns a hazard within the specified bounds.
+     * 
+     */
     private void SpawnHazard()
     {
         //find rando spawn vals:

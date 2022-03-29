@@ -1,23 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Filename: Item.cs 
+ * Developer: Seth Cram
+ * Purpose: File adds this script's GameObject to the LevelManager's list of player items if the player comes into contact. 
+ * 
+ */
+
 using UnityEngine;
 
+/*
+ * Summary: Class adds this script's GameObject to the LevelManager's list of player items if the player comes into contact.
+ * 
+ */
 public class Item : MonoBehaviour, Interactable
 {
     //public Color highlightColor;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /*
+     * Summary: Calls PlayerPickup() if triggers on the player.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //if collided w/ player:
@@ -28,6 +31,9 @@ public class Item : MonoBehaviour, Interactable
         }
     }
 
+    /*
+     * Summary: Adds this GameObject to the LevelManager's player items and makes it dissapear from the scene. 
+     */
     public void PlayerPickup()
     {
         //Add to LevelManager player's currItems:

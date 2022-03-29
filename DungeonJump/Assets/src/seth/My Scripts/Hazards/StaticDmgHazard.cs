@@ -1,26 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Filename: StaticDmgHazard.cs 
+ * Developer: Seth Cram
+ * Purpose: File to implement a Static player Damaging Hazard.
+ */
+
 using UnityEngine;
 
+/*
+ * Summary: Class to repeatedly damage the player if they're triggering the hazard.
+ * 
+ * Member Variables:
+ * dmg - Float to apply damage to player.
+ * reDmgDelay - Time in seconds waited till dmg should be applied again to player.
+ * target - GameObject of player that is triggering the damaging hazard.
+ */
 public class StaticDmgHazard : Hazard
 {
     public float dmg;
-    public float redDmgDelay = 0.5f;
+    public float reDmgDelay = 0.5f;
 
     private GameObject target;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //implement redamage delay somehow
-    }
-
+    /*
+     * Summary: When player enters the trigger, its set as the target and should be damaged.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
     override public void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
@@ -36,6 +42,12 @@ public class StaticDmgHazard : Hazard
         }
     }
 
+    /*
+     * Summary: When player exits the trigger, it's no longer set as the target.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
     public override void OnTriggerExit2D(Collider2D collision)
     {
         base.OnTriggerExit2D(collision);
@@ -48,6 +60,10 @@ public class StaticDmgHazard : Hazard
         }
     }
 
+    /*
+     * Summary: If the target is set, repeatedly damage the player until it's cleared.
+     * 
+     */
     private void DamagePlayer()
     {
         //if target exited:
@@ -56,11 +72,11 @@ public class StaticDmgHazard : Hazard
             return; //dont damage
         }
 
-        //dmg player
-        //target.GetComponent<SomeType>().DmgPlayer(); or target.getComponent<SomeType>().health -= dmg;
+        //dmg player:
+            //target.GetComponent<SomeType>().DmgPlayer(); or target.getComponent<SomeType>().health -= dmg;
         print("Damage Player");
 
         //try damaging player again in 0.5s:
-        Invoke("DamagePlayer", redDmgDelay);
+        Invoke("DamagePlayer", reDmgDelay);
     }
 }

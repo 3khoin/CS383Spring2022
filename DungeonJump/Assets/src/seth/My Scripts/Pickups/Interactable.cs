@@ -1,10 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+/*
+ * Filename: Interactable.cs 
+ * Developer: Seth Cram
+ * Purpose: File implemented by any script that involves player pickup. 
+ * 
+ */
 
+/*
+ * Summary: Interface implemented by any script that involves player pickup.
+ * 
+ */
 public interface Interactable
 {
+    /*
+     * Summary: Should allow the player to pickup something. 
+     */
     public void PlayerPickup();
-
 
 }

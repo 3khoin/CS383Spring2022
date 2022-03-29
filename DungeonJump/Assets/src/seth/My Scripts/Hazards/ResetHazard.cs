@@ -1,22 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Filename: ResetHazard.cs 
+ * Developer: Seth Cram
+ * Purpose: File resets the player if they're hit by the GameObject this script is attached to. 
+ * 
+ */
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Summary: Class resets the player if they're hit by the GameObject this script is attached to.
+ * 
+ */
 public class ResetHazard : Hazard
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /*
+     * Summary: Reloads the scene if the GameObject this script is attached to hits the player.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
     override public void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);

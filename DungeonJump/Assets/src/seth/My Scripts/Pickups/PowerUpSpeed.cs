@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Filename: PowerUpSpeed.cs 
+ * Developer: Seth Cram
+ * Purpose: File calls PlayerPickup() if triggers on the player.
+ *          Also increases player movement speed.
+ */
+
 using UnityEngine;
 
-public class PowerUp_Speed : MonoBehaviour, Interactable
+public class PowerUpSpeed : MonoBehaviour, Interactable
 {
     public float incrAmt = 0.1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /*
+     * Summary: Class calls PlayerPickup() if triggers on the player.
+     *          Also increases player movement speed.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //if collided w/ player:
@@ -32,6 +32,9 @@ public class PowerUp_Speed : MonoBehaviour, Interactable
         }
     }
 
+    /*
+     * Summary: Makes this GameObject dissapear from the scene. 
+     */
     public void PlayerPickup()
     {
         //make item dissapear:
