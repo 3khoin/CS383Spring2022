@@ -8,10 +8,6 @@ using UnityEngine;
 
 public class Dialogue : FriendlyNPC
 {
-    public Dialog[] dialogs;
-    //public Dialog dialog;
-    public TextAsset dialogueJson;
-
     protected int dialogueID;
     protected string[,] dialogueArr =
     {
@@ -24,19 +20,20 @@ public class Dialogue : FriendlyNPC
     protected GameObject playerUI1;
     protected GameObject playerUI2;
     protected GameObject playerUI3;
+    
+    
+    [SerializeReference] public TextAsset jsonFile;
+    public Dialog[] conversations;
 
-    void Start()
+    private void Start()
     {
         dialogueID = 0;
         npcUI = NPCManager.npcUI;
         playerUI1 = NPCManager.playerUI1;
         playerUI2 = NPCManager.playerUI2;
         playerUI3 = NPCManager.playerUI3;
-        dialogs = NPCManager.FW.ReadFile(dialogueJson);
-        foreach (Dialog employee in dialogs)
-        {
-            Debug.Log("Found text: " + employee.npcText + " " + employee.pOneText);
-        }
+        conversations = NPCManager.JR.ReadJSON(jsonFile);
+        Debug.Log("Found " + conversations[0].firstText + " " + conversations[0].secondText + " " + conversations[0].thirdText + conversations[0].next[0]);
     }
     
     
@@ -79,12 +76,12 @@ public class Dialogue : FriendlyNPC
     }
 
 
-    public virtual void PlayerUIEnable()
+    protected virtual void PlayerUIEnable()
     {
         Debug.Log("Default Player UI Enable");
     }
 
-    public virtual void PlayerUIDisable()
+    protected virtual void PlayerUIDisable()
     {
         Debug.Log("Default Player UI Disable");
     }
@@ -96,14 +93,14 @@ public class Dialogue : FriendlyNPC
     }
 
     
-    public void NPCUIEnable()
+    private void NPCUIEnable()
     {
         Debug.Log("NPC UI Enable");
         npcUI.SetActive(true);
     }
 
     
-    public void NPCUIDisable()
+    private void NPCUIDisable()
     {
         Debug.Log("NPC UI Disable");
         npcUI.SetActive(false);

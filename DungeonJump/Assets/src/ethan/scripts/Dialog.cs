@@ -2,74 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [System.Serializable]
-public class Dialog : MonoBehaviour
+public class Dialog
 {
-    [SerializeField] public string npcText;
-    [SerializeField] public string pOneText;
-    [SerializeField] public string pTwoText;
-    [SerializeField] public string pThreeText;
-    [SerializeField] public int[] next;
-    [SerializeField] public bool[] quest;
-    /*
+    //these variables are case sensitive and must match the strings "firstText" etc. in the JSON
+    public string npcText;
+    public string firstText;
+    public string secondText;
+    public string thirdText;
+    public int[] next;
+
     
     public string GetNPCText() {
         return npcText;
     }
     
     
-    public void SetNPCText(string s) {
-        npcText = s;
+    public string GetFirstText() {
+        return firstText;
     }
     
     
-    public string GetPOneText() {
-        return pOneText;
+    public string GetSecondText() {
+        return secondText;
     }
     
     
-    public void SetPOneText(string s) {
-        pOneText = s;
+    public string GetThirdText() {
+        return thirdText;
     }
     
     
-    public string GetPTwoText() {
-        return pTwoText;
+    int GetNext(int x)
+    {
+        return next[x];
     }
-    
-    
-    public void SetPTwoText(string s) {
-        pTwoText = s;
-    }
-    
-    
-    public string GetPThreeText() {
-        return pThreeText;
-    }
-    
-    
-    public void SetPThreeText(string s) {
-        pThreeText = s;
-    }
-    
-    
-    public int GetNext(int i) {
-        return next[i];
-    }
-    
-    
-    public void SetNext(int x, int y, int z) {
-        next = new int[]{x, y, z};
-    }
-    
-    
-    public bool GetQuest(int i) {
-        return quest[i];
-    }
-    
-    
-    public void SetQuest(bool x, bool y, bool z) {
-        quest = new bool[]{x, y, z};
-    }*/
 }

@@ -16,7 +16,7 @@ public class PlayerDialogueThree : Dialogue
         playerUI3.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+3);
     }
 
-    public override void PlayerUIEnable()
+    protected override void PlayerUIEnable()
     {
         //Debug.Log("Three Player UI Enable");
         playerUI1.SetActive(true);
@@ -24,7 +24,7 @@ public class PlayerDialogueThree : Dialogue
         playerUI3.SetActive(true);
     }
 
-    public override void PlayerUIDisable()
+    protected override void PlayerUIDisable()
     {
         //Debug.Log("Three Player UI Disable");
         playerUI1.SetActive(false);

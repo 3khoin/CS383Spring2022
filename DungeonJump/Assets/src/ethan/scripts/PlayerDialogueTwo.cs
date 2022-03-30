@@ -13,14 +13,14 @@ public class PlayerDialogueTwo : Dialogue
         playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+2);
     }
 
-    public override void PlayerUIEnable()
+    protected override void PlayerUIEnable()
     {
         Debug.Log("Two Player UI Enable");
         playerUI1.SetActive(true);
         playerUI2.SetActive(true);
     }
 
-    public override void PlayerUIDisable()
+    protected override void PlayerUIDisable()
     {
         Debug.Log("Two Player UI Disable");
         playerUI1.SetActive(false);

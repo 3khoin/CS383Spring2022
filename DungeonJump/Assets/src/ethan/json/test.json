@@ -1,0 +1,33 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Zero",
+      "firstText": "Hello",
+      "secondText": "My",
+      "thirdText": "Honey",
+      "next": [1, 2, 3]
+    },
+    {
+      "npcText": "One",
+      "firstText": "Hello",
+      "secondText": "My",
+      "thirdText": "Darling",
+      "next": [0, 2, 3]
+    },
+    {
+      "npcText": "Two",
+      "firstText": "Hello",
+      "secondText": "My",
+      "thirdText": "Ragtime Gal",
+      "next": [1, 0, 3]
+    },
+    {
+      "npcText": "Three",
+      "firstText": "Hello",
+      "secondText": "My",
+      "thirdText": "Momma",
+      "next": [1, 2, 0]
+    }
+  ]
+}

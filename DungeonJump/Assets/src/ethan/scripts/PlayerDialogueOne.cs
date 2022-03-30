@@ -14,13 +14,13 @@ public class PlayerDialogueOne : Dialogue
         playerUI1.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+1);
     }
     
-    public override void PlayerUIEnable()
+    protected override void PlayerUIEnable()
     {
         Debug.Log("One Player UI Enable");
         playerUI1.SetActive(true);
     }
 
-    public override void PlayerUIDisable()
+    protected override void PlayerUIDisable()
     {
         Debug.Log("One Player UI Disable");
         playerUI1.SetActive(false);
