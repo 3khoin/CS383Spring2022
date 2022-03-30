@@ -19,8 +19,8 @@ using UnityEngine;
  */
 public class Entryway : MonoBehaviour
 {
-    public GameObject openDoor; //public AnimationClip openAnim;
-    public GameObject closedDoor; //public AnimationClip closeAnim;
+    public GameObject openDoor; 
+    public GameObject closedDoor; 
     public AudioSource interactSound;
 
     private bool open = false;
@@ -34,7 +34,8 @@ public class Entryway : MonoBehaviour
     {
         if( entrywayInteractable )
         {
-            if (Input.GetKeyDown(KeyCode.E)) //player presses "E" on keyboard
+            //player presses "E" on keyboard
+            if (Input.GetKeyDown(KeyCode.E)) 
             {
                 //change entryway state:
                 InvertEntryway();
@@ -50,7 +51,8 @@ public class Entryway : MonoBehaviour
      */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") //player is in contact w/ door
+        // player is in contact w/ area around door
+        if (collision.gameObject.tag == "Player") 
         {
             entrywayInteractable = true;
         }
@@ -64,7 +66,8 @@ public class Entryway : MonoBehaviour
      */
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") //player is in contact w/ door
+        //player is in contact w/ area around door door 
+        if (collision.gameObject.tag == "Player") 
         {
             entrywayInteractable = false;
         }
@@ -72,22 +75,35 @@ public class Entryway : MonoBehaviour
 
     /*
      * Summary: Open or close the entryway depending upon its current state.
+     *          Should be called by player w/ interact w/ entryway.
      * 
      */
-    public void InvertEntryway() //should be called by player w/ interact w/ entryway
+    public void InvertEntryway() 
     {
-        if( open )
+        //close entryway
+        if ( open )
         {
-            //close entryway
-            openDoor.SetActive(false); //deactivate open door
-            closedDoor.SetActive(true); //activate closed door
+            
+
+            //if there's an open version of the door:
+            if(openDoor != null)
+                //deactivate open door
+                openDoor.SetActive(false);
+
+            //activate closed door
+            closedDoor.SetActive(true); 
+
             open = false;
         }
+        //open entryway
         else
         {
-            //open entryway
-            openDoor.SetActive(true);
+            
+            if (openDoor != null)
+                openDoor.SetActive(true);
+            
             closedDoor.SetActive(false);
+
             open = true;
         }
     }
