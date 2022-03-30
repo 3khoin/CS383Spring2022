@@ -1,4 +1,4 @@
-﻿/*
+﻿/* MainCamera Prefab
  * name: MainCamera
  * Summary: Camera will follow any given target transform at given lerp speed.
  * Description: If not target is specified, the camera automatically targets the GameObject tagged as "Player".
@@ -56,7 +56,8 @@ namespace Cainos.PixelArtTopDown_Basic
         }
 
         /*
-         * Summary: If the target is set, every frame change the camera's position according to the target's new position.
+         * Summary: If the target is set, every frame change the camera's position 
+         *          according to the target's new position.
          * 
          */
         private void Update()
