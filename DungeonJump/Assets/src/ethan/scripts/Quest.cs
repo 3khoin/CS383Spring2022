@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Quest : FriendlyNPC
 {
-    public bool questAccept;
     public bool questComplete;
-    [SerializeField] private GameObject questBlocker;
-    [SerializeField] private GameObject questHazard;
+    public string bane;
     [SerializeField] private GameObject questItem;
 
-        // Start is called before the first frame update
-    void Start()
+    
+    // Start is called before the first frame update
+    private void Start()
     {
-        quest = true;
-        questAccept = false;
         questComplete = false;
     }
 
@@ -25,31 +22,26 @@ public class Quest : FriendlyNPC
     }
 
 
-    private void GiveQuest()
+    private void GiveBane()
     {
-        questBlocker.SetActive(false);
-    }
-    
-    private void CompleteQuest()
-    {
-        questHazard.SetActive(false);
+        
     }
 
-    
-    void Update()
+
+    private void Update()
     {
-        if (!interact)
+        if (interact)
         {
-            if (!questAccept)
-            {
-                questAccept = true;
-                GiveQuest();
-            }
-
-            if (IsComplete())
+            // this checks if the quest parameters are complete, and calls level manager to remove blockage
+            if (IsComplete() && helpful)
             {
                 questComplete = true;
-                CompleteQuest();
+                LevelManager.Instance.RemoveProgressBlocks();
+            }
+
+            if (harmful)
+            {
+                //MainPlayer.moveSpeed;
             }
         }
     }

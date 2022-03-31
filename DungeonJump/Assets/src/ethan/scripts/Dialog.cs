@@ -11,6 +11,8 @@ public class Dialog
     public string secondText;
     public string thirdText;
     public int[] next;
+    public bool[] isQuest;
+    public bool[] isBane;
 
     
     public string GetNPCText() {
@@ -36,5 +38,17 @@ public class Dialog
     public int GetNext(int x)
     {
         return next[x];
+    }
+    
+    
+    public bool CheckQuest(int x)
+    {
+        return isQuest[x];
+    }
+    
+    
+    public bool CheckBane(int x)
+    {
+        return isBane[x];
     }
 }

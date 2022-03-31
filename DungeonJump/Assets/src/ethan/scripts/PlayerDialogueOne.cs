@@ -39,6 +39,8 @@ public class PlayerDialogueOne : Dialogue
             Debug.Log("Choice 1");
             dialogueID = conversations[dialogueID].GetNext(0);
             UIDisplay(dialogueID);
+            if(!helpful) helpful = conversations[dialogueID].CheckQuest(0);
+            if(!harmful) harmful = conversations[dialogueID].CheckBane(0);;
         }
     }
 }
