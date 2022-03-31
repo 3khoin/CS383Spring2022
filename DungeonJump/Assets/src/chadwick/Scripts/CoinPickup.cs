@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinPickup : MonoBehaviour
+public class CoinPickup : MonoBehaviour, InteractableItem
 {
-    public int coins;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            coins++; // need level manager to do this
-            FindObjectOfType<AudioManager>().Play("CoinPickup");
-            Destroy(gameObject);
+            Pickup(null);            
         }
+    }
+
+    public void Pickup(Collider2D other)
+    {
+        FindObjectOfType<AudioManager>().Play("CoinPickup");
+        Destroy(gameObject);
     }
 }

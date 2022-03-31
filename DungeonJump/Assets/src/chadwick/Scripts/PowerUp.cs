@@ -2,28 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public enum powerUpTypes {Speed, Jump, Health};
-
-public class PowerUp : MonoBehaviour
+public class PowerUp : MonoBehaviour, InteractableItem
 {
+    public enum powerUpTypes {Speed, Jump, Health};
     public GameObject pickupEffect;
     public powerUpTypes powerUpType;
+    [SerializeField]
     public float multiplier = 1.67f;
+    [SerializeField]
     public float duration = 30f;
+    [SerializeField]
     public float speedBalancer = .47f;
+    [SerializeField]
     public float jumpBalancer = .1f;
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.CompareTag("Player")){
-            StartCoroutine(Pickup(other));
+            Pickup(other);
         }
     }
 
-    IEnumerator Pickup(Collider2D player)
+    public void Pickup (Collider2D player)
+    {
+        FindObjectOfType<AudioManager>().Play("PowerUpPickup");
+        StartCoroutine(PickupPowerUp(player));
+    }
+
+    private IEnumerator PickupPowerUp(Collider2D player)
     {
         //Instantiate(pickupEffect, transform.position, transform.rotation);
-        Debug.Log("Picked up power up.");
+        //Debug.Log("Picked up power up.");
 
         // get the player and modify stats of the player
         LightBandit stats = player.GetComponent<LightBandit>();
@@ -45,7 +53,7 @@ public class PowerUp : MonoBehaviour
         }
         
 
-        // disable visibility and collision of powerup
+        // disable visibility and collision of powerup & play SFX
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         //GetComponent<ParticleSystem>().Stop();

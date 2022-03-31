@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class PlatformLevelManager : MonoBehaviour
 {
+    public static PlatformLevelManager instance; //singleton
     public GameObject player;
     public GameObject cam;
-    public Transform spawnPnt;
-    public Transform topPnt;
-    public Transform botPnt;
-    public Transform leftPnt;
-    public Transform rightPnt;
+    private Transform spawnPnt;
+    private Transform topPnt;
+    private Transform botPnt;
+    private Transform leftPnt;
+    private Transform rightPnt;
+
+        void Awake()
+    {
+        // Singleton code
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
