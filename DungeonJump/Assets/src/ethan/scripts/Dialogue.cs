@@ -37,29 +37,31 @@ public class Dialogue : FriendlyNPC
     }
     
     
-    protected virtual void PlayerDisplay(int id)
+    protected virtual void UIDisplay(int id)
     {
         Debug.Log("Default Player Display");
     }
 
-
-    protected string FetchText(int id)
+    
+    protected virtual void UIEnable()
     {
-        //Debug.Log(dialogueArr[id,0]);
-        return dialogueArr[id,0];
+        Debug.Log("Default UI Enable");
     }
 
+    protected virtual void UIDisable()
+    {
+        Debug.Log("Player UI Disable");
+    }
     
+
     public override void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Enter " + col.gameObject.tag + " for Dialogue");
         if (col.gameObject.CompareTag("Player")) // if player collision end
         {
             interact = true;
-            NPCUIEnable();
-            PlayerUIEnable();
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
+            UIEnable();
+            UIDisplay(dialogueID);
         }
     }
 
@@ -70,39 +72,7 @@ public class Dialogue : FriendlyNPC
         if (col.gameObject.CompareTag("Player")) // if player collision end
         {
             interact = false;
-            NPCUIDisable();
-            PlayerUIDisable();
+            UIDisable();
         }
-    }
-
-
-    protected virtual void PlayerUIEnable()
-    {
-        Debug.Log("Default Player UI Enable");
-    }
-
-    protected virtual void PlayerUIDisable()
-    {
-        Debug.Log("Default Player UI Disable");
-    }
-
-    protected void NPCDisplay(int id) 
-    { 
-        Debug.Log("NPC Dialogue"); 
-        npcUI.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id);
-    }
-
-    
-    private void NPCUIEnable()
-    {
-        Debug.Log("NPC UI Enable");
-        npcUI.SetActive(true);
-    }
-
-    
-    private void NPCUIDisable()
-    {
-        Debug.Log("NPC UI Disable");
-        npcUI.SetActive(false);
     }
 }

@@ -1,0 +1,47 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start.",
+      "firstText": "[1] What are you saying?",
+      "secondText": "",
+      "thirdText": "",
+      "next": [1, 0, 0]
+    },
+    {
+      "npcText": "The running speed starts slowly, but gets faster each minute after you hear this signal. [beep]",
+      "firstText": "[1] No, no. Not again.",
+      "secondText": "",
+      "thirdText": "",
+      "next": [2, 0, 0]
+    },
+    {
+      "npcText": "A single lap should be completed each time you hear this sound. [ding]",
+      "firstText": "[1] GETOUTOFMYHEAAAAAAAAAAAAD.",
+      "secondText": "",
+      "thirdText": "",
+      "next": [3, 0, 0]
+    },
+    {
+      "npcText": "Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over.",
+      "firstText": "[1] Make it stooop!",
+      "secondText": "",
+      "thirdText": "",
+      "next": [4, 0, 0]
+    },
+    {
+      "npcText": "The test will begin on the word start. On your mark, get ready, start.",
+      "firstText": "[1] Thank god it is over.",
+      "secondText": "",
+      "thirdText": "",
+      "next": [5, 0, 0]
+    },
+    {
+      "npcText": "The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start.",
+      "firstText": "[1] Noooooooooooooooooooooooo!",
+      "secondText": "",
+      "thirdText": "",
+      "next": [1, 0, 0]
+    }
+  ]
+}

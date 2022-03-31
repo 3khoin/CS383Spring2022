@@ -8,36 +8,32 @@ public class PlayerDialogueThree : Dialogue
 {
     
     
-    protected override void PlayerDisplay(int id) 
+    protected override void UIDisplay(int id) 
     {
-        //Debug.Log("Player Dialogue Three");
-        playerUI1.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+1);
-        playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+2);
-        playerUI3.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+3);
+        Debug.Log("Dialogue Three Display"); 
+        npcUI.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetNPCText();
+        playerUI1.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetFirstText();
+        playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetSecondText();
+        playerUI3.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetThirdText();
     }
 
-    protected override void PlayerUIEnable()
+    
+    protected override void UIEnable()
     {
-        //Debug.Log("Three Player UI Enable");
+        Debug.Log("Three UI Enable");
+        npcUI.SetActive(true);
         playerUI1.SetActive(true);
         playerUI2.SetActive(true);
         playerUI3.SetActive(true);
     }
 
-    protected override void PlayerUIDisable()
+    protected override void UIDisable()
     {
-        //Debug.Log("Three Player UI Disable");
+        Debug.Log("Three UI Disable");
+        npcUI.SetActive(false);
         playerUI1.SetActive(false);
         playerUI2.SetActive(false);
         playerUI3.SetActive(false);
-    }
-    
-    public int GetResponse(int id)
-    {
-        int response;
-        bool isParsable = Int32.TryParse(dialogueArr[id,1], out response);
-        if (isParsable) return response;
-        else return -1;
     }
     
     
@@ -47,23 +43,20 @@ public class PlayerDialogueThree : Dialogue
         if (Input.GetKeyDown("1"))
         {
             //Debug.Log("Choice 1");
-            dialogueID = GetResponse(dialogueID + 1);
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
+            dialogueID = conversations[dialogueID].GetNext(0);
+            UIDisplay(dialogueID);
         } 
         else if (Input.GetKeyDown("2"))
         {
             //Debug.Log("Choice 2");
-            dialogueID = GetResponse(dialogueID + 2);
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
+            dialogueID = conversations[dialogueID].GetNext(1);
+            UIDisplay(dialogueID);
         }
         else if (Input.GetKeyDown("3"))
         {
             //Debug.Log("Choice 3");
-            dialogueID = GetResponse(dialogueID + 3);
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
+            dialogueID = conversations[dialogueID].GetNext(2);
+            UIDisplay(dialogueID);
         }
     }
 }

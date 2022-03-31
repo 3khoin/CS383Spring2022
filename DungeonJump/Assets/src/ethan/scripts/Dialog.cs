@@ -33,7 +33,7 @@ public class Dialog
     }
     
     
-    int GetNext(int x)
+    public int GetNext(int x)
     {
         return next[x];
     }

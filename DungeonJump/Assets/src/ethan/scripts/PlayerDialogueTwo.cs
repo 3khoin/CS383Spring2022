@@ -6,33 +6,28 @@ using UnityEngine;
 
 public class PlayerDialogueTwo : Dialogue
 {
-    protected override void PlayerDisplay(int id) 
+    protected override void UIDisplay(int id) 
     {
-        Debug.Log("Player Dialogue Two"); 
-        playerUI1.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+1);
-        playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = FetchText(id+2);
+        Debug.Log("Dialogue Two Display"); 
+        npcUI.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetNPCText();
+        playerUI1.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetFirstText();
+        playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetSecondText();
     }
 
-    protected override void PlayerUIEnable()
+    protected override void UIEnable()
     {
-        Debug.Log("Two Player UI Enable");
+        Debug.Log("Two UI Enable");
+        npcUI.SetActive(true);
         playerUI1.SetActive(true);
         playerUI2.SetActive(true);
     }
 
-    protected override void PlayerUIDisable()
+    protected override void UIDisable()
     {
-        Debug.Log("Two Player UI Disable");
+        Debug.Log("Two UI Disable");
+        npcUI.SetActive(false);
         playerUI1.SetActive(false);
         playerUI2.SetActive(false);
-    }
-    
-    public int GetResponse(int id)
-    {
-        int response;
-        bool isParsable = Int32.TryParse(dialogueArr[id,1], out response);
-        if (isParsable) return response;
-        else return -1;
     }
     
     
@@ -42,17 +37,15 @@ public class PlayerDialogueTwo : Dialogue
         if (!interact) return;
         if (Input.GetKeyDown("1"))
         {
-            Debug.Log("Choice 1");
-            dialogueID = GetResponse(dialogueID + 1);
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
+            //Debug.Log("Choice 1");
+            dialogueID = conversations[dialogueID].GetNext(0);
+            UIDisplay(dialogueID);
         } 
         else if (Input.GetKeyDown("2"))
         {
-            Debug.Log("Choice 2");
-            dialogueID = GetResponse(dialogueID + 2);
-            NPCDisplay(dialogueID);
-            PlayerDisplay(dialogueID);
+            //Debug.Log("Choice 2");
+            dialogueID = conversations[dialogueID].GetNext(1);
+            UIDisplay(dialogueID);
         }
     }
 }
