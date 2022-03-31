@@ -61,6 +61,41 @@ public class StaticDmgHazard : Hazard
     }
 
     /*
+     * Summary: When player enters the collider, its set as the target and should be damaged.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //if collid w/ player:
+        if (collision.gameObject.tag == "Player")
+        {
+            //store player to damage:
+            target = collision.gameObject;
+
+            //damage player immediately
+            DamagePlayer();
+        }
+    }
+
+    /*
+     * Summary: When player exits the collider, it's no longer set as the target.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
+     */
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //if collide w/ player exiting:
+        if (collision.gameObject.tag == "Player")
+        {
+            //clear player so not re-damaged:
+            target = null;
+        }
+    }
+
+    /*
      * Summary: If the target is set, repeatedly damage the player until it's cleared.
      * 
      */
