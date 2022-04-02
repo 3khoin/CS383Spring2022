@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ExitGate : MonoBehaviour
 {
+    [SerializeField]
     public string levelName = "Overworld Spawn Area";
     // Start is called before the first frame update
     void Start()

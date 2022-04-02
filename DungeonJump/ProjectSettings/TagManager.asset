@@ -15,6 +15,7 @@ TagManager:
   - ProgBlock
   - Boundary
   - PowerUp
+  - QuestItem
   layers:
   - Default
   - TransparentFX

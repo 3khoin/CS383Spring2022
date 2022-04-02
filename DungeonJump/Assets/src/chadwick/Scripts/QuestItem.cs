@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestItem : MonoBehaviour
+public class QuestItem : MonoBehaviour, InteractableItem
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            Pickup(null);            
+        }
+    }
+    public void Pickup(Collider2D other){
+        //if (gameObject.CompareTag("QuestItem"))
+        //{
+        //LevelManager.Instance.playerCurrItems.Add(gameObject);
+        FindObjectOfType<AudioManager>().Play("QuestItemPickup");
+        ParticleSystem particles = gameObject.GetComponent<ParticleSystem>();
+        Destroy(particles);
+        Destroy(gameObject);
+        //}
     }
 }

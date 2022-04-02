@@ -43,4 +43,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b966bf1b3c75dbc459b0fcd2951bc9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: CoinPickup
+    clip: {fileID: 8300000, guid: b4d84b4427b714f81906f5e9df31e3a4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PowerUpPickup
+    clip: {fileID: 8300000, guid: 6a55b1210d28e48f9be508821dfab1d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bounce
+    clip: {fileID: 8300000, guid: 23521bf6cf1e34f51ba1a86ec9553326, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: QuestItemPickup
+    clip: {fileID: 8300000, guid: 24eaeae153b524bb6a55fdcc7ee3c735, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

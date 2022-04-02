@@ -11,6 +11,7 @@ public class BouncePlatform : MonoBehaviour
         // check if collided with player
         if(other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("Bounce");
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounceHeight, ForceMode2D.Impulse);
         }
     }
