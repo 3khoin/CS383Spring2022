@@ -13,11 +13,13 @@ using UnityEngine;
  * dmg - Float to apply damage to player.
  * reDmgDelay - Time in seconds waited till dmg should be applied again to player.
  * target - GameObject of player that is triggering the damaging hazard.
+ * soundFX - String set to specify desired sound effect to play.
  */
 public class StaticDmgHazard : Hazard
 {
     public float dmg;
     public float reDmgDelay = 0.5f;
+    public string soundFX = "HurtPlayer";
 
     private GameObject target;
 
@@ -110,6 +112,9 @@ public class StaticDmgHazard : Hazard
         //dmg player:
             //target.GetComponent<SomeType>().DmgPlayer(); or target.getComponent<SomeType>().health -= dmg;
         print("Damage Player");
+
+        //play sound:
+        AudioManager.instance.Play(soundFX);
 
         //try damaging player again in 0.5s:
         Invoke("DamagePlayer", reDmgDelay);

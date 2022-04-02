@@ -6,6 +6,7 @@
  */
 
 using UnityEngine;
+//using 
 
 /*
  * Summary: Class that inverts the entryway when player is within range and presses E.
@@ -13,7 +14,7 @@ using UnityEngine;
  * Member Variables:
  * openDoor - Gameobject of an open door.
  * closedDoor - Gameobject of a closed door.
- * interactSound - AudioSource that should be played when door is inverted.
+ * //interactSound - AudioSource that should be played when door is inverted.
  * open - Boolean to keep track of whether door is open or not.
  * entrywayInteractable - Boolean to keep track of whether dorr can be interacted with or not.
  */
@@ -21,7 +22,7 @@ public class Entryway : MonoBehaviour
 {
     public GameObject openDoor; 
     public GameObject closedDoor; 
-    public AudioSource interactSound;
+    //public AudioSource interactSound;
 
     private bool open = false;
     private bool entrywayInteractable = false;
@@ -74,7 +75,7 @@ public class Entryway : MonoBehaviour
     }
 
     /*
-     * Summary: Open or close the entryway depending upon its current state.
+     * Summary: Open or close the entryway depending upon its current state and play sound FX.
      *          Should be called by player w/ interact w/ entryway.
      * 
      */
@@ -106,5 +107,10 @@ public class Entryway : MonoBehaviour
 
             open = true;
         }
+
+        //play door sound
+        AudioManager.instance.Play("Entryway");
     }
+
+
 }

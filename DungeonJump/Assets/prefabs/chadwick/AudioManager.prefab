@@ -46,11 +46,14 @@ MonoBehaviour:
   sounds:
   - name: CoinPickup
     clip: {fileID: 8300000, guid: b4d84b4427b714f81906f5e9df31e3a4, type: 3}
+  - name: Entryway
+    clip: {fileID: 8300000, guid: d7da440ad4f6c4e7489efd85844988d8, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PowerUpPickup
+  - name: LevelGate
     clip: {fileID: 8300000, guid: 6a55b1210d28e48f9be508821dfab1d3, type: 3}
     volume: 1
     pitch: 1
@@ -58,12 +61,16 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Bounce
     clip: {fileID: 8300000, guid: 23521bf6cf1e34f51ba1a86ec9553326, type: 3}
+  - name: Fall
+    clip: {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: QuestItemPickup
     clip: {fileID: 8300000, guid: 24eaeae153b524bb6a55fdcc7ee3c735, type: 3}
+  - name: HurtPlayer
+    clip: {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
     volume: 1
     pitch: 1
     loop: 0

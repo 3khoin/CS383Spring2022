@@ -11,11 +11,11 @@ using UnityEngine;
  * Summary: Superclass used to document when player enters and exits a trigger.
  * 
  * Member Variables:
- * hazardSound - AudioSource that should be played by sub-classes when something is inflicted upon player.
+ * //hazardSound - AudioSource that should be played by sub-classes when something is inflicted upon player.
  */
 public class Hazard : MonoBehaviour
 {
-    public AudioSource hazardSound;
+    //public AudioSource hazardSound;
 
     /*
      * Summary: Displays message on console when player enters trigger.
