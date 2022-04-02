@@ -3988,4 +3988,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazardSound: {fileID: 0}
   dmg: 0
-  redDmgDelay: 0
+  reDmgDelay: 0.5
+  soundFX: HurtPlayer

@@ -43,4 +43,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b966bf1b3c75dbc459b0fcd2951bc9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Entryway
+    clip: {fileID: 8300000, guid: d7da440ad4f6c4e7489efd85844988d8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LevelGate
+    clip: {fileID: 8300000, guid: 6a55b1210d28e48f9be508821dfab1d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fall
+    clip: {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HurtPlayer
+    clip: {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

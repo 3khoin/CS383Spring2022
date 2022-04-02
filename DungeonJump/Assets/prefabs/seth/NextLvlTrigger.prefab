@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: OverworldSpawnArea
+  soundFX: 
 --- !u!61 &3492939479990347410
 BoxCollider2D:
   m_ObjectHideFlags: 0

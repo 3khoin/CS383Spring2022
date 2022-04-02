@@ -13,12 +13,15 @@ using UnityEngine.SceneManagement;
  * Member Variables:
  * levelName - String changed externally to specify what scene to change to.
  * lvlMngerInstance - LevelManager used to set the respawn position.
+ * soundFX - String set to specify desired sound effect to play.
  */
 public class LevelGate : MonoBehaviour
 {
     public string levelName = "OverworldSpawnArea";
     //public AnimationClip warpAnim;
     //public AudioSource warpSound;
+
+    public string soundFX = "LevelGate";
 
     private LevelManager lvlMngerInstance;
 
@@ -49,10 +52,11 @@ public class LevelGate : MonoBehaviour
                                                              collision.gameObject.transform.position.y - 1); 
 
             //cosmetic effects:
-            //Cosmetics();
+            Cosmetics();
 
             //change lvl to platformer lvl:
-            SwitchLevel(); //should call after cosmetics are finished
+            //should call after cosmetics are finished
+            SwitchLevel(); 
         }
     }
 
@@ -63,19 +67,24 @@ public class LevelGate : MonoBehaviour
      */
     public void SwitchLevel()
     {
-        //change scene to appropriate lvl+build index
-        //SceneManager.LoadScene( level_Index );
-
+        //change scene to appropriate level by name
         SceneManager.LoadScene(levelName);
     }
 
     /*
-    //cosmetic functionality assoc'd with Level Gates:
+     * Summary: Cosmetic functionality assoc'd with Level Gates.
+     *          Currently plays a sound effect if specified.
+     * 
+     */
+    //:
     private void Cosmetics()
     {
         //should play animation
 
-        //should play warp sound
+        //if sound effect specified
+        if(soundFX != "")
+            //should play warp sound
+            AudioManager.instance.Play(soundFX);
     }
-    */
+    
 }

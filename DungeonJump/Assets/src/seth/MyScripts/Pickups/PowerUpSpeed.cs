@@ -35,7 +35,9 @@ public class PowerUpSpeed : MonoBehaviour, Interactable
 
             //increase player's speed:
             float moveSpeed = collision.gameObject.GetComponent<MainPlayer>().moveSpeed;
-            collision.gameObject.GetComponent<MainPlayer>().moveSpeed += moveSpeed * incrAmt; //increases by incrAmt of og move speed
+
+            //increases by incrAmt of og move speed
+            collision.gameObject.GetComponent<MainPlayer>().moveSpeed += moveSpeed * incrAmt; 
         }
     }
 
