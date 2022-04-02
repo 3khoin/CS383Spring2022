@@ -7,12 +7,19 @@
 
 using UnityEngine;
 
+/*
+ * Summary: Class increases player speed when picked up and makes attached GameObject inactive.
+ * 
+ * Member Variables:
+ * incrAmt - Float to increase Speed by. Value should only be negative to decrease player speed.
+ * 
+ */
 public class PowerUpSpeed : MonoBehaviour, Interactable
 {
     public float incrAmt = 0.1f;
 
     /*
-     * Summary: Class calls PlayerPickup() if triggers on the player.
+     * Summary: Function calls PlayerPickup() if triggers on the player.
      *          Also increases player movement speed.
      * 
      * Paramters:
