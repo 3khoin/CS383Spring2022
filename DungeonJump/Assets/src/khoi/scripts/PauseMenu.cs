@@ -5,6 +5,8 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public AudioSource menuSound;
+    public AudioSource buttonSound;
     public bool isPaused;
 
     // Start is called before the first frame update
@@ -18,6 +20,7 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            MenuSound();
             if(isPaused)
             {
                 ResumeGame();
@@ -35,11 +38,26 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
     }
+
+    public void MenuSound()
+    {
+        menuSound.Play();
+    }
+
+    public void ButtonSound()
+    {
+        buttonSound.Play();
+    }
     
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
