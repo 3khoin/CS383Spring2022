@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinPickup : MonoBehaviour, InteractableItem
+public class CoinPickup : PlatformerItem
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    override public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -12,7 +12,7 @@ public class CoinPickup : MonoBehaviour, InteractableItem
         }
     }
 
-    public void Pickup(Collider2D other)
+    override public void Pickup(Collider2D other)
     {
         FindObjectOfType<AudioManager>().Play("CoinPickup");
         Destroy(gameObject);

@@ -77,6 +77,7 @@ public class PlatformLevelManager : MonoBehaviour
         leftPnt = GameObject.FindGameObjectWithTag("left").transform;
         rightPnt = GameObject.FindGameObjectWithTag("right").transform;
         
+        player.AddComponent<AudioListener>();
 
         // find the player and set the position to the spawn point
         player = GameObject.FindGameObjectWithTag("Player");

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5628792201499763215}
   - component: {fileID: 5628792201499763212}
   - component: {fileID: 5628792201499763213}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: ExitGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2596817, y: 1.1585207}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -70,4 +70,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1f847991b44bf40bf7e3eee709e476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Overworld Spawn Area
+  levelName: OverworldDemoScene

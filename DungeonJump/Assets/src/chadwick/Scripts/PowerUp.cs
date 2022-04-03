@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour, InteractableItem
+public class PowerUp :  PlatformerItem
 {
     public enum powerUpTypes {Speed, Jump, Health};
     public GameObject pickupEffect;
@@ -15,14 +15,14 @@ public class PowerUp : MonoBehaviour, InteractableItem
     public float speedBalancer = .47f;
     [SerializeField]
     public float jumpBalancer = .1f;
-    void OnTriggerEnter2D (Collider2D other)
+    override public void OnTriggerEnter2D (Collider2D other)
     {
         if (other.CompareTag("Player")){
             Pickup(other);
         }
     }
 
-    public void Pickup (Collider2D player)
+    override public void Pickup (Collider2D player)
     {
         FindObjectOfType<AudioManager>().Play("PowerUpPickup");
         StartCoroutine(PickupPowerUp(player));
