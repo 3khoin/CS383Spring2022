@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 114850797635947820}
   - component: {fileID: 95346456782871180}
   - component: {fileID: 212259381048184306}
+  - component: {fileID: 327452593665240503}
+  - component: {fileID: 7858789499450666627}
+  - component: {fileID: 4076895754707584197}
   - component: {fileID: 50512961935941442}
   - component: {fileID: 61252362154681264}
   m_Layer: 0
@@ -126,6 +129,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &327452593665240503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4206dfbc20490214fa748da1cc3ae8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 400
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.05
+  m_AirControl: 0
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  m_GroundCheck: {fileID: 0}
+  m_CeilingCheck: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 0}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7858789499450666627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94eac5503c7d5bc47acced524979a3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gyro: {fileID: 0}
+  controller: {fileID: 0}
+  runSpeed: 40
+--- !u!114 &4076895754707584197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1dabc57b575444bce4123139ac5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  joystick: {fileID: 0}
+  runSpeed: 40
 --- !u!50 &50512961935941442
 Rigidbody2D:
   serializedVersion: 4

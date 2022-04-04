@@ -72,10 +72,10 @@ public class LightBandit : MonoBehaviour {
             m_animator.SetTrigger("Hurt");
 
         //Attack
-        else if(Input.GetMouseButtonDown(0)) {
+        /*else if(Input.GetMouseButtonDown(0)) {
             m_animator.SetTrigger("Attack");
             Attack();
-        }
+        }*/
 
         //Change between idle and combat idle
         else if (Input.GetKeyDown("f"))
