@@ -37,19 +37,18 @@ public class PlayerDialogueTwo : Dialogue
         if (!interact) return;
         if (Input.GetKeyDown("1"))
         {
-            //Debug.Log("Choice 1");
+            Debug.Log("Choice 1");
             dialogueID = conversations[dialogueID].GetNext(0);
+            UIDisable();
             UIDisplay(dialogueID);
             if(!helpful) helpful = conversations[dialogueID].CheckQuest(0);
-            if(!harmful) harmful = conversations[dialogueID].CheckBane(0);;
         } 
         else if (Input.GetKeyDown("2"))
         {
-            //Debug.Log("Choice 2");
+            Debug.Log("Choice 2");
             dialogueID = conversations[dialogueID].GetNext(1);
             UIDisplay(dialogueID);
             if(!helpful) helpful = conversations[dialogueID].CheckQuest(1);
-            if(!harmful) harmful = conversations[dialogueID].CheckBane(1);;
         }
     }
 }

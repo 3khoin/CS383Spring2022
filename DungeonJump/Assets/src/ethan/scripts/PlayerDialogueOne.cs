@@ -32,15 +32,14 @@ public class PlayerDialogueOne : Dialogue
     
     private void Update()
     {
-        
         if (!interact) return;
         if (Input.GetKeyDown("1"))
         {
             Debug.Log("Choice 1");
             dialogueID = conversations[dialogueID].GetNext(0);
+            UIDisable();
             UIDisplay(dialogueID);
             if(!helpful) helpful = conversations[dialogueID].CheckQuest(0);
-            if(!harmful) harmful = conversations[dialogueID].CheckBane(0);;
         }
     }
 }

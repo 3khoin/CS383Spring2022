@@ -3975,7 +3975,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 327bd13788eb4ee4f9eb9e80e31c73d6, type: 3}
+      objectReference: {fileID: 4900000, guid: a7691fd62b54d764db16c837dd5527a6, type: 3}
     - target: {fileID: 5370012566506081005, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_Name
@@ -4067,7 +4067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ecd572816aac841982dd46fd5d5df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: 327bd13788eb4ee4f9eb9e80e31c73d6, type: 3}
+  jsonFile: {fileID: 4900000, guid: a7691fd62b54d764db16c837dd5527a6, type: 3}
   conversations: []
 --- !u!1 &390577601
 GameObject:
@@ -7419,7 +7419,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 327bd13788eb4ee4f9eb9e80e31c73d6, type: 3}
+      objectReference: {fileID: 4900000, guid: 0b710dda7bf19654b8eeea81f7017bd9, type: 3}
     - target: {fileID: 5370012566506081005, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_Name
@@ -7511,7 +7511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8713d1450becd4684a29e4bdbb491b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: 327bd13788eb4ee4f9eb9e80e31c73d6, type: 3}
+  jsonFile: {fileID: 4900000, guid: 0b710dda7bf19654b8eeea81f7017bd9, type: 3}
   conversations: []
 --- !u!1 &1425468338
 GameObject:
@@ -8243,6 +8243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cieling: {fileID: 1112011692}
+  buildingMusic: {fileID: 0}
 --- !u!68 &1510205473
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -8481,7 +8482,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 327bd13788eb4ee4f9eb9e80e31c73d6, type: 3}
+      objectReference: {fileID: 4900000, guid: 2e689cbe81e33ac4cbfb8b5984fbe0a6, type: 3}
     - target: {fileID: 5370012566506081005, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_Name
@@ -8573,7 +8574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ca632bfd5d21d469caaea6b8a91434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: 327bd13788eb4ee4f9eb9e80e31c73d6, type: 3}
+  jsonFile: {fileID: 4900000, guid: 2e689cbe81e33ac4cbfb8b5984fbe0a6, type: 3}
   conversations: []
 --- !u!1 &1564761526
 GameObject:
@@ -17957,6 +17958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cieling: {fileID: 1112011692}
+  buildingMusic: {fileID: 0}
 --- !u!68 &1965072757
 EdgeCollider2D:
   m_ObjectHideFlags: 0
