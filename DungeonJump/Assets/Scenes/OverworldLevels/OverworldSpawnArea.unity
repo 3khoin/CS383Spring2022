@@ -7058,12 +7058,12 @@ PrefabInstance:
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.2
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.2
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
@@ -8459,6 +8459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: CoconutCave
   soundFX: LevelGate
+  respawnDistFromLevelGate: {x: 0, y: -2}
 --- !u!1001 &1555506615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18159,6 +18160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: levelName
       value: OverworldDemoScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777631097159072056, guid: b413de6f10cc2ca43be6bf7a4e66070e,
+        type: 3}
+      propertyPath: respawnDistFromLevelGate.y
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2777631097159072057, guid: b413de6f10cc2ca43be6bf7a4e66070e,
         type: 3}

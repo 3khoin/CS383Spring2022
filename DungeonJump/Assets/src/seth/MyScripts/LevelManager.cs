@@ -4,15 +4,17 @@
  * Purpose: File to manage the overworld levels and keep track of specific world attributes.
  */
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Summary: Singleton class to manage the overworld levels and keep track of specific world attributes .
  * 
  * Member Variables:
  * progressBlocks - GameObject array filled with the current scene's progress blocks.
- * playerRespawnPos - Vector2 that should be used to repawn the player with.
+ * playerRespawnPos - Vector2 array that should be used to repawn the player with in each level 0-3.
  * score - float to keep track of total game score.
  * playerCurrItems - GameObject list to hold all of the player's items.
  * totItems -int keeping track of total items in the game.
@@ -22,8 +24,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject[] progressBlocks;
-    //public GameObject player;
-    public Vector2 playerRespawnPos;
+
+    public string[] sceneNames = { "OverworldSpawnArea", "OverworldDemoScene", "OverworldAlienScape", "OverworldGrungieArea" };
 
     public float score;
 
@@ -33,6 +35,12 @@ public class LevelManager : MonoBehaviour
 
     //private int progZone = 1;
     public float progPercentage;
+
+    //allocate enough space for one respawn per overworld scene:
+    private Vector2[] playerRepawnPos = new Vector2[4];
+
+    //make prog blocks visible by default w/ one prog block visiblity setting per overworld scene:
+    private bool[] progBlockVisibility = { true, true, true, true };
 
     private static LevelManager instance = null;
 
@@ -100,6 +108,60 @@ public class LevelManager : MonoBehaviour
 
         //test removing current scene's progress blocks:
         InvokeRepeating("RemoveProgressBlocks", 10, 10);
+
+        //subscribe method to spawn player at respawn loc w/ scenes loaded in:
+        SceneManager.sceneLoaded += OnSceneLoadedRespawn;
+
+        //sub method to make prog blocks in/visible every scene load:
+        SceneManager.sceneLoaded += OnSceneLoadedProgBlocks;
+    }
+
+    /*
+     * Summary: Method subscribed to SceneLoaded. Everytime enter new scene, if it's 
+     *          prog blocks visibility is False, the prog blocks are removed.
+     * 
+     */
+    private void OnSceneLoadedProgBlocks(Scene currScene, LoadSceneMode mode)
+    {
+        //throw new NotImplementedException();
+
+        //walk thru whole sceneNames arr:
+        for (int i = 0; i < sceneNames.Length; i++)
+        {
+            //if curr scene is found and its respawn is already set: 
+            if (currScene.name == sceneNames[i] && progBlockVisibility[i] == false)
+            {
+                //remove all prog blocks in curr scene:
+                RemoveProgressBlocks();
+            }
+        }
+    }
+
+    /*
+     * Summary: Method subscribed to SceneLoaded. Everytime enter new scene, if it's 
+     *          respawn point is set, the player is moved there.
+     * 
+     */
+    private void OnSceneLoadedRespawn(Scene currScene, LoadSceneMode mode)
+    {
+        //throw new NotImplementedException();
+
+        Debug.Log("OnSceneLoaded: " + currScene);
+        Debug.Log("Scene mode: " + mode);
+
+        //walk thru whole sceneNames arr:
+        for (int i = 0; i < sceneNames.Length; i++)
+        {
+            //if curr scene is found and its respawn is already set: 
+            if (currScene.name == sceneNames[i] && playerRepawnPos[i] != null)
+            {
+                //teleport player to desired respawn loc:
+                GameObject.FindGameObjectWithTag("Player").GetComponent <Transform>().position 
+                    = new Vector3( playerRepawnPos[i].x, playerRepawnPos[i].y, 0);
+
+                print("Player respawned to: " + playerRepawnPos.ToString());
+            }
+        }
     }
 
     /*
@@ -108,13 +170,13 @@ public class LevelManager : MonoBehaviour
      */
     public void CheckProgress() 
     {
-        print("Progress being checked");
-
         if (playerCurrItems != null)
             //calc progPercentage thru ratio of player items and tot items:
             progPercentage = (playerCurrItems.Count / totItems) * 100;
         else
             progPercentage = 0;
+
+        print("Player Item collection progress: " + progPercentage);
 
         //if progressed enough for curr zone:
         /*
@@ -131,6 +193,7 @@ public class LevelManager : MonoBehaviour
 
     /*
      * Summary: Remove all of the scene's progress blocks by finding them and setting inactive.
+     *          Makes sure their visibility is false for future scene revisits.
      * 
      */
     public void RemoveProgressBlocks()
@@ -150,6 +213,35 @@ public class LevelManager : MonoBehaviour
 
             //turn off visibility of prog block:
             progressBlocks[i].SetActive(false);
+        }
+
+        //walk thru whole sceneNames arr:
+        for (int i = 0; i < sceneNames.Length; i++)
+        {
+            //if curr scene is found: 
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
+            {
+                //turn prog block visiblity off:
+                progBlockVisibility[i] = false;
+            }
+        }
+    }
+
+    /*
+     * Summary: Set the appropriate scene's player respawn location.
+     * 
+     */
+    public void SetRespawn( Vector2 respawn2D)
+    {
+        //walk thru whole sceneNames arr:
+        for (int i = 0; i < sceneNames.Length ; i++)
+        {
+            //if curr scene is found: (hopefully active scene hasn't changed yet)
+            if(SceneManager.GetActiveScene().name == sceneNames[i])
+            {
+                //copy respawn loc into that scene's respawn pos:
+                playerRepawnPos[i] = respawn2D; 
+            }
         }
     }
 }

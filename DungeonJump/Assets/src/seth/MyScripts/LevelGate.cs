@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
  * levelName - String changed externally to specify what scene to change to.
  * lvlMngerInstance - LevelManager used to set the respawn position.
  * soundFX - String set to specify desired sound effect to play.
+ * respawnDistsFromLevelGate - Vector2 to store distance player should be respawned from level gate.
  */
 public class LevelGate : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class LevelGate : MonoBehaviour
     //public AudioSource warpSound;
 
     public string soundFX = "LevelGate";
+    public Vector2 respawnDistFromLevelGate = new Vector2(-1, 0);
 
     private LevelManager lvlMngerInstance;
 
@@ -47,9 +49,12 @@ public class LevelGate : MonoBehaviour
         {
 
             //store player position for respawn:
-            //have to shift y-pos down 1 so don't trigger statue
-            lvlMngerInstance.playerRespawnPos = new Vector2( collision.gameObject.transform.position.x, 
-                                                             collision.gameObject.transform.position.y - 1); 
+            //have to shift pos so don't re-trigger level gate on respawn
+            //lvlMngerInstance.playerRespawnPos = new Vector2( collision.gameObject.transform.position.x + respawnDistFromLevelGate.x, 
+            //                                                 collision.gameObject.transform.position.y + respawnDistFromLevelGate.y); 
+
+            lvlMngerInstance.SetRespawn(new Vector2(collision.gameObject.transform.position.x + respawnDistFromLevelGate.x,
+                                                             collision.gameObject.transform.position.y + respawnDistFromLevelGate.y));
 
             //cosmetic effects:
             Cosmetics();
@@ -62,7 +67,8 @@ public class LevelGate : MonoBehaviour
 
 
     /*
-     * Summary: Changes scene based on lvl name.
+     * Summary: Changes scene based on lvl name. 
+     *          Shouldn't change untill player respawn set + level gate cosmetics performed.
      * 
      */
     public void SwitchLevel()

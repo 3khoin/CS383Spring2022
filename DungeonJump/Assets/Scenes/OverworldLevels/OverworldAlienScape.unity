@@ -9608,6 +9608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: OverworldGrungieArea
   soundFX: LevelGate
+  respawnDistFromLevelGate: {x: 5, y: 0}
 --- !u!1001 &492121342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10853,6 +10854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: CoconutCave
   soundFX: LevelGate
+  respawnDistFromLevelGate: {x: 0, y: 4}
 --- !u!61 &817913907
 BoxCollider2D:
   m_ObjectHideFlags: 0
