@@ -12,8 +12,12 @@
 public interface Interactable
 {
     /*
-     * Summary: Should allow the player to pickup something. 
+     * Summary: Should allow the player to pickup something.
      */
     public void PlayerPickup();
 
+    /*
+     * Summary: Should play sound when picked up.
+     */
+    //public void PlayPickupSound();
 }

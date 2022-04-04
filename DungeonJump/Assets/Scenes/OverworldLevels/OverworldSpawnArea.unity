@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 24781073}
   - component: {fileID: 24781074}
   m_Layer: 0
-  m_Name: SpawnMusic
+  m_Name: BackgroundMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

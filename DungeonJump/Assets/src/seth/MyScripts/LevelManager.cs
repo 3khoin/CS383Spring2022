@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
     public float progPercentage;
 
     //allocate enough space for one respawn per overworld scene:
-    private Vector2[] playerRepawnPos = new Vector2[4];
+    private Vector2[] playerRepawnPos = new Vector2[4]; //{ null, null, null, null };
 
     //make prog blocks visible by default w/ one prog block visiblity setting per overworld scene:
     private bool[] progBlockVisibility = { true, true, true, true };
@@ -152,8 +152,8 @@ public class LevelManager : MonoBehaviour
         //walk thru whole sceneNames arr:
         for (int i = 0; i < sceneNames.Length; i++)
         {
-            //if curr scene is found and its respawn is already set: 
-            if (currScene.name == sceneNames[i] && playerRepawnPos[i] != null)
+            //if curr scene is found and its respawn is already set: (assumes no level gate is near map origin)
+            if ( currScene.name == sceneNames[i] && playerRepawnPos[i] != new Vector2(0, 0) )
             {
                 //teleport player to desired respawn loc:
                 GameObject.FindGameObjectWithTag("Player").GetComponent <Transform>().position 

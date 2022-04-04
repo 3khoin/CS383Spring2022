@@ -12,10 +12,12 @@ using UnityEngine;
  * 
  * Member Variables:
  * cieling - GameObject set externally to allow inactiveating of cieling.
+ * buildingMusic - AudioSource holding music to Pause.
  */
 public class EntrywayExit : MonoBehaviour
 {
     public GameObject cieling;
+    public AudioSource buildingMusic;
 
     /*
      * Summary: Turns cieling invisible when player exits trigger.
@@ -28,6 +30,13 @@ public class EntrywayExit : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             cieling.SetActive(true);
+        }
+
+        //if building music held:
+        if (buildingMusic != null )
+        {
+            //pause it:
+            buildingMusic.Pause();
         }
     }
 }
