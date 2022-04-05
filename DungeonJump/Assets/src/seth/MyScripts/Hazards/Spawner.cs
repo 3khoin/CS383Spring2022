@@ -47,6 +47,6 @@ public class Spawner : MonoBehaviour
         //create hazard in scene:
         Instantiate(hazard, new Vector3(spawnX, spawnY, 0), Quaternion.identity, transform);
 
-        print("Hazard spawned");
+        //debug: print("Hazard spawned");
     }
 }

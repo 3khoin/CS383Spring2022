@@ -19,7 +19,7 @@ using UnityEngine.SceneManagement;
 public class LevelGate : MonoBehaviour
 {
     public string levelName = "OverworldSpawnArea";
-    //public AnimationClip warpAnim;
+
     //public AudioSource warpSound;
 
     public string soundFX = "LevelGate";
@@ -50,9 +50,6 @@ public class LevelGate : MonoBehaviour
 
             //store player position for respawn:
             //have to shift pos so don't re-trigger level gate on respawn
-            //lvlMngerInstance.playerRespawnPos = new Vector2( collision.gameObject.transform.position.x + respawnDistFromLevelGate.x, 
-            //                                                 collision.gameObject.transform.position.y + respawnDistFromLevelGate.y); 
-
             lvlMngerInstance.SetRespawn(new Vector2(collision.gameObject.transform.position.x + respawnDistFromLevelGate.x,
                                                              collision.gameObject.transform.position.y + respawnDistFromLevelGate.y));
 
