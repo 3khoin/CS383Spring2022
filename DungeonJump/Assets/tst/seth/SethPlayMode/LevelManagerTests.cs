@@ -24,8 +24,6 @@ public class LevelManagerTests
 
     private LevelManager lvlMngerInstance;
 
-    //LevelManager
-
     /*
      * Summary: Retrieves level manager instance.
      *  
@@ -54,13 +52,13 @@ public class LevelManagerTests
         //testing starting scene:
         SceneManager.LoadScene(testScene);
 
+        //allow scene to load:
+        yield return new WaitForSeconds(0.5f);
+
         //ACT
 
         //remove curr scene's prog blocks:
         lvlMngerInstance.RemoveProgressBlocks();
-
-        //allow frame pass:
-        yield return null;
 
         //Use console to make sure scene actually changes:
         Debug.Log("Current active scene: " + SceneManager.GetActiveScene().name);
@@ -70,7 +68,8 @@ public class LevelManagerTests
 
         //SceneManager.GetActiveScene().buildIndex+1);
 
-        yield return null;
+        //allow scene to load:
+        yield return new WaitForSeconds(0.5f);
 
         Debug.Log("Current active scene: " + SceneManager.GetActiveScene().name);
 
@@ -79,9 +78,11 @@ public class LevelManagerTests
         //Change scene back:
         SceneManager.LoadScene(testScene);
 
+        //allow scene to load:
+        yield return new WaitForSeconds(0.5f);
+
         // Use the Assert class to test conditions.
         // Use yield to skip a frame.
-        yield return null;
 
         Debug.Log("Current active scene: " + SceneManager.GetActiveScene().name);
 
@@ -96,6 +97,8 @@ public class LevelManagerTests
             //make sure prog block is false:
             Assert.IsFalse(progBlocks[i].activeSelf);
         }
+
+        
     }
 
     /*

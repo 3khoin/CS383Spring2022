@@ -1,7 +1,8 @@
 /*
  * Filename: LevelGateTests.cs 
  * Developer: Seth Cram
- * Purpose: File tests
+ * Purpose: File tests to make sure scene changes when player is teleported onto a random level gate
+ *          located in the test scene.
  * 
  */
 
@@ -12,7 +13,8 @@ using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
 /*
- * Summary: Class tests 
+ * Summary: Class tests to make sure scene changes when player is teleported onto a random level gate
+ *          located in the test scene.
  * 
  * Member Variables:
  * testScene - string name of scene being used to test. 
@@ -73,5 +75,5 @@ public class LevelGateTests
         //make sure scene has been changed:
         Assert.IsTrue(initSceneName != SceneManager.GetActiveScene().name);
     }
-    
+
 }
