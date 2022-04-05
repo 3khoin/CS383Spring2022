@@ -1,0 +1,37 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Ohh heheheh. \n *The monkey is engrossed in filling orders for sushi and doesnt see you.*",
+      "firstText": "[1] I dont really want sushi.",
+      "secondText": "[2] One order please.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "Eeek eeek! \n *The monkey looks up and yells, seems he doesnt like you cutting the line.*",
+      "firstText": "[1] Oh woops, sorry.",
+      "secondText": "[2] But I want it now.",
+      "thirdText": "",
+      "next": [0, 2, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "Grrrrr! \n *He reaches and grabs a knife, cutting off the head of a fish in one swift stroke. He proceeds to ignore you.*",
+      "firstText": "[1] All right, I get the message.",
+      "secondText": "[2] But I am hungry.",
+      "thirdText": "",
+      "next": [0, 3, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "*The monkey is continuing to make meals, ignoring you entirely.*",
+      "firstText": "[1] No point staying here.",
+      "secondText": "[2] Hello, monkey boy?",
+      "thirdText": "",
+      "next": [3, 3, 0],
+      "isQuest": [false, false, false]
+    }
+  ]
+}

@@ -10,7 +10,7 @@
       "isQuest": [false, false, false]
     },
     {
-      "npcText": "*The buff monkey is just sitting there, a sad look on his face while his stomach growls",
+      "npcText": "*The buff monkey is just sitting there, a sad look on his face while his stomach growls*",
       "firstText": "[1] I will leave him to his moping.",
       "secondText": "[2] You even need food man?",
       "thirdText": "[3] Sorry, I dont have any food for you.",
@@ -18,7 +18,7 @@
       "isQuest": [false, false, false]
     },
     {
-      "npcText": "*The buff monkey is just sitting there, a sad look on his face while his stomach growls",
+      "npcText": "*The buff monkey is just sitting there, a sad look on his face while his stomach growls.*",
       "firstText": "[1] Leave him",
       "secondText": "[2] Food time.",
       "thirdText": "[3] Who wants ham?",
@@ -42,12 +42,12 @@
       "isQuest": [false, false, true]
     },
     {
-      "npcText": "OOOOOOH AHHHHHH! *Buff monkey looks at you like you just challenged him, and proceeds to break a nearby boulder with one stomp*",
+      "npcText": "OOOOOOH AHHHHHH! *Buff monkey looks at you like you just challenged him, and proceeds to break a nearby boulder with one stomp.*",
       "firstText": "[1] And that's my queue to run",
       "secondText": "[2] Do it again!",
       "thirdText": "[3] You hungry?",
       "next": [1, 5, 6],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, true]
     },
     {
       "npcText": "OOOOK-OOOOK! *Buff monkey rubs his tummy looks at you. He grasps you and points you towards a forest.*",
@@ -55,7 +55,7 @@
       "secondText": "[2] How much protein you need?",
       "thirdText": "[3] So you are hungry.",
       "next": [1, 5, 6],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, true]
     },
     {
       "npcText": "*Buff monkeys eyes go wide. In a single motion he snatches the ham and eats it. Newly invigorated, he throws a boulder towards the cave* \n EEEEK-AAK-EEEK!",
