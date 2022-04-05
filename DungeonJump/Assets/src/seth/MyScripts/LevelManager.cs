@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
                     mnger.name = "LevelManager";
                     instance = mnger.AddComponent<LevelManager>();
 
-                    print("new (level) manager created");
+                    print("new (overworld level) manager created");
 
                     //make sure not destroyed w/ change scenes
                     DontDestroyOnLoad(mnger); 
@@ -145,8 +145,9 @@ public class LevelManager : MonoBehaviour
     {
         //throw new NotImplementedException();
 
-        Debug.Log("OnSceneLoaded: " + currScene);
-        Debug.Log("Scene mode: " + mode);
+        //debug:
+        //Debug.Log("OnSceneLoaded: " + currScene);
+        //Debug.Log("Scene mode: " + mode);
 
         //walk thru whole sceneNames arr:
         for (int i = 0; i < sceneNames.Length; i++)
