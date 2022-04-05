@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Platformer Levels/CoconutCave.unity
     guid: e604313ded906914c96b9962329337df
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Platformer Levels/DungeonPlatformer.unity
     guid: 3ef346042d3607542b1662962243c584
   - enabled: 1
@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OverworldLevels/OverworldGrungieArea.unity
     guid: 5df2eb20519a38743a6ce07d213014b4
   - enabled: 1
-    path: Assets/Scenes/Platformer Levels/PostWaterfall.unity
+    path: Assets/Scenes/Platformer Levels/IslaDelMonke.unity
     guid: be895fbb64f5e244ebd3714266c19c03
   - enabled: 1
     path: Assets/Scenes/Platformer Levels/SunnyForest.unity

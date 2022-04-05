@@ -1,0 +1,6 @@
+Name: Rooms
+Summary: Contains room gameobjects easily reuseable in connection with 
+	 one another.
+Description: Each room has atleast one door accessible through "E" 
+	     on the keyboard provided the gameobject tagged "Player" is
+	     within range. Said door has sound and can be reactivated.

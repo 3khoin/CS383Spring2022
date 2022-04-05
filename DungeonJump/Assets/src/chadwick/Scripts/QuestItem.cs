@@ -17,8 +17,7 @@ public class QuestItem : MonoBehaviour, InteractableItem
         //{
         //LevelManager.Instance.playerCurrItems.Add(gameObject);
         FindObjectOfType<AudioManager>().Play("QuestItemPickup");
-        ParticleSystem particles = gameObject.GetComponent<ParticleSystem>();
-        Destroy(particles);
+        Destroy(gameObject.GetComponent<ParticleSystem>());
         Destroy(gameObject);
         //}
     }

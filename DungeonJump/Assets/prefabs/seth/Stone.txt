@@ -1,0 +1,4 @@
+Name: Stone
+Summary: A stone that resets the player when hit.
+Desciption: Resets gameobjects tagged "Player" and "MainCamera" to 
+	    gameobject tagged "Spawn" upon contact.  

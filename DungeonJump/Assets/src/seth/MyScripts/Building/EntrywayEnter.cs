@@ -1,3 +1,12 @@
+/* EntryTrigger Prefab
+ * name: EntryTrigger
+ * summary: Inactivates cieling and plays music when gameobject tagged "Player" exits trigger.
+ * description: A trigger that plays music if there's music specified. 
+ *              The cieling field must be filled externally to work properly.
+ *              Intended to be used in conjunction with "EntrywayExit" prefab.
+ * 
+ */
+
 /*
  * Filename: EntrywayEnter.cs 
  * Developer: Seth Cram 

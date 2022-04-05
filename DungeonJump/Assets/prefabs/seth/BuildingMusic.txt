@@ -1,0 +1,4 @@
+Name: BuildingMusic
+Summary: Music localized to an area.
+Description: An audiosource that fades out/in upon exit/entry from its range.
+	     Music originates from the audio source's scene location.

@@ -4,7 +4,6 @@
  * Purpose: File to manage the overworld levels and keep track of specific world attributes.
  */
 
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

@@ -34,8 +34,8 @@ public class BoundaryTests
     public void Setup()
     {
 
-        //testing starting scene:
-        SceneManager.LoadScene("Overworld Spawn Area"); //needed for boundary pnts?
+        //testing starting scene: (scene selection arbitrary)
+        SceneManager.LoadScene("OverworldSpawnArea"); 
 
         //cant do in setup for some reason: (bc has to be def'd above?)
         //GameObject playerObj = new GameObject("TestPlayer");
