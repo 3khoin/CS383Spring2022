@@ -33,6 +33,10 @@ public class PowerUp :  PlatformerItem
         //Instantiate(pickupEffect, transform.position, transform.rotation);
         //Debug.Log("Picked up power up.");
 
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject.GetComponent<ParticleSystem>());
+
         // get the player and modify stats of the player
         LightBandit stats = player.GetComponent<LightBandit>();
 
@@ -54,8 +58,7 @@ public class PowerUp :  PlatformerItem
         
 
         // disable visibility and collision of powerup & play SFX
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<Collider2D>().enabled = false;
+        
         //GetComponent<ParticleSystem>().Stop();
         
         //  wait time and reverse effect
