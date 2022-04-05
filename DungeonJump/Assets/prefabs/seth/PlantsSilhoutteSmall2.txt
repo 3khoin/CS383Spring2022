@@ -1,0 +1,5 @@
+Name: PlantsSilhoutteSmall2
+Summary: The silhoutte of a bush that damages the player.
+Desciption: Plays a player hurt sound. Incrementally damages player until 
+	    they leave the plant's outline. Damage speed, amount, and 
+	    hurt sound is adjustable.

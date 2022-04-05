@@ -4080,7 +4080,7 @@ GameObject:
   - component: {fileID: 390577602}
   - component: {fileID: 390577603}
   m_Layer: 21
-  m_Name: Spawner
+  m_Name: RockSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7058,12 +7058,12 @@ PrefabInstance:
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: 24.8
       objectReference: {fileID: 0}
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 54
+      value: 30.5
       objectReference: {fileID: 0}
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
