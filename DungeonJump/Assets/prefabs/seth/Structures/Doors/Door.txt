@@ -1,0 +1,6 @@
+name: Door (Door_NoGround) (SideDoor) (UpDoor)
+summary: A gameobject interactable through player proximity and input.
+description: Inverts the state of the door gameobject. If no close 
+	     gameobject is specified, none is used. UpDoor prefab makes use
+	     of Door_NoGround and adds functionality to it. SideDoor is 
+	     just a top-down view of UpDoor.

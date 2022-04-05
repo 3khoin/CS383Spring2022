@@ -1,3 +1,10 @@
+/* Item Prefab
+ * Name: Item
+ * Summary: A gameobject that's added to the player's inventory when triggered.
+ * Description: The gameobject is inactivated upon contact and added to the player's inventory.
+ *              Only works if interacting gameobject is tagged "Player".
+ */
+
 /*
  * Filename: Item.cs 
  * Developer: Seth Cram

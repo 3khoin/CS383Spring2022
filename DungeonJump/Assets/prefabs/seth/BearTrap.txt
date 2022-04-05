@@ -1,0 +1,6 @@
+Name: BearTrap
+Summary: A trap meant to impeded player progress by inflicting damage.
+Description: An obstacle consisting of two different spike tilemaps, 
+	     so it has to be placed under a grid gameobject in the hierarchy.
+	     Inflicts damage incrementally when player is in contact.
+	 

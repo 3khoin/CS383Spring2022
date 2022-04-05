@@ -1,7 +1,7 @@
 ﻿/* MainCamera Prefab
  * name: MainCamera
  * Summary: Camera will follow any given target transform at given lerp speed.
- * Description: If not target is specified, the camera automatically targets the GameObject tagged as "Player".
+ * Description: If target is not specified, the camera automatically targets the GameObject tagged as "Player".
  */
 
 /*

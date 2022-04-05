@@ -1,3 +1,10 @@
+/* ExitTrigger Prefab
+ * name: ExitTrigger
+ * summary: Activates cieling and pauses music when gameobject tagged "Player" exits trigger.
+ * description: The cieling field must be filled externally to work properly.
+ *              Intended to be used in conjunction with "EntrywayEnter" prefab.
+ */
+
 /*
  * Filename: EntrywayExit.cs 
  * Developer: Seth Cram 
