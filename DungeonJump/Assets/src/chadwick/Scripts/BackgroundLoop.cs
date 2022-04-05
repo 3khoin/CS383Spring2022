@@ -28,7 +28,7 @@ public class BackgroundLoop : MonoBehaviour
         // find screen width of obj
         float objectWidth = obj.GetComponent<SpriteRenderer>().bounds.size.x - choke;
         // Find out how many clones are needed to fill screen
-        int childsNeeded = (int)Mathf.Ceil(screenBounds.x * 2 / objectWidth) + 1;
+        int childsNeeded = (int)Mathf.Ceil(screenBounds.x * 3/ objectWidth) + 1;
         // Make a clone
         GameObject clone = Instantiate(obj) as GameObject;
 
