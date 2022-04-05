@@ -1,0 +1,6 @@
+Name: Building
+Summary: A generic building outline with a functional door and back entrance.
+Description: It uses tilemaps, so it must be placed as a child to a grid.
+	     Door interacts with player based on the "Player" tag and
+	     opens using "E" on the keyboard. The cieling is visible based
+	     on if the player is within the building or not using triggers. 
