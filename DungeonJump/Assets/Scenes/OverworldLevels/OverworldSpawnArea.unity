@@ -7050,11 +7050,6 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6727454382096102375, guid: f82a687431d889648ab2929928653e0b,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6727454382096102376, guid: f82a687431d889648ab2929928653e0b,
         type: 3}
       propertyPath: m_RootOrder

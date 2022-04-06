@@ -8,7 +8,8 @@
 /*
  * Filename: Item.cs 
  * Developer: Seth Cram
- * Purpose: File adds this script's GameObject to the LevelManager's list of player items if the player comes into contact. 
+ * Purpose: File requiring a Collider2D that adds this script's GameObject to the LevelManager's 
+ *          list of player items if the player comes into contact. 
  * 
  */
 
@@ -18,6 +19,7 @@ using UnityEngine;
  * Summary: Class adds this script's GameObject to the LevelManager's list of player items if the player comes into contact.
  * 
  */
+[RequireComponent(typeof(Collider2D))]
 public class Item : MonoBehaviour, Interactable
 {
     //public Color highlightColor;

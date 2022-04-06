@@ -10,7 +10,8 @@ using UnityEngine;
 //using UnityEngine.SceneManagement;
 
 /*
- * Summary: Class resets the player and camera if they're hit by the GameObject this script is attached to.
+ * Summary: Class that resets the player and camera 
+ *          if they're hit by the GameObject this script is attached to.
  * 
  */
 public class ResetHazard : Hazard

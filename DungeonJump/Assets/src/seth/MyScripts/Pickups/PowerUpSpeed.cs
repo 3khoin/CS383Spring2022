@@ -8,12 +8,13 @@
 using UnityEngine;
 
 /*
- * Summary: Class increases player speed when picked up and makes attached GameObject inactive.
+ * Summary: Class requiring a Collider2D that increases player speed when picked up and makes attached GameObject inactive.
  * 
  * Member Variables:
  * incrAmt - Float to increase Speed by. Value should only be negative to decrease player speed.
  * 
  */
+[RequireComponent(typeof(Collider2D))]
 public class PowerUpSpeed : MonoBehaviour, Interactable
 {
     public float incrAmt = 0.1f;

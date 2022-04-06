@@ -8,11 +8,12 @@
 using UnityEngine;
 
 /*
- * Summary: Superclass used to document when player enters and exits a trigger.
+ * Summary: Superclass requiring a Collider2D used to document when player enters and exits a trigger.
  * 
  * Member Variables:
  * //hazardSound - AudioSource that should be played by sub-classes when something is inflicted upon player.
  */
+[RequireComponent(typeof(Collider2D))]
 public class Hazard : MonoBehaviour
 {
     //public AudioSource hazardSound;
