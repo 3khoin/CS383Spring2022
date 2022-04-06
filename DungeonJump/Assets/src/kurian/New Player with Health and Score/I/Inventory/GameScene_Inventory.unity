@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 9bb5455f2a6179a44b90a8095741d4a2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 9bb5455f2a6179a44b90a8095741d4a2,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1576,7 +1577,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: dee376222848e90438fb664630ef1ed2, type: 3}
 --- !u!4 &814888835 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4660278464350348, guid: dee376222848e90438fb664630ef1ed2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4660278464350348, guid: dee376222848e90438fb664630ef1ed2,
+    type: 3}
   m_PrefabInstance: {fileID: 814888834}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &845386165
@@ -3985,7 +3987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c688ec10b5421864a86c832955be81f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfItemWorld: {fileID: 7995319173897065653, guid: 1f8bcf0055d5ee3469d1689bd2df8e7d, type: 3}
+  pfItemWorld: {fileID: 7995319173897065653, guid: 1f8bcf0055d5ee3469d1689bd2df8e7d,
+    type: 3}
   swordSprite: {fileID: 21300000, guid: 0567c05197d0d374ca05f1aed297c2e4, type: 3}
   healthPotionSprite: {fileID: 21300000, guid: 28cd643389c25de4eb77f49567812e47, type: 3}
   manaPotionSprite: {fileID: 21300000, guid: 567c1dba48fd591478dcf0bb74786ddf, type: 3}
