@@ -9,18 +9,10 @@ using UnityEngine;
 public class Dialogue : FriendlyNPC
 {
     protected int dialogueID;
-    protected string[,] dialogueArr =
-    {
-        {"My initial dialogue", "0"}, {"A positive day to you", "4"}, {"It is quite neutral today", "8"}, {"I am feeling negative today", "12"},
-        {"A positive day to you too.", "0"}, {"No, a positive day to YOU.", "4"}, {"No, I have no string feelings.", "8"}, {"Just kidding, screw you", "12"},
-        {"Yes, quite beige.","0"}, {"But it is so positively colorful today.","4"}, {"Yes, quite.","8"}, {"Yes, DARK BEIGE!","12"},
-        {"Well I say!","0"}, {"Sorry, just had to balance out the good.","4"}, {"Life is meaningless.","8"}, {"I am sure you say!","12"}
-    };
     protected GameObject npcUI;
     protected GameObject playerUI1;
     protected GameObject playerUI2;
     protected GameObject playerUI3;
-    
     
     [SerializeReference] public TextAsset jsonFile;
     public Dialog[] conversations;
@@ -50,7 +42,7 @@ public class Dialogue : FriendlyNPC
 
     protected virtual void UIDisable()
     {
-        Debug.Log("Player UI Disable");
+        Debug.Log("Default UI Disable");
     }
     
 

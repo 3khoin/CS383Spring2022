@@ -1,0 +1,37 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Mate ook oook. \n *This monkey appears to be attempting to learn how to boomerang.*",
+      "firstText": "[1] Leave him to learn.",
+      "secondText": "[2] can you even throw?",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "Ooooh ooh aaaaah! \n *The monkey screeches, and perfectly arches the boomerang around a nearby obstacle.*",
+      "firstText": "[1] Jolly good throw.",
+      "secondText": "[2] That's nothing.",
+      "thirdText": "",
+      "next": [0, 2, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "Eeeeek! \n *The monkey, now angry, throws the boomerang out of visibility. He turns to you, smiles, and gets hit in the head.*",
+      "firstText": "[1] Time to run.",
+      "secondText": "[2] Are you okay?",
+      "thirdText": "",
+      "next": [3, 3, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "*The monkey lies motionless. His boomerang lies shamefully next to him.*",
+      "firstText": "[1] Leave him.",
+      "secondText": "[2] See if anything changes.",
+      "thirdText": "",
+      "next": [3, 3, 0],
+      "isQuest": [false, false, false]
+    }
+  ]
+}

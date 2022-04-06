@@ -1,0 +1,21 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Barby oooh. \n *The monkey before you is having fun with a boomerang.*",
+      "firstText": "[1] I'm more of a kiwi.",
+      "secondText": "[2] Go long.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false]
+    },
+    {
+      "npcText": "Eeek eek mate. *With a strong throw, the monkey throws the boomerang hard. You swear it touches the sun before arcing back.*",
+      "firstText": "[1] Jolly good throw.",
+      "secondText": "[2] Do it again.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false]
+    }
+  ]
+}

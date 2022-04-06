@@ -2,8 +2,8 @@
   "dialogs":
   [
     {
-      "npcText": "Ooook-ooook. \n *The monkey is holding a dart, intently focused on throwing it towards his partner across from him. He pays no attention to you*",
-      "firstText": "[1] I dont think I should distract him.",
+      "npcText": "*This monkey is standing in line. he puffs out his chest, most likely to intimidate you into keeping his spot in line.*",
+      "firstText": "[1] Goodbye.",
       "secondText": "",
       "thirdText": "",
       "next": [0, 0, 0],

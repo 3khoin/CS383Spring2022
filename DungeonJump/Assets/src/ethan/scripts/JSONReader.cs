@@ -14,7 +14,7 @@ public class JSONReader : MonoBehaviour
 
     public Dialog[] ReadJSON(TextAsset file)
     {
-        Debug.Log("Reading JSON");
+        //Debug.Log("Reading JSON");
         Dialogs wrap = JsonUtility.FromJson<Dialogs>(file.text);
         return wrap.dialogs;
     }
