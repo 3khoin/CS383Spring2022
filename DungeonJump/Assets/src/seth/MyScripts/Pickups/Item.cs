@@ -44,7 +44,7 @@ public class Item : MonoBehaviour, Interactable
     public void PlayerPickup()
     {
         //Add to LevelManager player's currItems:
-        LevelManager.Instance.playerCurrItems.Add(gameObject); 
+        //LevelManager.Instance.playerCurrItems.Add(gameObject); 
 
         //make item dissapear:
         gameObject.SetActive(false);

@@ -1,0 +1,13 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "*This monkey is standing in line. he puffs out his chest, most likely to intimidate you into keeping his spot in line.*",
+      "firstText": "[1] Goodbye.",
+      "secondText": "",
+      "thirdText": "",
+      "next": [0, 0, 0],
+      "isQuest": [false, false, false]
+    }
+  ]
+}

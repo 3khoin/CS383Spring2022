@@ -28,7 +28,7 @@ namespace Cainos.PixelArtTopDown_Basic
     {
         public Transform target;
         public float lerpSpeed = 2.5f;
-        public float camOffset;
+        public float camOffset = -10;
 
         private Vector3 offset;
 
