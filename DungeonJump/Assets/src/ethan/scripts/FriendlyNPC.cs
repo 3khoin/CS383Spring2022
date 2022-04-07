@@ -8,15 +8,17 @@ using UnityEngine.PlayerLoop;
 public class FriendlyNPC : MonoBehaviour
 {
     protected bool interact;
-    protected bool helpful;
-    protected bool harmful;
+    protected bool questStart;
+    protected bool questEnd;
+    protected int dialogueID; // declared here to allow quest to edit it
     
     
     void Start()
     {
         interact = false;
-        helpful = false;
-        harmful = false;
+        questStart = false;
+        questEnd = false;
+        dialogueID = 0;
     }
 
     public void Init(int x, int y)

@@ -1,0 +1,77 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "*The white monkey stands out in the landscape, she seems distressed and upon seeing you waves you over.*",
+      "firstText": "[1] Dont talk to strangers.",
+      "secondText": "[2] Are you okay?",
+      "thirdText": "[3] Are you drunk?",
+      "next": [0, 4, 4],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*The white monkey is pacing back and forth impatiently, and upon seeing you seem to perk up.*",
+      "firstText": "[1] I will return.",
+      "secondText": "[2] Billy isn't home.",
+      "thirdText": "[3] So what do you need?",
+      "next": [1, 5, 6],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*The white monkey is pacing back and forth impatiently, and upon seeing you seem to perk up.*",
+      "firstText": "[1] Leave her to it.",
+      "secondText": "[2] I got your rock.",
+      "thirdText": "[3] Gonna kiss you hero?",
+      "next": [2, 7, 7],
+      "isQuest": [false, false, false],
+      "isComplete": [false, true, true]
+    },
+    {
+      "npcText": "*The white monkey has pulled out an old scroll and is engrossed in reading it. SHe pays you no heed.*",
+      "firstText": "[1] Goodbye.",
+      "secondText": "[2] I deserve a kiss.",
+      "thirdText": "[3] BOOOOOO!",
+      "next": [3, 3, 3],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*As you approach, the monkey smiles, and then points at her mouth. She appears to strain for a bit before closing his mouth.*",
+      "firstText": "[1] Yeah, no.",
+      "secondText": "[2] Billy's in the well!",
+      "thirdText": "[3] You need help speaking?",
+      "next": [1, 5, 6],
+      "isQuest": [false, false, true],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*The monkey rolls her eyes, unamused by your comment. She makes what you assume are very insulting gestures at you. You are happy she is out of poop.*",
+      "firstText": "[1] Alright, alright, bye.",
+      "secondText": "[2] But where is he?",
+      "thirdText": "[3] Okay, so you cant talk?",
+      "next": [1, 5, 6],
+      "isQuest": [false, false, true],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*She nods and draws an object on the ground. It appears to be a gem encased underground. After a few moments she erases the drawing.*",
+      "firstText": "[1] I shall get the gem.",
+      "secondText": "[2] Is Billy there?",
+      "thirdText": "[3] Run that by me again.",
+      "next": [1, 5, 6],
+      "isQuest": [false, false, true],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*The white monkey lunges at you and seizes the gem. She unlocks the barrier nearby and grabs a bag, placing the gem inside before sitting back down.*",
+      "firstText": "[1] I guess I can advance.",
+      "secondText": "[2] So that's it?",
+      "thirdText": "[3] How does this help?",
+      "next": [3, 3, 3],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}

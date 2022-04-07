@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class Dialogue : FriendlyNPC
 {
-    protected int dialogueID;
     protected GameObject npcUI;
     protected GameObject playerUI1;
     protected GameObject playerUI2;
@@ -19,7 +18,6 @@ public class Dialogue : FriendlyNPC
 
     private void Start()
     {
-        dialogueID = 0;
         npcUI = NPCManager.npcUI;
         playerUI1 = NPCManager.playerUI1;
         playerUI2 = NPCManager.playerUI2;
