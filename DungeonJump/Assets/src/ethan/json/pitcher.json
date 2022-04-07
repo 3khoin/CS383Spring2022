@@ -7,7 +7,8 @@
       "secondText": "",
       "thirdText": "",
       "next": [0, 0, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     }
   ]
 }

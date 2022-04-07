@@ -43,24 +43,27 @@ public class PlayerDialogueThree : Dialogue
         if (Input.GetKeyDown("1"))
         {
             //Debug.Log("Choice 1");
+            if(!questStart) questStart = conversations[dialogueID].CheckQuest(0);
+            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
             dialogueID = conversations[dialogueID].GetNext(0);
             UIDisable();
             UIDisplay(dialogueID);
-            if(!helpful) helpful = conversations[dialogueID].CheckQuest(0);
         } 
         else if (Input.GetKeyDown("2"))
         {
             //Debug.Log("Choice 2");
+            if(!questStart) questStart = conversations[dialogueID].CheckQuest(1);
+            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
             dialogueID = conversations[dialogueID].GetNext(1);
             UIDisplay(dialogueID);
-            if(!helpful) helpful = conversations[dialogueID].CheckQuest(1);
         }
         else if (Input.GetKeyDown("3"))
         {
             //Debug.Log("Choice 3");
+            if(!questStart) questStart = conversations[dialogueID].CheckQuest(2);
+            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(2);
             dialogueID = conversations[dialogueID].GetNext(2);
             UIDisplay(dialogueID);
-            if(!helpful) helpful = conversations[dialogueID].CheckQuest(2);
         }
     }
 }

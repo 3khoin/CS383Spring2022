@@ -7,7 +7,8 @@
       "secondText": "[2] Can I have some.",
       "thirdText": "",
       "next": [0, 1, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     },
     {
       "npcText": "Oooh oh aaaah ahhh. \n *The monkey smiles and hands you a tankard. It is empty.*",
@@ -15,7 +16,8 @@
       "secondText": "[2] Hit me again",
       "thirdText": "",
       "next": [0, 2, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     },
     {
       "npcText": "Eeek eeek. \n *He reaches to grab another tankard, but falls over and doesnt move.*",
@@ -23,7 +25,8 @@
       "secondText": "[2] Hello?",
       "thirdText": "",
       "next": [0, 3, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     },
     {
       "npcText": "*The monkey lies on the floor in a puddle of booze. The faint sound of breathing can be heard.*",
@@ -31,7 +34,8 @@
       "secondText": "[2] Wait.",
       "thirdText": "",
       "next": [3, 3, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     }
   ]
 }

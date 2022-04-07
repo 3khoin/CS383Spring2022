@@ -7,7 +7,8 @@
       "secondText": "[2] One order please.",
       "thirdText": "",
       "next": [0, 1, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     },
     {
       "npcText": "Eeek eeek! \n *The monkey looks up and yells, seems he doesnt like you cutting the line.*",
@@ -15,7 +16,8 @@
       "secondText": "[2] But I want it now.",
       "thirdText": "",
       "next": [0, 2, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     },
     {
       "npcText": "Grrrrr! \n *He reaches and grabs a knife, cutting off the head of a fish in one swift stroke. He proceeds to ignore you.*",
@@ -23,7 +25,8 @@
       "secondText": "[2] But I am hungry.",
       "thirdText": "",
       "next": [0, 3, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     },
     {
       "npcText": "*The monkey is continuing to make meals, ignoring you entirely.*",
@@ -31,7 +34,8 @@
       "secondText": "[2] Hello, monkey boy?",
       "thirdText": "",
       "next": [3, 3, 0],
-      "isQuest": [false, false, false]
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
     }
   ]
 }
