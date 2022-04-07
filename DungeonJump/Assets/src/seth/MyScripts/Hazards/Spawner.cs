@@ -7,7 +7,6 @@
 
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 /*
  * Summary: This class duplicates and spawns the provided hazard randomly within the provided bounds.
@@ -28,7 +27,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject hazard;
 
-    private float destroyDelay = 5;
+    public float destroyDelay = 5;
 
     /*
      * Summary: Repeatedly calls a function to spawn a hazard dependent on spawnSpeed.
@@ -38,6 +37,7 @@ public class Spawner : MonoBehaviour
         //repeatedly spawn a hazard:
         InvokeRepeating("SpawnHazard", 0, 1/spawnSpeed);
 
+        //make sure destroyDelay longer than spawnDelay:
         destroyDelay = 3.5f / spawnSpeed;
     }
 
@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
      * Summary: Randomly spawns a hazard within the specified bounds.
      * 
      */
-    private void SpawnHazard()
+    public void SpawnHazard()
     {
         //find rando spawn vals:
         float spawnX = Random.Range(minX, maxX);
@@ -56,11 +56,12 @@ public class Spawner : MonoBehaviour
 
         //debug: print("Hazard spawned");
 
+        //remove hazard after some time:
         StartCoroutine(RemoveHazard(spawnHazard));
     }
 
     /*
-     * Summary: Removes oldest spawned hazard.
+     * Summary: Removes passed in spawnedObj after destroy delay.
      */
     public IEnumerator RemoveHazard( GameObject spawnedObj)
     {
@@ -70,6 +71,7 @@ public class Spawner : MonoBehaviour
         //destroy passed obj
         Destroy(spawnedObj);
 
-        Debug.Log("Hazard removed");
+        //debug:
+        Debug.Log("Hazard " + spawnedObj.name + " removed");
     }
 }
