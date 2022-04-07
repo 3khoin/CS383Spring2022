@@ -81753,6 +81753,7 @@ GameObject:
   - component: {fileID: 251197858}
   - component: {fileID: 251197860}
   - component: {fileID: 251197861}
+  - component: {fileID: 251197862}
   m_Layer: 21
   m_Name: Wizard Hat
   m_TagString: Untagged
@@ -86635,6 +86636,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7067997, y: 0.84834665}
   m_EdgeRadius: 0
+--- !u!114 &251197862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251197855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fb41ec4f9d0a64894a8f02b6ee5a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Hat
 --- !u!1001 &255927984
 PrefabInstance:
   m_ObjectHideFlags: 0

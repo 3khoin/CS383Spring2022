@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemObtained : MonoBehaviour, Interactable
+public class MiscItemObtained : MonoBehaviour, Interactable
 {
     public string itemName;
 

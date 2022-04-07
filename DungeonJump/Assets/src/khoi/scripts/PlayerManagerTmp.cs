@@ -21,11 +21,7 @@ public class PlayerManagerTmp : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
 
-    // Start is called before the first frame update
-    private void Start()
-    {
         playerHealth = 1.0f;
         playerScore = 0;
 
@@ -34,6 +30,11 @@ public class PlayerManagerTmp : MonoBehaviour
 
         // Miscellaneous items
         miscItems = new LinkedList<string>();
+    }
+
+    // Start is called before the first frame update
+    private void Start()
+    {
     }
 
     // Update is called once per frame
@@ -64,14 +65,34 @@ public class PlayerManagerTmp : MonoBehaviour
         playerScore = playerScore + scoreChange;
     }
 
+    public void GetQuestItems()
+    {
+        Debug.Log("List of quest items:");
+        foreach(string str in questItems)
+        {
+            Debug.Log(str);
+        }
+    }
+
+    public void GetMiscItems()
+    {
+        Debug.Log("List of miscellaneous items:");
+        foreach(string str in miscItems)
+        {
+            Debug.Log(str);
+        }
+    }
+
     public void AddQuestItem(string questItem)
     {
         questItems.AddLast(questItem);
+        GetQuestItems();
     }
 
     public void AddMiscItem(string miscItem)
     {
         miscItems.AddLast(miscItem);
+        GetMiscItems();
     }
 
     public bool QuestItemIsCollected(string questItem)

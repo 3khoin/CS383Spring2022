@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &24781074
 AudioSource:
@@ -4098,7 +4098,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &390577603
 MonoBehaviour:
@@ -4118,6 +4118,7 @@ MonoBehaviour:
   minY: 80
   spawnSpeed: 1
   hazard: {fileID: 7827572933343989178, guid: b7e75bce93d45484585053e640b98f0d, type: 3}
+  destroyDelay: 5
 --- !u!1001 &395552609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7409,6 +7410,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9919f88fdf4a44b4c8a7ec2d7627a8ac, type: 3}
+--- !u!1 &979969541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 290054889904524427, guid: 9919f88fdf4a44b4c8a7ec2d7627a8ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 979969540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &979969542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979969541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1ce3ede2542fa4b862dbca57764f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Egg
 --- !u!1 &1037364299
 GameObject:
   m_ObjectHideFlags: 0
@@ -14297,7 +14317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668960162
 GameObject:
@@ -14376,7 +14396,7 @@ Transform:
   - {fileID: 1668960163}
   - {fileID: 447407726}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720610930
 GameObject:
@@ -14442,7 +14462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831316723
 GameObject:
@@ -19413,7 +19433,7 @@ PrefabInstance:
     - target: {fileID: 7462544371873763402, guid: 7a80943618b69ec4d899467f9177f5da,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7462544371873763402, guid: 7a80943618b69ec4d899467f9177f5da,
         type: 3}
