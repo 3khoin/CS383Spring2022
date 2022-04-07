@@ -17,6 +17,7 @@ TagManager:
   - PowerUp
   - QuestItem
   - OverworldItem
+  - EnemyNPC
   layers:
   - Default
   - TransparentFX
