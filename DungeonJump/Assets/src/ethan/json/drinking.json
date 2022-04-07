@@ -1,0 +1,32 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Hey kid congrattttz. You look like you made it through just fine. I'd offer you a drink, but until the drugs wear off that is too dangerous.",
+      "firstText": "[1] Thanks man.",
+      "secondText": "[2] Come on, just a sip.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "No, I let my cousin George take a sip. He went mad and wandered off with some banana man. Haven't seen him in years.",
+      "firstText": "[1] Fiiine",
+      "secondText": "[2] That sounds terrible",
+      "thirdText": "",
+      "next": [0, 2, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "It was, terrible shame. Curse the banana man.",
+      "firstText": "[1] Goodbye.",
+      "secondText": "[2] So not even a sip?",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}

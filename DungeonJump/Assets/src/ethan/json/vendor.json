@@ -1,0 +1,23 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "We out of fish, come back later. Shoo shoo.",
+      "firstText": "[1] Okay.",
+      "secondText": "[2] Not even some rice.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Rice for sushi only. Stop asking.",
+      "firstText": "[1] Goodbye.",
+      "secondText": "[2] Not even a little.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}
