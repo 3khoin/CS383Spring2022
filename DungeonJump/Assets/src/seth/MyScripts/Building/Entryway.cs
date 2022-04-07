@@ -6,7 +6,6 @@
  */
 
 using UnityEngine;
-//using 
 
 /*
  * Summary: Class that inverts the entryway when player is within range and presses E.
@@ -22,10 +21,23 @@ public class Entryway : MonoBehaviour
 {
     public GameObject openDoor; 
     public GameObject closedDoor; 
-    //public AudioSource interactSound;
 
     private bool open = false;
     private bool entrywayInteractable = false;
+
+    /*
+     * summary: Makes sure open boolean is properly set.
+     * 
+     */
+    private void Start()
+    {
+        //debug: Debug.Log("Start called");
+
+        //if door already open or not closed:
+        if ( openDoor != null && openDoor.activeSelf || !closedDoor.activeSelf)
+            //set variable as such
+            open = true;
+    }
 
     /*
      * Summary: Every frame invert the entryway if it's interactable and player presses E.
@@ -81,6 +93,7 @@ public class Entryway : MonoBehaviour
      */
     public void InvertEntryway() 
     {
+
         //close entryway
         if ( open )
         {

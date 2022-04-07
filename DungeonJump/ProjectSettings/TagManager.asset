@@ -17,6 +17,8 @@ TagManager:
   - PowerUp
   - QuestItem
   - OverworldItem
+  - PlayerPos
+  - Test
   layers:
   - Default
   - TransparentFX
