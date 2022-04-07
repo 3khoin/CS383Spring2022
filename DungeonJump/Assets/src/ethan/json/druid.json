@@ -1,0 +1,41 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Thanks for your help child, I was getting bored stuck in my head. \n *The gem, now lodged in their head glows with the words.*",
+      "firstText": "[1] You're welcome.",
+      "secondText": "[2] Wait, you cant talk?",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "That is correct, I was not tricking you. I needed somebody to get this gem to allow me to project my thoughts. Now I can talk, kinda.",
+      "firstText": "[1] Well have fun.",
+      "secondText": "[2] Do I get that kiss now?",
+      "thirdText": "",
+      "next": [0, 2, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Oh oh, drugs haven't worn off yet. I'm your aunt, I feel that would be inappropriate.",
+      "firstText": "[1] Your probably right.",
+      "secondText": "[2] How about yes.",
+      "thirdText": "",
+      "next": [0, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "*She gives you a look and refuses to talk to you.*",
+      "firstText": "[1] Goodbye.",
+      "secondText": "[2] Hello?",
+      "thirdText": "",
+      "next": [3, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}

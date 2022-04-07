@@ -17,7 +17,12 @@ TagManager:
   - PowerUp
   - QuestItem
   - OverworldItem
+<<<<<<< HEAD
   - EnemyNPC
+=======
+  - PlayerPos
+  - Test
+>>>>>>> cdc59b921ca6eed05fdb22f199e085e7754bb4bb
   layers:
   - Default
   - TransparentFX

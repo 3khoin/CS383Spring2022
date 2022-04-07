@@ -1,10 +1,11 @@
 /*
  * Filename: HazardTests.cs 
  * Developer: Seth Cram
- * Purpose: File tests 
+ * Purpose: File tests ResetHazard, StaticDmgHazard, and spawning capabilities of Spawner class.
  * 
  */
 
+using System;
 using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
@@ -12,11 +13,12 @@ using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
 /*
- * Summary: Class tests 
+ * Summary: Class tests ResetHazard, StaticDmgHazard, and spawning capabilities of Spawner class.
  * 
  * Member Variables:
  * testScene - string name of scene being used to test.   
  * spawnOffset - Vector3 distance from spawn point that test takes place.
+ * testTag - string of the tag solely used for testing.
  */
 public class HazardTests: MonoBehaviour
 {
@@ -24,14 +26,16 @@ public class HazardTests: MonoBehaviour
 
     public Vector3 spawnOffset = new Vector3(5, 5, 0);
 
+    public string testTag = "Test";
+
     /*
-     * Summary: Loads test scene.
+     * Summary: .
      *  
      */
     [SetUp]
     public void Setup()
     {
-        SceneManager.LoadScene(testScene);
+        
     }
 
     /*
@@ -42,6 +46,9 @@ public class HazardTests: MonoBehaviour
     public IEnumerator ResetHazardTest()
     {
         //ARRANGE
+
+        //Loads test scene
+        SceneManager.LoadScene(testScene);
 
         //have to wait longer than a frame for scene to load and reset hazard to spawn:
         yield return new WaitForSeconds(3f);
@@ -92,10 +99,10 @@ public class HazardTests: MonoBehaviour
         Assert.AreEqual( spawnTransform.position, player.transform.position);
     }
 
-    /*
-  * Summary: Function testing the reset capabilities of a reset hazard.
-  * 
-  */
+        /*
+      * Summary: Function testing the damaging capabilities of a static damage hazard.
+      * 
+      */
     /*
     [UnityTest]
     public IEnumerator StaticDmgHazardTest()
@@ -107,4 +114,51 @@ public class HazardTests: MonoBehaviour
         //ASSERT
     }
     */
+
+    /*
+    * Summary: Function testing the destroying capabilities of the spawner.
+    * 
+    */
+    [UnityTest]
+    public IEnumerator DestroyHazardTest()
+    {
+        throw new NotImplementedException();
+
+        //ARRANGE
+
+        //have to wait longer than a frame for scene to load and reset hazard to spawn:
+        //yield return new WaitForSeconds(3f);
+
+        //create new spawner: (needs to be attached to a gameobj)
+        GameObject spawnerObj = new GameObject(name: "Spawner");
+        Spawner spawner = spawnerObj.AddComponent<Spawner>();
+
+        //pass new obj as hazard:
+        spawner.hazard = new GameObject(name: "spawnedHazard");
+
+        //create new test obj:
+        GameObject rmObj = new GameObject(name: "removeObj");
+
+        //add Test tag:
+        rmObj.tag = testTag;
+
+        //let obj be spawned:
+        //yield return new WaitForSeconds(0.1f);
+       // yield return new WaitForSeconds(10f);
+
+        //ACT
+
+        Debug.Log("try removing: " + GameObject.FindGameObjectWithTag(testTag).name);
+
+        //remove spawned test obj:
+        spawner.RemoveHazard(GameObject.FindGameObjectWithTag(testTag));
+
+        //wait till longer than removal delay:
+        yield return new WaitForSeconds(spawner.destroyDelay + 0.5f + 10f);
+
+        //ASSERT
+
+        //removed gameobj if cant find test tag anymore:
+        Assert.IsFalse(GameObject.FindGameObjectWithTag(testTag));
+    }
 }
