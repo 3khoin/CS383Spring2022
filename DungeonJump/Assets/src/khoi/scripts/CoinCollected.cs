@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinCollected : MonoBehaviour
+public class CoinCollected : PlatformerItem
 {
-    // Start is called before the first frame update
-    void Start()
+    override public void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            Pickup(null);     
+            PlayerManagerTmp.instance.UpdatePlayerScore(100);       
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    override public void Pickup(Collider2D other)
     {
-        
+        Destroy(gameObject);
     }
 }
