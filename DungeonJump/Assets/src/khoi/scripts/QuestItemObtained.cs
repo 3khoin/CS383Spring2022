@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestItemObtained : MonoBehaviour, Interactable
+public class QuestItemObtained : MonoBehaviour
 {
     public string itemName;
 

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Cainos.PixelArtTopDown_Basic;
 
 public class HealthBar : MonoBehaviour
 {

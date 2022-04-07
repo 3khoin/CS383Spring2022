@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollected : MonoBehaviour, Interactable
+public class ItemCollected : MonoBehaviour
 {
     public float updateHealth = -0.3f;
 
