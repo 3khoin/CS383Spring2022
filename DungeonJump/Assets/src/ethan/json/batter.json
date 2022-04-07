@@ -2,7 +2,7 @@
   "dialogs":
   [
     {
-      "npcText": "Ooooh Ooh Oh.\n *The monkey turns to this partner, holding a long stick with several puncture holes. He seems ready to swing the stick at something.*",
+      "npcText": "Ooooh Ooh Oh.\n *The monkey turns to their partner, holding a long stick with several puncture holes. He seems ready to swing the stick at something.*",
       "firstText": "[1] I will leave him too it.",
       "secondText": "[2] Hey, whats that!?",
       "thirdText": "",

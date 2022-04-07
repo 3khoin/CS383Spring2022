@@ -4,7 +4,7 @@
     {
       "npcText": "Mate ook oook. \n *This monkey appears to be attempting to learn how to boomerang.*",
       "firstText": "[1] Leave him to learn.",
-      "secondText": "[2] can you even throw?",
+      "secondText": "[2] Can you even throw?",
       "thirdText": "",
       "next": [0, 1, 0],
       "isQuest": [false, false, false],

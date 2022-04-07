@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class Quest : FriendlyNPC
 {
-    [SerializeField] private int questItem;
+    [SerializeField] private string item;
 
     
-    // Start is called before the first frame update
-    private void Start()
-    {
-        //questComplete = false;
-    }
-
-
     private bool IsComplete()
     {
-        if (questItem == 1)
-        {
-            return true;
-        } 
-        return false;
+        return PlayerManagerTmp.instance.QuestItemIsCollected(item);
     }
 
 
@@ -28,13 +17,10 @@ public class Quest : FriendlyNPC
     {
         if (interact)
         {
-            if (questStart)
-            {
-                if (IsComplete())
-                {
-                    dialogueID = 3;
-                    questStart = false;
-                }
+            if (questStart && IsComplete())
+            { 
+                dialogueID = 3;
+                questStart = false;
             }
 
             if (questEnd)
