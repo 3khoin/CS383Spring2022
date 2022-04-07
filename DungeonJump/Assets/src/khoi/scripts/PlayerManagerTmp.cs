@@ -9,6 +9,7 @@ public class PlayerManagerTmp : MonoBehaviour
     private float playerHealth;
     private int playerScore;
     private LinkedList<string> questItems, miscItems;
+    private string questItemsList, miscItemsList;
 
     private void Awake()
     {
@@ -30,6 +31,9 @@ public class PlayerManagerTmp : MonoBehaviour
 
         // Miscellaneous items
         miscItems = new LinkedList<string>();
+
+        questItemsList = "List of quest items:";
+        miscItemsList = "List of miscellaneous items:";
     }
 
     // Start is called before the first frame update
@@ -67,31 +71,39 @@ public class PlayerManagerTmp : MonoBehaviour
 
     public void GetQuestItems()
     {
-        Debug.Log("List of quest items:");
         foreach(string str in questItems)
         {
-            Debug.Log(str);
+            questItemsList = questItemsList + " " + str;
         }
+        Debug.Log(questItemsList);
     }
 
     public void GetMiscItems()
     {
-        Debug.Log("List of miscellaneous items:");
         foreach(string str in miscItems)
         {
-            Debug.Log(str);
+            miscItemsList = miscItemsList + " " + str;
         }
+        Debug.Log(miscItemsList);
     }
 
     public void AddQuestItem(string questItem)
     {
-        questItems.AddLast(questItem);
+        if(!QuestItemIsCollected(questItem))
+        {
+            questItems.AddLast(questItem);
+            UpdatePlayerScore(2000);
+        }
         GetQuestItems();
     }
 
     public void AddMiscItem(string miscItem)
     {
-        miscItems.AddLast(miscItem);
+        if(!MiscItemIsCollected(miscItem))
+        {
+            miscItems.AddLast(miscItem);
+            UpdatePlayerScore(500);
+        }
         GetMiscItems();
     }
 
