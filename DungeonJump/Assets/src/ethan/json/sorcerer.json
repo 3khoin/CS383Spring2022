@@ -1,0 +1,41 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Oh hi. Thanks for the new hat. It is a bit big though, bit I guess it is the thought that counts.",
+      "firstText": "[1] No problem.",
+      "secondText": "[2] Wait, glasses?",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Yeah, I was wearing my contacts earlier. The orb kinda burned them out though.",
+      "firstText": "[1] Um, okay.",
+      "secondText": "[2] Yeah, what is that.",
+      "thirdText": "",
+      "next": [0, 2, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Oh, I doubt you would understand, it takes years of study to get something that powerful and awesome.",
+      "firstText": "[1] Okay.",
+      "secondText": "[2] You dont know do you?",
+      "thirdText": "",
+      "next": [0, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Whaaaaat, noooo. \n *He slowly looks away, the wall suddenly being very interesting.*",
+      "firstText": "[1] Bye.",
+      "secondText": "[2] Yeah, you dont know.",
+      "thirdText": "",
+      "next": [0, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}

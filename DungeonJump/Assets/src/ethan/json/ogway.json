@@ -1,0 +1,59 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "Hello my child, you have completed your trial. You have completed your right of passage and may now join us in celebration.",
+      "firstText": "[1] Okaaaaay.",
+      "secondText": "[2] What's going on?",
+      "thirdText": "",
+      "next": [1, 2, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Go, enjoy the party. You have earned it.",
+      "firstText": "[1] Goodbye.",
+      "secondText": "[2] What is going on?",
+      "thirdText": "",
+      "next": [1, 2, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Ah yes, you cant remember anything before today right? That should change soon. Those drugs we gave you should work out of your system soon.",
+      "firstText": "[1] That explains it.",
+      "secondText": "[2] What, why?",
+      "thirdText": "",
+      "next": [1, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "To complete your right of passage, and join us as a member of the community, you completed tasks showing your ability to help those around you.",
+      "firstText": "[1] Time to party.",
+      "secondText": "[2] So this was a test.",
+      "thirdText": "",
+      "next": [1, 4, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Yes, the drugs wiped your memory of all of us and our language so we could judge your strength of character. Everybody has gone through it before.",
+      "firstText": "[1] Let me go ask them.",
+      "secondText": "[2] So I passed?",
+      "thirdText": "",
+      "next": [1, 5, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "Yes, you passed with flying colors.",
+      "firstText": "[1] Yay!",
+      "secondText": "[2] I passed?",
+      "thirdText": "",
+      "next": [1, 5, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}
