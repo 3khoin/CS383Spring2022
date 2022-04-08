@@ -16,6 +16,8 @@ public class QuestItemObtained : MonoBehaviour
 
     public void PlayerPickup()
     {
+        //FindObjectOfType<AudioManager>().Play("QuestItemPickup");
+        Destroy(gameObject.GetComponent<ParticleSystem>());
         gameObject.SetActive(false);
     }
 }
