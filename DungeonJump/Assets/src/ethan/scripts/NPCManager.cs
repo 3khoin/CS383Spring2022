@@ -9,9 +9,8 @@ public class NPCManager : MonoBehaviour
     public static GameObject playerUI2;
     public static GameObject playerUI3;
     public static JSONReader JR;
+    
     // Start is called before the first frame update
-
-    //[SerializeField] public FriendlyNPC Talking;
 
     private void Awake()
     {

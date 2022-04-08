@@ -38,8 +38,6 @@ public class PlayerDialogueTwo : Dialogue
         if (Input.GetKeyDown("1"))
         {
             //Debug.Log("Choice 1");
-            if(!questStart) questStart = conversations[dialogueID].CheckQuest(0);
-            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
             dialogueID = conversations[dialogueID].GetNext(0);
             UIDisable();
             UIDisplay(dialogueID);
@@ -47,8 +45,6 @@ public class PlayerDialogueTwo : Dialogue
         else if (Input.GetKeyDown("2"))
         {
             //Debug.Log("Choice 2");
-            if(!questStart) questStart = conversations[dialogueID].CheckQuest(1);
-            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
             dialogueID = conversations[dialogueID].GetNext(1);
             UIDisplay(dialogueID);
         }

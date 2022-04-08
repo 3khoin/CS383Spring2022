@@ -1,32 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Quest : FriendlyNPC
 {
-    [SerializeField] private string item;
+    [SerializeField] private string questItem;
 
-    
-    private bool IsComplete()
+
+    public bool IsComplete()
     {
-        return PlayerManagerTmp.instance.QuestItemIsCollected(item);
+        Debug.Log("Check Completed.");
+        return PlayerManagerTmp.instance.QuestItemIsCollected(questItem);
     }
 
-
-    private void Update()
+    public void ClearBlock()
     {
-        if (interact)
-        {
-            if (questStart && IsComplete())
-            { 
-                dialogueID = 3;
-                questStart = false;
-            }
-
-            if (questEnd)
-            {
-                LevelManager.Instance.RemoveProgressBlocks();
-            }
-        }
+        Debug.Log("Clear Blocker");
+        LevelManager.Instance.RemoveProgressBlocks();
     }
 }

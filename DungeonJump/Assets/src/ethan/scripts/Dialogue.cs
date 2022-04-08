@@ -12,7 +12,7 @@ public class Dialogue : FriendlyNPC
     protected GameObject playerUI1;
     protected GameObject playerUI2;
     protected GameObject playerUI3;
-    
+    protected int dialogueID;
     [SerializeReference] public TextAsset jsonFile;
     public Dialog[] conversations;
 
@@ -22,6 +22,7 @@ public class Dialogue : FriendlyNPC
         playerUI1 = NPCManager.playerUI1;
         playerUI2 = NPCManager.playerUI2;
         playerUI3 = NPCManager.playerUI3;
+        dialogueID = 0;
         conversations = NPCManager.JR.ReadJSON(jsonFile);
         Debug.Log("Found " + conversations[0].firstText + " " + conversations[0].secondText + " " + conversations[0].thirdText + conversations[0].next[0]);
     }

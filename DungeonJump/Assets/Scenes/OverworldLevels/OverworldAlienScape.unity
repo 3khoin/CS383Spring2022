@@ -9714,7 +9714,7 @@ PrefabInstance:
     - target: {fileID: 8105322392052091008, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8105322392052091008, guid: 383bb59679f640342aca27bba01d62d1,
         type: 3}
@@ -9788,6 +9788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: 08083cea477cc164ea5edd00471426f9, type: 3}
   conversations: []
+  questItem: Emerald
 --- !u!1001 &492121342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47315,7 +47316,7 @@ PrefabInstance:
     - target: {fileID: 7462544371873763402, guid: 7a80943618b69ec4d899467f9177f5da,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7462544371873763402, guid: 7a80943618b69ec4d899467f9177f5da,
         type: 3}

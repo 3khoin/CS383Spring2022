@@ -29,7 +29,7 @@
       "isComplete": [false, true, true]
     },
     {
-      "npcText": "*The white monkey has pulled out an old scroll and is engrossed in reading it. SHe pays you no heed.*",
+      "npcText": "*The white monkey has pulled out an old scroll and is engrossed in reading it. She pays you no heed.*",
       "firstText": "[1] Goodbye.",
       "secondText": "[2] I deserve a kiss.",
       "thirdText": "[3] BOOOOOO!",

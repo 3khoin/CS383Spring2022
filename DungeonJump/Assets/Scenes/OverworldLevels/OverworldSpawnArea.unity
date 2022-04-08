@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &24781074
 AudioSource:
@@ -4069,6 +4069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: a7691fd62b54d764db16c837dd5527a6, type: 3}
   conversations: []
+  questItem: Ham
 --- !u!1 &390577601
 GameObject:
   m_ObjectHideFlags: 0
@@ -19375,6 +19376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462544371671232196, guid: 7a80943618b69ec4d899467f9177f5da,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7462544371873763402, guid: 7a80943618b69ec4d899467f9177f5da,
         type: 3}

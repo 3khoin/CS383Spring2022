@@ -10,7 +10,6 @@ public class FriendlyNPC : MonoBehaviour
     protected bool interact;
     protected bool questStart;
     protected bool questEnd;
-    protected int dialogueID; // declared here to allow quest to edit it
     
     
     void Start()
@@ -18,7 +17,6 @@ public class FriendlyNPC : MonoBehaviour
         interact = false;
         questStart = false;
         questEnd = false;
-        dialogueID = 0;
     }
 
     public void Init(int x, int y)

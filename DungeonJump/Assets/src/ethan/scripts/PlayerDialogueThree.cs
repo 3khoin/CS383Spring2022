@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerDialogueThree : Dialogue
 {
-    
+    [SerializeField] protected string questItem;
     
     protected override void UIDisplay(int id) 
     {
@@ -40,29 +40,39 @@ public class PlayerDialogueThree : Dialogue
     private void Update()
     {
         if (!interact) return;
+        if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd) dialogueID = 2;
         if (Input.GetKeyDown("1"))
         {
             //Debug.Log("Choice 1");
-            if(!questStart) questStart = conversations[dialogueID].CheckQuest(0);
-            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
-            dialogueID = conversations[dialogueID].GetNext(0);
+            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
+            else LevelManager.Instance.RemoveProgressBlocks();
+            
+            if (!questStart) questStart = conversations[dialogueID].CheckQuest(0);
+            if (!PlayerManagerTmp.instance.QuestItemIsCollected(questItem) || questEnd) dialogueID = conversations[dialogueID].GetNext(0);
+            
             UIDisable();
             UIDisplay(dialogueID);
         } 
         else if (Input.GetKeyDown("2"))
         {
             //Debug.Log("Choice 2");
-            if(!questStart) questStart = conversations[dialogueID].CheckQuest(1);
-            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
-            dialogueID = conversations[dialogueID].GetNext(1);
+            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
+            else LevelManager.Instance.RemoveProgressBlocks();
+
+            if (!questStart) questStart = conversations[dialogueID].CheckQuest(1);
+            if (!PlayerManagerTmp.instance.QuestItemIsCollected(questItem) || questEnd) dialogueID = conversations[dialogueID].GetNext(1);
+            
             UIDisplay(dialogueID);
         }
         else if (Input.GetKeyDown("3"))
         {
             //Debug.Log("Choice 3");
-            if(!questStart) questStart = conversations[dialogueID].CheckQuest(2);
-            if(!questEnd) questEnd = conversations[dialogueID].CheckComplete(2);
-            dialogueID = conversations[dialogueID].GetNext(2);
+            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(2);
+            else LevelManager.Instance.RemoveProgressBlocks();
+            
+            if (!questStart) questStart = conversations[dialogueID].CheckQuest(2);
+            if (!PlayerManagerTmp.instance.QuestItemIsCollected(questItem) || questEnd) dialogueID = conversations[dialogueID].GetNext(2);
+            
             UIDisplay(dialogueID);
         }
     }
