@@ -27,7 +27,7 @@ public class EntrywayExit : MonoBehaviour
     public AudioSource buildingMusic;
 
     /*
-     * Summary: Turns cieling invisible when player exits trigger.
+     * Summary: Turns cieling invisible and pauses music when player exits trigger.
      * 
      * Paramters:
      * collision - Collider2D used to determine what triggered this GameObject. 
@@ -36,11 +36,32 @@ public class EntrywayExit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            cieling.SetActive(true);
-        }
+            //set cieling visible:
+            SetCieling();
 
+            PauseMusic();
+        }
+    }
+
+    /*
+     * Summary: Turns cieling visible.
+     * 
+     * 
+     */
+    private void SetCieling()
+    {
+        cieling.SetActive(true);
+    }
+
+
+    /*
+     * Summary: Function to pause any music avaliable..
+     * 
+     */
+    public void PauseMusic()
+    {
         //if building music held:
-        if (buildingMusic != null )
+        if (buildingMusic != null)
         {
             //pause it:
             buildingMusic.Pause();

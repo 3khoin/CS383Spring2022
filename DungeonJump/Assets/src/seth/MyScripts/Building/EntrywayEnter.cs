@@ -10,14 +10,14 @@
 /*
  * Filename: EntrywayEnter.cs 
  * Developer: Seth Cram 
- * Purpose: File sets cieling to visible when player exits this GameObject's trigger. 
+ * Purpose: File sets cieling to invisible when player exits this GameObject's trigger. 
  * 
  */
 
 using UnityEngine;
 
 /*
- * Summary: Class sets cieling to visible and plays music when player exits this GameObject's trigger.
+ * Summary: Class sets cieling to invisible and plays music when player exits this GameObject's trigger.
  * 
  * Member Variables:
  * cieling - GameObject set externally to allow activeating of cieling.
@@ -29,7 +29,7 @@ public class EntrywayEnter : MonoBehaviour
     public AudioSource buildingMusic;
 
     /*
-     * Summary: Turns cieling visible when player exits trigger.
+     * Summary: Turns cieling invisible when player exits trigger.
      *          Also plays/resumes any music avaliable.
      * 
      * Paramters:
@@ -37,13 +37,32 @@ public class EntrywayEnter : MonoBehaviour
      */
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if( collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            cieling.SetActive(false);
-        }
+            ClearCieling();
 
+            PlayMusic();
+        }
+    }
+
+    /*
+     * Summary: Turns cieling invisible.
+     * 
+     * 
+     */
+    private void ClearCieling()
+    {
+        cieling.SetActive(false);
+    }
+
+    /*
+     * Summary: Function to play/resume any music avaliable..
+     * 
+     */
+    public void PlayMusic()
+    {
         //if building music held  + not playing:
-        if ( buildingMusic != null && buildingMusic.isPlaying == false)
+        if (buildingMusic != null && buildingMusic.isPlaying == false)
         {
             //play/resume it:
             buildingMusic.Play();

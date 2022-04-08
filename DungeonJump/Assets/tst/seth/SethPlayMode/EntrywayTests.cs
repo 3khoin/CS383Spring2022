@@ -1,11 +1,10 @@
 /*
  * Filename: EntrywayTests.cs 
  * Developer: Seth Cram
- * Purpose: File tests 
+ * Purpose: File tests Opening and closing capabilities of entryways.
  * 
  */
 
-using System;
 using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
@@ -13,17 +12,14 @@ using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
 /*
- * Summary: Class tests 
+ * Summary: Class tests Opening and closing capabilities of entryways.
  * 
  * Member Variables:
  * testScene - string name of scene being used to test.   
- * testTag - string of the tag solely used for testing.
  */
 public class EntrywayTests: MonoBehaviour
 {
     public string testScene = "OverworldSpawnArea";
-
-    public string testTag = "Test";
 
     /*
      * Summary: Load test scene.
@@ -134,4 +130,6 @@ public class EntrywayTests: MonoBehaviour
 
         yield return null;
     }
+
+ 
 }
