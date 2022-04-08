@@ -72,6 +72,6 @@ public class Spawner : MonoBehaviour
         Destroy(spawnedObj);
 
         //debug:
-        Debug.Log("Hazard " + spawnedObj.name + " removed");
+        //Debug.Log("Hazard " + spawnedObj.name + " removed");
     }
 }

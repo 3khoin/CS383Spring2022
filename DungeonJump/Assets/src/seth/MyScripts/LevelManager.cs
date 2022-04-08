@@ -4,7 +4,7 @@
  * Purpose: File to manage the overworld levels and keep track of specific world attributes.
  */
 
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +17,7 @@ using UnityEngine.SceneManagement;
  * score - float to keep track of total game score.
  * playerCurrItems - GameObject list to hold all of the player's items.
  * totItems -int keeping track of total items in the game.
- * progPercentage - float to track progress. 
+ * //progPercentage - float to track progress. 
  * instance - SINGLETON: (static obj, Instance def, and awake) (persistent across scenes, doesn't need attachment to gameobj, created w/ needed)
  */
 public class LevelManager : MonoBehaviour
@@ -29,11 +29,10 @@ public class LevelManager : MonoBehaviour
     public float score;
 
     //need to be filled by outside scripts as items found:
-    public List<GameObject> playerCurrItems = new List<GameObject>(); 
-    private int totItems = 10; 
+    //public List<GameObject> playerCurrItems = new List<GameObject>(); 
+    //private int totItems = 10; 
 
-    //private int progZone = 1;
-    public float progPercentage;
+    //public float progPercentage;
 
     //allocate enough space for one respawn per overworld scene:
     private Vector2[] playerRepawnPos = new Vector2[4]; //{ null, null, null, null };
@@ -103,10 +102,10 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         //check progress after 10 secs, every 10 secs:
-        InvokeRepeating("CheckProgress", 10, 10);
+        //InvokeRepeating("CheckProgress", 10, 10);
 
         //test removing current scene's progress blocks:
-        InvokeRepeating("RemoveProgressBlocks", 10, 10);
+        //InvokeRepeating("RemoveProgressBlocks", 10, 10);
 
         //subscribe method to spawn player at respawn loc w/ scenes loaded in:
         SceneManager.sceneLoaded += OnSceneLoadedRespawn;
@@ -168,6 +167,7 @@ public class LevelManager : MonoBehaviour
      * Summary: Update player's progress using number of player items vs total items in game.
      * 
      */
+    /*
     public void CheckProgress() 
     {
         if (playerCurrItems != null)
@@ -177,19 +177,8 @@ public class LevelManager : MonoBehaviour
             progPercentage = 0;
 
         print("Player Item collection progress: " + progPercentage);
-
-        //if progressed enough for curr zone:
-        /*
-        if (progPercentage >= 25 && progZone == 1 || 
-            progPercentage >= 50 && progZone == 2 ||
-            progPercentage >= 75 && progZone == 3)
-        {
-            RemoveProgressBlocks();
-
-            progZone++; //incr to nxt prog zone
-        }
-        */
     }
+    */
 
     /*
      * Summary: Remove all of the scene's progress blocks by finding them and setting inactive.

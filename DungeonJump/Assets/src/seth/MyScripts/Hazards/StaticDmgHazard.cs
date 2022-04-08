@@ -17,7 +17,7 @@ using UnityEngine;
  */
 public class StaticDmgHazard : Hazard
 {
-    public float dmg;
+    public float dmg = -0.1f;
     public float reDmgDelay = 0.5f;
     public string soundFX = "HurtPlayer";
 
@@ -110,8 +110,9 @@ public class StaticDmgHazard : Hazard
         }
 
         //dmg player:
-            //target.GetComponent<SomeType>().DmgPlayer(); or target.getComponent<SomeType>().health -= dmg;
-        print("Damage Player");
+        PlayerManagerTmp.instance.UpdatePlayerHealth(dmg);
+    
+        print("Damage Player" + dmg);
 
         //play sound:
         AudioManager.instance.Play(soundFX);

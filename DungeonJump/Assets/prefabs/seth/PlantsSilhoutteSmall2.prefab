@@ -3986,7 +3986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75671231900a0414fb1d96c6953327c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardSound: {fileID: 0}
-  dmg: 0
+  dmg: 0.1
   reDmgDelay: 0.5
   soundFX: HurtPlayer
