@@ -100,7 +100,7 @@ public class PowerUp :  PlatformerItem
                 stats.m_speed *= (multiplier - speedBalancer);
             break;
             case powerUpTypes.Health :
-                // do nothing
+                PlayerManagerTmp.instance.UpdatePlayerHealth(.30f);
             break;
         }
         
