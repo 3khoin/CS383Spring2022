@@ -34,7 +34,7 @@ public class QuestItem :  PlatformerItem
     }
 
     /*
-    * Summary: Plays a sound upon picking up a quest item
+    * Summary: Plays a sound upon and removes the item from the scene when picking up a quest item
     *
     * Parameters:
     * other - a separate 2D collider
@@ -44,5 +44,7 @@ public class QuestItem :  PlatformerItem
     */
     override public void Pickup(Collider2D other){
         FindObjectOfType<AudioManager>().Play("QuestItemPickup");
+        Destroy(gameObject.GetComponent<ParticleSystem>());
+        Destroy(gameObject);
     }
 }
