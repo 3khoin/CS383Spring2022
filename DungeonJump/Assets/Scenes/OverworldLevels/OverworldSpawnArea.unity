@@ -9000,7 +9000,7 @@ PrefabInstance:
     - target: {fileID: 7947911505737750448, guid: d730038d263986f4dac93230e1dd62b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750448, guid: d730038d263986f4dac93230e1dd62b0,
         type: 3}
@@ -9110,7 +9110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: CoconutCave
   soundFX: LevelGate
-  respawnDistFromLevelGate: {x: 0, y: -2}
+  respawnDistFromLevelGate: {x: 0, y: -10}
 --- !u!1001 &1555506615
 PrefabInstance:
   m_ObjectHideFlags: 0

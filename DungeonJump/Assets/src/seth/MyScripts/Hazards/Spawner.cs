@@ -47,6 +47,13 @@ public class Spawner : MonoBehaviour
      */
     public void SpawnHazard()
     {
+        //if no hazard
+        if(hazard == null)
+        {
+            //dont spawn one
+            return;
+        }
+
         //find rando spawn vals:
         float spawnX = Random.Range(minX, maxX);
         float spawnY = Random.Range(minY, maxY);
@@ -65,13 +72,16 @@ public class Spawner : MonoBehaviour
      */
     public IEnumerator RemoveHazard( GameObject spawnedObj)
     {
+        //debug:
+        //Debug.Log("Hazard " + spawnedObj.name + " waiting for removal");
+
         //wait for destroy delay
         yield return new WaitForSeconds(destroyDelay);
 
-        //destroy passed obj
-        Destroy(spawnedObj);
-
         //debug:
         //Debug.Log("Hazard " + spawnedObj.name + " removed");
+
+        //destroy passed obj
+        Destroy(spawnedObj);
     }
 }

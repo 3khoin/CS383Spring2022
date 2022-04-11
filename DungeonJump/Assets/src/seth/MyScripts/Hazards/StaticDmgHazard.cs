@@ -112,7 +112,7 @@ public class StaticDmgHazard : Hazard
         //dmg player:
         PlayerManagerTmp.instance.UpdatePlayerHealth(dmg);
     
-        print("Damage Player" + dmg);
+        print("Damage Player " + dmg);
 
         //play sound:
         AudioManager.instance.Play(soundFX);

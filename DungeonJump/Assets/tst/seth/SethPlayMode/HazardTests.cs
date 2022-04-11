@@ -5,7 +5,7 @@
  * 
  */
 
-using System;
+//using System;
 using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
@@ -27,16 +27,6 @@ public class HazardTests: MonoBehaviour
     public Vector3 spawnOffset = new Vector3(5, 5, 0);
 
     public string testTag = "Test";
-
-    /*
-     * Summary: .
-     *  
-     */
-    [SetUp]
-    public void Setup()
-    {
-        
-    }
 
     /*
      * Summary: Function testing the reset capabilities of a reset hazard.
@@ -99,30 +89,72 @@ public class HazardTests: MonoBehaviour
         Assert.AreEqual( spawnTransform.position, player.transform.position);
     }
 
-        /*
-      * Summary: Function testing the damaging capabilities of a static damage hazard.
+     /*
+      * Summary: Function testing the damaging and redamaging capabilities of a static damage hazard.
       * 
       */
-    /*
     [UnityTest]
     public IEnumerator StaticDmgHazardTest()
     {
+        //throw new NotImplementedException();
+
+        //Loads test scene
+        SceneManager.LoadScene(testScene);
+
         //ARRANGE
+
+        //have to wait longer than a frame for scene to load and reset hazard to spawn:
+        yield return new WaitForSeconds(3f);
+
+        //create a gameobj for damaging player
+        GameObject dmgObj = new GameObject(name:"dmgObj", typeof(BoxCollider2D), typeof(StaticDmgHazard));
+        dmgObj.GetComponent<BoxCollider2D>().edgeRadius = 0.1f;
+
+        //find scene player:
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        //set player + dmg obj to same layer:
+        player.layer = dmgObj.layer;
 
         //ACT
 
+        //teleport dmg obj on top of player:
+        dmgObj.transform.position = player.transform.position;
+
+        //let hazard damage:
+        yield return new WaitForSeconds(0.1f);
+
         //ASSERT
+
+        //store player hp:
+        float initHitPlayerHP = PlayerManagerTmp.instance.GetPlayerHealth();
+
+        //debug:
+        print("Player hp after 1 hit: " + initHitPlayerHP);
+
+        //pass if player health is less than full:
+        Assert.Less(initHitPlayerHP, 1);
+
+        //wait for longer than redamage delay:
+        yield return new WaitForSeconds(dmgObj.GetComponent<StaticDmgHazard>().reDmgDelay + 0.1f);
+
+        //pass if player health is less than before:
+        Assert.Less(PlayerManagerTmp.instance.GetPlayerHealth(), initHitPlayerHP);
+
+        yield return null;
     }
-    */
+    
 
     /*
     * Summary: Function testing the destroying capabilities of the spawner.
-    * 
+    *           Currently inconclusive because unity testing of coroutines is difficult.
     */
     [UnityTest]
     public IEnumerator DestroyHazardTest()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+
+        Assert.Inconclusive("Can't test coroutines");
 
         //ARRANGE
 
@@ -134,7 +166,7 @@ public class HazardTests: MonoBehaviour
         Spawner spawner = spawnerObj.AddComponent<Spawner>();
 
         //pass new obj as hazard:
-        spawner.hazard = new GameObject(name: "spawnedHazard");
+        //spawner.hazard = new GameObject(name: "spawnedHazard");
 
         //create new test obj:
         GameObject rmObj = new GameObject(name: "removeObj");
@@ -143,7 +175,7 @@ public class HazardTests: MonoBehaviour
         rmObj.tag = testTag;
 
         //let obj be spawned:
-        //yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.1f);
        // yield return new WaitForSeconds(10f);
 
         //ACT
@@ -151,14 +183,17 @@ public class HazardTests: MonoBehaviour
         Debug.Log("try removing: " + GameObject.FindGameObjectWithTag(testTag).name);
 
         //remove spawned test obj:
-        spawner.RemoveHazard(GameObject.FindGameObjectWithTag(testTag));
+        //StartCoroutine(spawner.RemoveHazard(GameObject.FindGameObjectWithTag(testTag)));
+        StartCoroutine(spawner.RemoveHazard(rmObj));
+
+        //spawner.RemoveHazard(GameObject.FindGameObjectWithTag(testTag));
 
         //wait till longer than removal delay:
-        yield return new WaitForSeconds(spawner.destroyDelay + 0.5f + 10f);
+        yield return new WaitForSeconds(spawner.destroyDelay + 0.5f);
 
         //ASSERT
 
-        //removed gameobj if cant find test tag anymore:
-        Assert.IsFalse(GameObject.FindGameObjectWithTag(testTag));
+        //successfully removed gameobj if cant find test tag anymore:
+        Assert.IsTrue(GameObject.FindGameObjectWithTag(testTag) == null);
     }
 }

@@ -26,8 +26,6 @@ public class LevelManager : MonoBehaviour
 
     public string[] sceneNames = { "OverworldSpawnArea", "OverworldDemoScene", "OverworldAlienScape", "OverworldGrungieArea" };
 
-    public float score;
-
     //need to be filled by outside scripts as items found:
     //public List<GameObject> playerCurrItems = new List<GameObject>(); 
     //private int totItems = 10; 
@@ -97,6 +95,7 @@ public class LevelManager : MonoBehaviour
 
     /*
      * Summary: Repeatedly check player's progress and test removing of progress blocks if necessary.
+     *          When scene is loaded, respawn player and keep progress blocks invisible.
      * 
      */
     void Start()
@@ -159,6 +158,8 @@ public class LevelManager : MonoBehaviour
                     = new Vector3( playerRepawnPos[i].x, playerRepawnPos[i].y, 0);
 
                 print("Player respawned to: " + playerRepawnPos.ToString());
+
+
             }
         }
     }
