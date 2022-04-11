@@ -1,15 +1,37 @@
+/*
+* Filename: AudioManager.cs
+* Developer: Chadwick Goodall
+* Purpose: This file contains the code for the audio manager singleton
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/*
+* Summary: The AudioManager class which manages SFX
+*
+* Member Variables:
+* sounds - a list of sound effects
+* instance - the singleton
+*/
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
     public static AudioManager instance;
 
+    /*
+    * Summary: Initialize an AudioManager singleton
+    *
+    * Parameters:
+    * none
+    *
+    * Returns:
+    * none
+    */
     void Awake()
     {
         // Singleton code for AudioManager
@@ -33,13 +55,16 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Play("LevelTheme");
-    }
 
-    // Update is called once per frame
+    /*
+    * Summary: Play a sound clip
+    *
+    * Parameters:
+    * name - name of the sound clip
+    *
+    * Returns:
+    * none
+    */
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

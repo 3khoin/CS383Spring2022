@@ -1,0 +1,3 @@
+Name: BouncePlatform
+Summary: A bouncy platform which launches the player.
+Description: Like a trampoline in all practicality. The player will get launched upward if stepping on this platform.

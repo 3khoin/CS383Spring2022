@@ -1,24 +1,48 @@
+/*
+* Filename: QuestItem.cs
+* Developer: Chadwick Goodall
+* Purpose: This file contains the code for the quest item object
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestItem : MonoBehaviour, InteractableItem
+/*
+* Summary: The QuestItem class which plays a sound effect and utilizes the interactable item interface
+* currently acting as skeleton code until the assembly definition problem is figured out
+* Member Variables:
+* none
+*/
+public class QuestItem :  PlatformerItem
 {
-
-    private void OnTriggerEnter2D(Collider2D other)
+    /*
+    * Summary: Detect a collision between 2D objects
+    *
+    * Parameters:
+    * other - separate collider entity
+    *
+    * Returns:
+    * none
+    */
+    override public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             Pickup(null);            
         }
     }
-    public void Pickup(Collider2D other){
-        //if (gameObject.CompareTag("QuestItem"))
-        //{
-        //LevelManager.Instance.playerCurrItems.Add(gameObject);
+
+    /*
+    * Summary: Plays a sound upon picking up a quest item
+    *
+    * Parameters:
+    * other - a separate 2D collider
+    *
+    * Returns:
+    * none
+    */
+    override public void Pickup(Collider2D other){
         FindObjectOfType<AudioManager>().Play("QuestItemPickup");
-        Destroy(gameObject.GetComponent<ParticleSystem>());
-        Destroy(gameObject);
-        //}
     }
 }

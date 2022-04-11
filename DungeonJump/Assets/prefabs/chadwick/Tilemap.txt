@@ -1,0 +1,5 @@
+Name: Tilemap
+Summary: A basic template for a tilemap with 4 layers.
+Description: The tilemap has 4 base layers to begin with which are drawn in successive order over eachother. There is the background, collidable, hazards, and foreground layers.
+The collidable and hazards layer are drawn on the same sorting layer. The background is drawn in the very back of the scene and the foreground is drawn over the collidable
+and hazards layer. These can be customized and painted with any tile palette. This is intended to expedite the development of tilemap based platformer levels.

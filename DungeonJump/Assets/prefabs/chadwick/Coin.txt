@@ -1,0 +1,3 @@
+Name: Coin
+Summary: An interactable coin.
+Description: This coin can be placed into a level and will play a nice sound effect and increase the score of the player.

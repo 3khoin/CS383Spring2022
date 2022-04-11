@@ -1,7 +1,24 @@
+/*
+* Filename: BackgroundLoop.cs
+* Developer: Chadwick Goodall
+* Purpose: This file contains the code for the BackgroundLoop class which loops the background images continuously for a platformer level
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+* Summary: The BackgroundLoop class which effectively is supposed to allow for an infinitely scrolling platformer background
+*
+* Member Variables:
+* levels - the different background images
+* mainCamera - the camera
+* screenBounds - the calculated visible screen bounds
+* choke - used in repositioning the backgrounds
+* scrollSpeed - how fast the camera is moving so the rate at which the backgrounds should be drawn can be known
+*/
 public class BackgroundLoop : MonoBehaviour
 {
     public GameObject[] levels;
@@ -10,6 +27,16 @@ public class BackgroundLoop : MonoBehaviour
     public float choke;
     public float scrollSpeed;
 
+
+    /*
+    * Summary: Find the screen bounds necessary for drawing the background
+    *
+    * Parameters:
+    * none
+    *
+    * Returns:
+    * none
+    */
     void Start()
     {
         mainCamera = gameObject.GetComponent<Camera>();
@@ -23,6 +50,16 @@ public class BackgroundLoop : MonoBehaviour
         }
     }
 
+
+    /*
+    * Summary: Gathers and loads all of the objects which make up the background
+    *
+    * Parameters:
+    * obj -  a gameObject to be displayed on the screen
+    *
+    * Returns:
+    * none
+    */
     private void LoadChildObjects(GameObject obj)
     {
         // find screen width of obj
@@ -45,7 +82,16 @@ public class BackgroundLoop : MonoBehaviour
         Destroy(obj.GetComponent<SpriteRenderer>());
     }
 
-    // reposition children so they are always filling the screen
+
+/*
+    * Summary: reposition the game objects that make up the background of the level
+    *
+    * Parameters:
+    * obj -  a gameObject to be repositioned on the screen
+    *
+    * Returns:
+    * none
+    */
     void repositionChildObjects(GameObject obj)
     {
         Transform[] children = obj.GetComponentsInChildren<Transform>();
@@ -71,6 +117,16 @@ public class BackgroundLoop : MonoBehaviour
         }
     }
 
+
+/*
+    * Summary: Smooth the scrollspeed of the level
+    *
+    * Parameters:
+    * none
+    *
+    * Returns:
+    * none
+    */
     void Update() {
 
         Vector3 velocity = Vector3.zero;
@@ -80,7 +136,16 @@ public class BackgroundLoop : MonoBehaviour
 
     }
 
-    // update after each frame
+
+    /*
+    * Summary: update after each frame
+    *
+    * Parameters:
+    * none
+    *
+    * Returns:
+    * none
+    */
     void LateUpdate()
     {
         foreach(GameObject obj in levels)

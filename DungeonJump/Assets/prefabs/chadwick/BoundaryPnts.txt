@@ -1,0 +1,4 @@
+Name: BoundaryPnts
+Summary: A collection of empty gameObjects labeled with orientation.
+Description: These points are meant to be dispersed throughout a level to define the maximum bounds of the level that the player should never exceed.
+Additionally these include a spawn point for setting where the player should initially load into a level.

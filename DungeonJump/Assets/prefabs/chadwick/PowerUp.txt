@@ -1,0 +1,4 @@
+Name: PowerUp
+Summary: An interactable power up which grants the player a status buff.
+Description: The power up is a small object which will grant tht player with a buff to either health, jump, or speed stats of the player. It produces small cusomizable particles
+and plays a sound effect upon picking it up. Additionally, the sprite and color of the power up can be modified.

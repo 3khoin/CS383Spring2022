@@ -1,0 +1,5 @@
+Name: AudioManager
+Summary: Manages audio sound effects within the game scene
+Description: This is the audio manager prefab which is an implementation of the audio manager class. It can be dragged and dropped onto any scene.
+It contains a list of sound objects which can be populated with various clips for triggering sound effects. The volume, and pitch can be adjusted on a slider.
+Additionally the sound can be looped.

@@ -1,0 +1,3 @@
+Name: ExitGate
+Summary: A simple gateway allowing the transitioning of scenes upon a player colliding with it.
+Description: The exit gate is nothing more than a box collider which will then send the player to another level (scene) upon walking into the gate and colliding with it.
