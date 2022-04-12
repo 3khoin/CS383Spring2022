@@ -1963,6 +1963,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7462544371873763402}
     m_Modifications:
+    - target: {fileID: 599225756481489653, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182961087544220218, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Emerald
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470577548664511896, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fe19ffae1abab0479d7d9716bcbbb9c,
+        type: 3}
+    - target: {fileID: 7559249632104997497, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 21ed692efe3d95a40bcb58ec97b4d87a,
+        type: 3}
     - target: {fileID: 7581483162387649645, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
         type: 3}
       propertyPath: m_Name
@@ -2184,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 7368248705510250707}
-  itemName: Hat
+  itemName: Staff
 --- !u!114 &7317782556569954956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2198,7 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 3238052282197174066}
-  itemName: Staff
+  itemName: Emerald
 --- !u!114 &4109107492987642958
 MonoBehaviour:
   m_ObjectHideFlags: 0
