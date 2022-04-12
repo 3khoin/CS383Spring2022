@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerDialogueThree : Dialogue
@@ -10,7 +11,7 @@ public class PlayerDialogueThree : Dialogue
     
     protected override void UIDisplay(int id) 
     {
-        //Debug.Log("Dialogue Three Display"); 
+        //Debug.Log("Dialogue Three Display");
         npcUI.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetNPCText();
         playerUI1.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetFirstText();
         playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetSecondText();
@@ -35,20 +36,36 @@ public class PlayerDialogueThree : Dialogue
         playerUI2.SetActive(false);
         playerUI3.SetActive(false);
     }
+
+
+    private void CheckEnv()
+    {
+        if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd)
+        {
+            Debug.Log("Quest complete Dialogue");
+            dialogueID = 2;
+        }
+        /*if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && questEnd && dialogueID != 7)
+        {
+            Debug.Log("Quest complete Dialogue");
+            dialogueID = 3;
+        }*/
+        UIDisplay(dialogueID);
+    }
     
     
     private void Update()
     {
         if (!interact) return;
-        if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd) dialogueID = 2;
+        CheckEnv();
         if (Input.GetKeyDown("1"))
         {
             //Debug.Log("Choice 1");
             if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
             else LevelManager.Instance.RemoveProgressBlocks();
             
-            if (!questStart) questStart = conversations[dialogueID].CheckQuest(0);
-            if (!PlayerManagerTmp.instance.QuestItemIsCollected(questItem) || questEnd) dialogueID = conversations[dialogueID].GetNext(0);
+            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(0);
+            dialogueID = conversations[dialogueID].GetNext(0);
             
             UIDisable();
             UIDisplay(dialogueID);
@@ -59,8 +76,8 @@ public class PlayerDialogueThree : Dialogue
             if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
             else LevelManager.Instance.RemoveProgressBlocks();
 
-            if (!questStart) questStart = conversations[dialogueID].CheckQuest(1);
-            if (!PlayerManagerTmp.instance.QuestItemIsCollected(questItem) || questEnd) dialogueID = conversations[dialogueID].GetNext(1);
+            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(1);
+            dialogueID = conversations[dialogueID].GetNext(1);
             
             UIDisplay(dialogueID);
         }
@@ -70,8 +87,8 @@ public class PlayerDialogueThree : Dialogue
             if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(2);
             else LevelManager.Instance.RemoveProgressBlocks();
             
-            if (!questStart) questStart = conversations[dialogueID].CheckQuest(2);
-            if (!PlayerManagerTmp.instance.QuestItemIsCollected(questItem) || questEnd) dialogueID = conversations[dialogueID].GetNext(2);
+            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(2);
+            dialogueID = conversations[dialogueID].GetNext(2);
             
             UIDisplay(dialogueID);
         }
