@@ -1,7 +1,24 @@
+/*
+ * Filename: NPCManager.cs
+ * Developer: Ethan
+ * Purpose: Manage UI elements
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Summary: This class acts as a singleton that manages the ui elements for FriendlyNPC
+ *
+ * Member Variables:
+ * npcUI - UI box housing NPC text
+ * playerUI1 - UI box housing player response 1
+ * playerUI2 - UI box housing player response 2
+ * playerUI3 -UI box housing player response 3
+ * JR - variable referring to the JSON reader script
+ */
 public class NPCManager : MonoBehaviour
 {
     public static GameObject npcUI;
@@ -10,8 +27,14 @@ public class NPCManager : MonoBehaviour
     public static GameObject playerUI3;
     public static JSONReader JR;
     
-    // Start is called before the first frame update
-
+    
+    /*
+     * Summary: on the first time the script is loaded, set the UI elements to their variables
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     private void Awake()
     {
         Debug.Log("awaken");

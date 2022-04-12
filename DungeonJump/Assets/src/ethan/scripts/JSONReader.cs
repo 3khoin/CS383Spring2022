@@ -1,7 +1,20 @@
+/*
+ * Filename:JSONReader.cs
+ * Developer: Ethan
+ * Purpose: Reads .json files
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Summary: This class acts as a singleton that manages the ui elements for FriendlyNPC
+ *
+ * Member Variables: none
+ */
 public class JSONReader : MonoBehaviour
 {
     [System.Serializable]

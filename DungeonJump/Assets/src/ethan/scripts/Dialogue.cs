@@ -1,3 +1,10 @@
+/*
+ * Filename: Dialogue.cs
+ * Developer: Ethan
+ * Purpose: Subclass of FriendlyNPC
+ */
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +13,18 @@ using TMPro;
 using UnityEngine;
 
 
+/*
+ * Summary: This class acts as the subclass for the friendly NPCs that handles dialogue with the player
+ *
+ * Member Variables:
+ * npcUI - UI box housing NPC text
+ * playerUI1 - UI box housing player response 1
+ * playerUI2 - UI box housing player response 2
+ * playerUI3 -UI box housing player response 3
+ * dialogueID - current ID for the player/npc interaction
+ * jsonFile - serialized field for the external text file with the dialogue
+ * conversations - array of dialogs for the NPC
+ */
 public class Dialogue : FriendlyNPC
 {
     protected GameObject npcUI;
@@ -16,6 +35,14 @@ public class Dialogue : FriendlyNPC
     [SerializeReference] public TextAsset jsonFile;
     public Dialog[] conversations;
 
+    
+    /*
+     * Summary: sets starting variable values
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     private void Start()
     {
         npcUI = NPCManager.npcUI;
@@ -24,27 +51,56 @@ public class Dialogue : FriendlyNPC
         playerUI3 = NPCManager.playerUI3;
         dialogueID = 0;
         conversations = NPCManager.JR.ReadJSON(jsonFile);
-        Debug.Log("Found " + conversations[0].firstText + " " + conversations[0].secondText + " " + conversations[0].thirdText + conversations[0].next[0]);
     }
     
     
+    /*
+     * Summary: virtual that displays the text of the conversation
+     *
+     * Parameters: the current id of the dialogue
+     *
+     * Returns: none
+     */
     protected virtual void UIDisplay(int id)
     {
         Debug.Log("Default Player Display");
     }
 
     
+    /*
+     * Summary: virtual that enables the ui
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected virtual void UIEnable()
     {
         Debug.Log("Default UI Enable");
     }
 
+    
+    /*
+     * Summary: virtual that disables the ui
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected virtual void UIDisable()
     {
         Debug.Log("Default UI Disable");
     }
     
 
+    /*
+     * Summary: override that activates code when a player touches the friendly NPC collider
+     *
+     * Parameters:
+     * col - object that collided with the npc
+     *
+     * Returns: none
+     */
     public override void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Enter " + col.gameObject.tag + " for Dialogue");
@@ -57,6 +113,14 @@ public class Dialogue : FriendlyNPC
     }
 
     
+    /*
+     * Summary: override that activates code when a player leaves the friendly NPC collider
+     *
+     * Parameters:
+     * col - object that collided with the npc
+     *
+     * Returns: none
+     */
     public override void OnTriggerExit2D(Collider2D col)
     {
         Debug.Log("Exit " + col.gameObject.tag + " for Dialogue");
