@@ -1,3 +1,10 @@
+/*
+ * Filename: PlayerDialogueThree.cs
+ * Developer: Ethan
+ * Purpose: Subclass of Dialogue
+ */
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,10 +12,26 @@ using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+
+/*
+ * Summary: This class is the subclass for dialogue that allows three dialogue options for users (1 is exit dialogue, 2 and 3 advances the dialogue).
+ *          This class also handles checks for if quests have been completed.
+ *
+ * Member Variables:
+ * questItem - serialized field of what quest item should the dialogue options look for
+ */
 public class PlayerDialogueThree : Dialogue
 {
     [SerializeField] protected string questItem;
     
+    
+    /*
+     * Summary: override that displays the text of the conversation corresponding to the current id
+     *
+     * Parameters: the current id of the dialogue to display
+     *
+     * Returns: none
+     */
     protected override void UIDisplay(int id) 
     {
         //Debug.Log("Dialogue Three Display");
@@ -19,6 +42,13 @@ public class PlayerDialogueThree : Dialogue
     }
 
     
+    /*
+     * Summary: override that enables the ui window with three dialogue options
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected override void UIEnable()
     {
         //Debug.Log("Three UI Enable");
@@ -28,6 +58,14 @@ public class PlayerDialogueThree : Dialogue
         playerUI3.SetActive(true);
     }
 
+    
+    /*
+     * Summary: override that disables the ui window with three dialogue options
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected override void UIDisable()
     {
         //Debug.Log("Three UI Disable");
@@ -38,6 +76,13 @@ public class PlayerDialogueThree : Dialogue
     }
 
 
+    /*
+     * Summary: This function checks the world environment to see if the quest item has been collected by the player
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     private void CheckEnv()
     {
         if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd)
@@ -54,6 +99,14 @@ public class PlayerDialogueThree : Dialogue
     }
     
     
+    /*
+     * Summary: Update handles taking in the user inputs via keydown every frame, three options with a check for if quests are complete.
+     *          When the quest end trigger is set true via the dialogue, the quest blocker is removed.
+     *
+     * Parameters: none
+     *
+     * Returns: returns if no interaction is going on
+     */
     private void Update()
     {
         if (!interact) return;

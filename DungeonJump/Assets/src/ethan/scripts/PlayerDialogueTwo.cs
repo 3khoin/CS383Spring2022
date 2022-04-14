@@ -1,11 +1,31 @@
+/*
+ * Filename: PlayerDialogueTwo.cs
+ * Developer: Ethan
+ * Purpose: Subclass of Dialogue
+ */
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
+/*
+ * Summary: This class is the subclass for dialogue that allows two dialogue options for users (1 is exit dialogue, 2 advances the dialogue)
+ *
+ * Member Variables: none
+ */
 public class PlayerDialogueTwo : Dialogue
 {
+    /*
+     * Summary: override that displays the text of the conversation corresponding to the current id
+     *
+     * Parameters: the current id of the dialogue to display
+     *
+     * Returns: none
+     */
     protected override void UIDisplay(int id) 
     {
         //Debug.Log("Dialogue Two Display"); 
@@ -14,6 +34,14 @@ public class PlayerDialogueTwo : Dialogue
         playerUI2.GetComponentInChildren<TextMeshProUGUI>().text = conversations[id].GetSecondText();
     }
 
+    
+    /*
+     * Summary: override that enables the ui window with two dialogue options
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected override void UIEnable()
     {
         //Debug.Log("Two UI Enable");
@@ -22,6 +50,14 @@ public class PlayerDialogueTwo : Dialogue
         playerUI2.SetActive(true);
     }
 
+    
+    /*
+     * Summary: override that disables the ui window with two dialogue options
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected override void UIDisable()
     {
         //Debug.Log("Two UI Disable");
@@ -31,6 +67,13 @@ public class PlayerDialogueTwo : Dialogue
     }
     
     
+    /*
+     * Summary: update handles taking in the user inputs via keydown every frame, two option
+     *
+     * Parameters: none
+     *
+     * Returns: returns if no interaction is going on
+     */
     private void Update()
     {
         
