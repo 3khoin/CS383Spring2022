@@ -28,7 +28,8 @@ public class PlayerDialogueThree : Dialogue
     /*
      * Summary: override that displays the text of the conversation corresponding to the current id
      *
-     * Parameters: the current id of the dialogue to display
+     * Parameters:
+     * id - the current id of the dialogue to display
      *
      * Returns: none
      */
@@ -77,7 +78,8 @@ public class PlayerDialogueThree : Dialogue
 
 
     /*
-     * Summary: This function checks the world environment to see if the quest item has been collected by the player
+     * Summary: This function checks the world environment to see if certain conditions are met and updates the dialogue
+     *          accordingly.
      *
      * Parameters: none
      *
@@ -85,23 +87,48 @@ public class PlayerDialogueThree : Dialogue
      */
     private void CheckEnv()
     {
+        // when the quest item is got and the ending dialogue has not been triggered
         if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd)
         {
             Debug.Log("Quest complete Dialogue");
             dialogueID = 2;
         }
-        /*if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && questEnd && dialogueID != 7)
+
+        // when player backtracks, resets dialogue to final dialogue
+        if (blocker != null)
         {
-            Debug.Log("Quest complete Dialogue");
-            dialogueID = 3;
-        }*/
+            if (blocker.activeSelf == false && dialogueID == 2)
+            {
+                Debug.Log("Quest complete Dialogue");
+                dialogueID = 3;
+            }
+        }
+        UIDisplay(dialogueID);
+    }
+
+    
+    /*
+     * Summary: Gets the next dialog item and displays it based on an input i. If the next dialog triggers the end of a
+     *          quest, the world blocker is removed.
+     *
+     * Parameters:
+     * i - the index of the dialog arrays you wish to fetch
+     *
+     * Returns: none
+     */
+    private void NextDialogue(int i)
+    {
+        questEnd = conversations[dialogueID].CheckComplete(i);
+        if (questEnd) LevelManager.Instance.RemoveProgressBlocks();
+
+        dialogueID = conversations[dialogueID].GetNext(i);
+            
         UIDisplay(dialogueID);
     }
     
     
     /*
      * Summary: Update handles taking in the user inputs via keydown every frame, three options with a check for if quests are complete.
-     *          When the quest end trigger is set true via the dialogue, the quest blocker is removed.
      *
      * Parameters: none
      *
@@ -113,37 +140,16 @@ public class PlayerDialogueThree : Dialogue
         CheckEnv();
         if (Input.GetKeyDown("1"))
         {
-            //Debug.Log("Choice 1");
-            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
-            else LevelManager.Instance.RemoveProgressBlocks();
-            
-            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(0);
-            dialogueID = conversations[dialogueID].GetNext(0);
-            
+            NextDialogue(0);
             UIDisable();
-            UIDisplay(dialogueID);
         } 
         else if (Input.GetKeyDown("2"))
         {
-            //Debug.Log("Choice 2");
-            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
-            else LevelManager.Instance.RemoveProgressBlocks();
-
-            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(1);
-            dialogueID = conversations[dialogueID].GetNext(1);
-            
-            UIDisplay(dialogueID);
+            NextDialogue(1);
         }
         else if (Input.GetKeyDown("3"))
         {
-            //Debug.Log("Choice 3");
-            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(2);
-            else LevelManager.Instance.RemoveProgressBlocks();
-            
-            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(2);
-            dialogueID = conversations[dialogueID].GetNext(2);
-            
-            UIDisplay(dialogueID);
+            NextDialogue(2);
         }
     }
 }

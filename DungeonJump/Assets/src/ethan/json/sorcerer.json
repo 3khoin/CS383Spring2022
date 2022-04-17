@@ -2,25 +2,25 @@
   "dialogs":
   [
     {
-      "npcText": "Oh hi. Thanks for the new hat. It is a bit big though, bit I guess it is the thought that counts.",
+      "npcText": "Oh hi. Thanks for the new staff. It is a bit big though, but I guess it is the thought that counts.",
       "firstText": "[1] No problem.",
-      "secondText": "[2] Wait, glasses?",
+      "secondText": "[2] Wait, facial hair?",
       "thirdText": "",
       "next": [0, 1, 0],
       "isQuest": [false, false, false],
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "Yeah, I was wearing my contacts earlier. The orb kinda burned them out though.",
+      "npcText": "Yeah, I just shaved earlier. The staffs glow accelerates facial growth.",
       "firstText": "[1] Um, okay.",
-      "secondText": "[2] Yeah, what is that.",
+      "secondText": "[2] Um, why is that.",
       "thirdText": "",
       "next": [0, 2, 0],
       "isQuest": [false, false, false],
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "Oh, I doubt you would understand, it takes years of study to get something that powerful and awesome.",
+      "npcText": "Oh, I doubt you would understand, it takes years of study to understand something this powerful and awesome.",
       "firstText": "[1] Okay.",
       "secondText": "[2] You dont know do you?",
       "thirdText": "",

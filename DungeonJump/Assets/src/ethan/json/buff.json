@@ -65,7 +65,7 @@
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "*Buff monkeys eyes go wide. In a single motion he snatches the ham and eats it. Newly invigorated, he throws a boulder towards the cave* \n EEEEK-AAK-EEEK!",
+      "npcText": "*Buff monkeys eyes go wide. In a single motion he snatches the ham and eats it. Newly invigorated, he throws a boulder towards the cave*",
       "firstText": "[1] Um, I guess the cave is open now.",
       "secondText": "[2] Back to work now?",
       "thirdText": "[3] Wow, you eat fast.",

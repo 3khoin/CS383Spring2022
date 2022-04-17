@@ -17,6 +17,7 @@ using UnityEngine;
  * Summary: This class acts as the subclass for the friendly NPCs that handles dialogue with the player
  *
  * Member Variables:
+ * blocker - the progress blocker on a level
  * npcUI - UI box housing NPC text
  * playerUI1 - UI box housing player response 1
  * playerUI2 - UI box housing player response 2
@@ -27,6 +28,7 @@ using UnityEngine;
  */
 public class Dialogue : FriendlyNPC
 {
+    protected GameObject blocker;
     protected GameObject npcUI;
     protected GameObject playerUI1;
     protected GameObject playerUI2;
@@ -35,7 +37,7 @@ public class Dialogue : FriendlyNPC
     [SerializeReference] public TextAsset jsonFile;
     public Dialog[] conversations;
 
-    
+
     /*
      * Summary: sets starting variable values
      *
@@ -51,6 +53,8 @@ public class Dialogue : FriendlyNPC
         playerUI3 = NPCManager.playerUI3;
         dialogueID = 0;
         conversations = NPCManager.JR.ReadJSON(jsonFile);
+        if (NPCManager.progBlocks[0] != null) blocker = NPCManager.progBlocks[0];
+        else blocker = null;
     }
     
     

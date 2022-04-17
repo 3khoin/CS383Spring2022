@@ -15,10 +15,14 @@ using UnityEngine;
 /*
  * Summary: This class is the subclass for dialogue that allows two dialogue options for users (1 is exit dialogue, 2 advances the dialogue)
  *
- * Member Variables: none
+ * Member Variables:
+ * questItem - serialized field of what quest item should the dialogue options look for
  */
 public class PlayerDialogueTwo : Dialogue
 {
+    [SerializeField] protected string questItem;
+    
+    
     /*
      * Summary: override that displays the text of the conversation corresponding to the current id
      *
@@ -68,6 +72,56 @@ public class PlayerDialogueTwo : Dialogue
     
     
     /*
+     * Summary: Gets the next dialog item and displays it based on an input i. If the next dialog triggers the end of a
+     *          quest, the world blocker is removed.
+     *
+     * Parameters:
+     * i - the index of the dialog arrays you wish to fetch
+     *
+     * Returns: none
+     */
+    private void NextDialogue(int i)
+    {
+        questEnd = conversations[dialogueID].CheckComplete(i);
+        if (questEnd) LevelManager.Instance.RemoveProgressBlocks();
+
+        dialogueID = conversations[dialogueID].GetNext(i);
+            
+        UIDisplay(dialogueID);
+    }
+    
+    
+    /*
+     * Summary: This function checks the world environment to see if certain conditions are met and updates the dialogue
+     *          accordingly.
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
+    private void CheckEnv()
+    {
+        // when the quest item is got and the ending dialogue has not been triggered
+        if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd)
+        {
+            Debug.Log("Quest complete Dialogue");
+            dialogueID = 2;
+        }
+
+        // when player backtracks, resets dialogue to final dialogue
+        if (blocker != null)
+        {
+            if (blocker.activeSelf == false && dialogueID == 2)
+            {
+                Debug.Log("Quest complete Dialogue");
+                dialogueID = 3;
+            }
+        }
+        UIDisplay(dialogueID);
+    }
+    
+    
+    /*
      * Summary: update handles taking in the user inputs via keydown every frame, two option
      *
      * Parameters: none
@@ -76,20 +130,16 @@ public class PlayerDialogueTwo : Dialogue
      */
     private void Update()
     {
-        
         if (!interact) return;
+        CheckEnv();
         if (Input.GetKeyDown("1"))
         {
-            //Debug.Log("Choice 1");
-            dialogueID = conversations[dialogueID].GetNext(0);
+            NextDialogue(0);
             UIDisable();
-            UIDisplay(dialogueID);
         } 
         else if (Input.GetKeyDown("2"))
         {
-            //Debug.Log("Choice 2");
-            dialogueID = conversations[dialogueID].GetNext(1);
-            UIDisplay(dialogueID);
+            NextDialogue(1);
         }
     }
 }
