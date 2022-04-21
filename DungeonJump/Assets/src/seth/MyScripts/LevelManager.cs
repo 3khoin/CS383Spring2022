@@ -2,6 +2,10 @@
  * Filename: LevelManager.cs 
  * Developer: Seth Cram
  * Purpose: File to manage the overworld levels and keep track of specific world attributes.
+ * Notes: Singleton
+ *      Chosen for its dynamic capabilities such as creation upon demand and easy information access.
+ *      Needed to save data between scenes so made into a DontDestroyOnLoad obj.
+ *      Made it easier to keep track of world attributes.
  */
 
 //using System.Collections.Generic;
@@ -17,7 +21,7 @@ using UnityEngine.SceneManagement;
  * score - float to keep track of total game score.
  * playerCurrItems - GameObject list to hold all of the player's items.
  * totItems -int keeping track of total items in the game.
- * //progPercentage - float to track progress. 
+ *      //progPercentage - float to track progress. 
  * instance - SINGLETON: (static obj, Instance def, and awake) (persistent across scenes, doesn't need attachment to gameobj, created w/ needed)
  */
 public class LevelManager : MonoBehaviour
@@ -26,11 +30,11 @@ public class LevelManager : MonoBehaviour
 
     public string[] sceneNames = { "OverworldSpawnArea", "OverworldDemoScene", "OverworldAlienScape", "OverworldGrungieArea" };
 
-    //need to be filled by outside scripts as items found:
-    //public List<GameObject> playerCurrItems = new List<GameObject>(); 
-    //private int totItems = 10; 
+        //need to be filled by outside scripts as items found:
+        //public List<GameObject> playerCurrItems = new List<GameObject>(); 
+        //private int totItems = 10; 
 
-    //public float progPercentage;
+        //public float progPercentage;
 
     //allocate enough space for one respawn per overworld scene:
     private Vector2[] playerRepawnPos = new Vector2[4]; //{ null, null, null, null };
@@ -94,7 +98,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /*
-     * Summary: Repeatedly check player's progress and test removing of progress blocks if necessary.
+     * Summary: If uncommented, Repeatedly check player's progress and test removing of progress blocks if necessary.
      *          When scene is loaded, respawn player and keep progress blocks invisible.
      * 
      */

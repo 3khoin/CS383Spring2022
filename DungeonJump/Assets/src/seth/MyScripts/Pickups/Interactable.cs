@@ -1,23 +1,48 @@
+/* Item Prefab
+ * Name: Interactable
+ * Summary: A gameobject that's added to the player's inventory when triggered.
+ * Description: Only works if interacting gameobject is tagged "Player".
+ */
+
 /*
  * Filename: Interactable.cs 
  * Developer: Seth Cram
- * Purpose: File implemented by any script that involves player pickup. 
+ * Purpose: File requiring a Collider2D that calls PlayerPickup if the player comes into contact. 
  * 
  */
+
+using UnityEngine;
 
 /*
- * Summary: Interface implemented by any script that involves player pickup.
+ * Summary: Superclass that calls PlayerPickup if the player comes into contact.
  * 
  */
-public interface Interactable
+[RequireComponent(typeof(Collider2D))]
+public class Interactable : MonoBehaviour, InteractableInterface
 {
-    /*
-     * Summary: Should allow the player to pickup something.
-     */
-    public void PlayerPickup();
+    //public Color highlightColor;
 
     /*
-     * Summary: Should play sound when picked up.
+     * Summary: Calls PlayerPickup() if triggers on the player.
+     * 
+     * Paramters:
+     * collision - Collider2D used to determine what triggered this GameObject. 
      */
-    //public void PlayPickupSound();
+    virtual public void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if collided w/ player:
+        if (collision.gameObject.tag == "Player")
+        {
+            //have player pickup:
+            PlayerPickup();
+        }
+    }
+
+    /*
+     * Summary: Calls pickup message for confirmation. 
+     */
+    virtual public void PlayerPickup()
+    {
+        print("Player should pickup item.");
+    }
 }
