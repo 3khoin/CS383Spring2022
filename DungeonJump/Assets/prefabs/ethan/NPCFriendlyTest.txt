@@ -1,0 +1,21 @@
+Test 1: Wrong input test.
+
+Step 1: Start interaction with NPC
+Step 2: Press valid key (2 or 3 depending on NPC)
+Step 4: Press invalid key
+Step 5: See if dialogue changed/ended
+Step 6: Repeat step 4 if no visible change for user
+Step 7: End
+
+Test 2: Proper dialogue test for quests
+
+Step 1: Start interaction with NPC
+Step 2: End interaction with NPC
+Step 3: Complete platform level
+Step 4: Start interaction with NPC
+Step 5: View is dialogue has changed
+Step 6: If yes, complete dialogue chain, if no, failure
+Step 7: Leave stage
+Step 8: Reenter stage
+Step 9: See if dialogue is the same
+Step 10: If yes, success, in not failure
