@@ -1,0 +1,12 @@
+Name: NPCFriendly
+Summary: A non hostile 2D NPC which the player can interact with
+Description: The NPCFriendly class is a prefab of the FriendlyNPC class. This class consists of a dialogue subclasses as
+a decorator for how many dialogue options you wish the player to have when talking with the NPC as well as a separate 
+dialog class for the dialog trees. This prefab will trigger a conversation with the player when the player enters the
+NPCs collider and end the conversation upon leaving.
+
+This prefab is able to serialize a .json file and create dialogue trees for the NPC. The structure of the json files 
+must mirror the dialog class to be able to be properly read without any errors. Quest begin and end triggers can be 
+specified in the dialogue as well as the dialogue path.
+
+Note that all dialogue 1 options will end the interaction, so be aware of that while creating the dialogue trees.

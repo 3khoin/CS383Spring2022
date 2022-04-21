@@ -1,0 +1,7 @@
+Name: NPCManager
+Summary: An instance of the NPCManager and JSONReader class
+Description: This prefab can be dragged and dropped onto any scene to create an instance of the NPCManager and the 
+JSONReader scripts. These scripts are necessary for the use of the NPCFriendly prefabs UI and serialized dialogue. This
+prefab finds and identifies the UI elements necessary to display the dialogue on the UI, as well as identifies any 
+progress blockers that may be in the scene so that quest triggers in the dialogue can remove the blockers. Note that 
+it is assumed that there is only one or zero progress blockers in a level. This is done upon the loading of the script instance.

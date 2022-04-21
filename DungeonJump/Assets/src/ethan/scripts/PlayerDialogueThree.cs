@@ -1,3 +1,10 @@
+/*
+ * Filename: PlayerDialogueThree.cs
+ * Developer: Ethan
+ * Purpose: Subclass of Dialogue
+ */
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,10 +12,27 @@ using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+
+/*
+ * Summary: This class is the subclass for dialogue that allows three dialogue options for users (1 is exit dialogue, 2 and 3 advances the dialogue).
+ *          This class also handles checks for if quests have been completed.
+ *
+ * Member Variables:
+ * questItem - serialized field of what quest item should the dialogue options look for
+ */
 public class PlayerDialogueThree : Dialogue
 {
     [SerializeField] protected string questItem;
     
+    
+    /*
+     * Summary: override that displays the text of the conversation corresponding to the current id
+     *
+     * Parameters:
+     * id - the current id of the dialogue to display
+     *
+     * Returns: none
+     */
     protected override void UIDisplay(int id) 
     {
         //Debug.Log("Dialogue Three Display");
@@ -19,6 +43,13 @@ public class PlayerDialogueThree : Dialogue
     }
 
     
+    /*
+     * Summary: override that enables the ui window with three dialogue options
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected override void UIEnable()
     {
         //Debug.Log("Three UI Enable");
@@ -28,6 +59,14 @@ public class PlayerDialogueThree : Dialogue
         playerUI3.SetActive(true);
     }
 
+    
+    /*
+     * Summary: override that disables the ui window with three dialogue options
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     protected override void UIDisable()
     {
         //Debug.Log("Three UI Disable");
@@ -38,59 +77,79 @@ public class PlayerDialogueThree : Dialogue
     }
 
 
+    /*
+     * Summary: This function checks the world environment to see if certain conditions are met and updates the dialogue
+     *          accordingly.
+     *
+     * Parameters: none
+     *
+     * Returns: none
+     */
     private void CheckEnv()
     {
+        // when the quest item is got and the ending dialogue has not been triggered
         if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && !questEnd)
         {
             Debug.Log("Quest complete Dialogue");
             dialogueID = 2;
         }
-        /*if (PlayerManagerTmp.instance.QuestItemIsCollected(questItem) && questEnd && dialogueID != 7)
+
+        // when player backtracks, resets dialogue to final dialogue
+        if (blocker != null)
         {
-            Debug.Log("Quest complete Dialogue");
-            dialogueID = 3;
-        }*/
+            if (blocker.activeSelf == false && dialogueID == 2)
+            {
+                Debug.Log("Quest complete Dialogue");
+                dialogueID = 3;
+            }
+        }
+        UIDisplay(dialogueID);
+    }
+
+    
+    /*
+     * Summary: Gets the next dialog item and displays it based on an input i. If the next dialog triggers the end of a
+     *          quest, the world blocker is removed.
+     *
+     * Parameters:
+     * i - the index of the dialog arrays you wish to fetch
+     *
+     * Returns: none
+     */
+    private void NextDialogue(int i)
+    {
+        questEnd = conversations[dialogueID].CheckComplete(i);
+        if (questEnd) LevelManager.Instance.RemoveProgressBlocks();
+
+        dialogueID = conversations[dialogueID].GetNext(i);
+            
         UIDisplay(dialogueID);
     }
     
     
+    /*
+     * Summary: Update handles taking in the user inputs via keydown every frame, three options with a check for if quests are complete.
+     *
+     * Parameters: none
+     *
+     * Returns: returns if no interaction is going on
+     */
     private void Update()
     {
         if (!interact) return;
         CheckEnv();
         if (Input.GetKeyDown("1"))
         {
-            //Debug.Log("Choice 1");
-            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(0);
-            else LevelManager.Instance.RemoveProgressBlocks();
-            
-            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(0);
-            dialogueID = conversations[dialogueID].GetNext(0);
-            
+            NextDialogue(0);
             UIDisable();
-            UIDisplay(dialogueID);
         } 
         else if (Input.GetKeyDown("2"))
         {
-            //Debug.Log("Choice 2");
-            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(1);
-            else LevelManager.Instance.RemoveProgressBlocks();
-
-            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(1);
-            dialogueID = conversations[dialogueID].GetNext(1);
-            
-            UIDisplay(dialogueID);
+            NextDialogue(1);
         }
         else if (Input.GetKeyDown("3"))
         {
-            //Debug.Log("Choice 3");
-            if (!questEnd) questEnd = conversations[dialogueID].CheckComplete(2);
-            else LevelManager.Instance.RemoveProgressBlocks();
-            
-            //if (!questStart) questStart = conversations[dialogueID].CheckQuest(2);
-            dialogueID = conversations[dialogueID].GetNext(2);
-            
-            UIDisplay(dialogueID);
+            NextDialogue(2);
         }
     }
 }

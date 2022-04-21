@@ -5,7 +5,8 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "ChadwickSrc",
-        "KurianSrc"
+        "KhoiSrc",
+        "PlatformerPlayer"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

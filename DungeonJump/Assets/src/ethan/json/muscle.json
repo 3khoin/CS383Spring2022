@@ -1,0 +1,41 @@
+{
+  "dialogs":
+  [
+    {
+      "npcText": "ME HUNGRY, ME WANT SUSHI. ME EAT WHOLE WHALE!",
+      "firstText": "[1] And bye.",
+      "secondText": "[2] There's sushi over there.",
+      "thirdText": "",
+      "next": [0, 1, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "HE NO SERVE ME, SAY I EAT TOO MUCH. NO BUFFET FOR ME. \n *Sob*",
+      "firstText": "[1] I'm sorry.",
+      "secondText": "[2] Just beat him.",
+      "thirdText": "",
+      "next": [0, 2, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "WHY ME DO THAT. VIOLENCE LEAD TO MORE PROBLEM. WE ALL NEED TO BE FRIEND. MAKE MUSCLE, NOT FIGHT.",
+      "firstText": "[1] Okay.",
+      "secondText": "[2] Your a pacifist.",
+      "thirdText": "",
+      "next": [0, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    },
+    {
+      "npcText": "NO, ME NO PACIFIST. ME HATE VIOLENCE AND WAR IN ALL FORMS.",
+      "firstText": "[1] Okay then.",
+      "secondText": "[2] Yeah, a pacifist.",
+      "thirdText": "",
+      "next": [0, 3, 0],
+      "isQuest": [false, false, false],
+      "isComplete": [false, false, false]
+    }
+  ]
+}

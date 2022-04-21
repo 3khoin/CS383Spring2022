@@ -2,7 +2,7 @@
   "dialogs":
   [
     {
-      "npcText": "Oook-ook ahhha. \n *This monkey is wearing a robe with dark swirls on it. They are fully entranced by a glow in their hands.*",
+      "npcText": "Oook-ook ahhha. \n *This monkey is wearing a nice blue robe with yellow highlights. They are fully entranced by a glow in their hands.*",
       "firstText": "[1] Glowing hands, no way.",
       "secondText": "[2] Wacha doin?",
       "thirdText": "[3] Sir, your hands are on fire.",
@@ -11,10 +11,10 @@
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "Oooh Oooh Eeek Eeeeek. \n *The monkey seems disinterested in you. Perhaps you should get his hat?*",
+      "npcText": "Oooh Oooh Eeek Eeeeek. \n *The monkey seems disinterested in you. Perhaps you should get his staff?*",
       "firstText": "[1] I will return.",
-      "secondText": "[2] You really want a nerd hat?",
-      "thirdText": "[3] So where was this hat?",
+      "secondText": "[2] You really want a nerd staff?",
+      "thirdText": "[3] So where was this staff?",
       "next": [1, 5, 6],
       "isQuest": [false, false, false],
       "isComplete": [false, false, false]
@@ -22,14 +22,14 @@
     {
       "npcText": "Eeeek eeek. \n *The robed monkey looks happy to see you, I think he knows you have what he wants.*",
       "firstText": "[1] Leave him.",
-      "secondText": "[2] Fashion police is here.",
-      "thirdText": "[3] Hat delivery!",
+      "secondText": "[2] This is less cool than I thought.",
+      "thirdText": "[3] Staff delivery!",
       "next": [2, 7, 7],
       "isQuest": [false, false, false],
       "isComplete": [false, true, true]
     },
     {
-      "npcText": "Ohhh-eek. \n *The robed monkey, armed with his new hat, has returned to observing the glow. He pays you no heed.*",
+      "npcText": "Ohhh-eek. \n *The robed monkey has returned to observing the glow, the staff seemingly gone. He pays you no heed.*",
       "firstText": "[1] Goodbye.",
       "secondText": "[2] Yoo hoo, nerd.",
       "thirdText": "[3] That gosh darn glow.",
@@ -38,10 +38,10 @@
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "Aaaaw? \n *The robed monkey turns towards you. From here the glow is much brighter, but you can make out his nerdy face, and his ratty hat.*",
+      "npcText": "Aaaaw? \n *The robed monkey turns towards you. From here the glow is much brighter, but you can make out his nerdy face and bare face.*",
       "firstText": "[1] Never mind.",
       "secondText": "[2] Haha nerd.",
-      "thirdText": "[3] Want a new hat?",
+      "thirdText": "[3] What wizard doesnt have a staff?",
       "next": [1, 5, 6],
       "isQuest": [false, false, true],
       "isComplete": [false, false, false]
@@ -50,22 +50,22 @@
       "npcText": "Eeeeeeek! \n *The robed monkey curls his lips up and bares his teeth. However, he makes no move against you.*",
       "firstText": "[1] Alright, I will go.",
       "secondText": "[2] Nerd monkey say what?",
-      "thirdText": "[3] A new hat is less nerdy.",
+      "thirdText": "[3] A staff is less nerdy.",
       "next": [1, 5, 6],
       "isQuest": [false, false, true],
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "Aaaaaaah-hah-ha. \n *The monkey nods, pulling off his hat and looking at it. He pulls out a map and points to a cave.*",
+      "npcText": "Aaaaaaah-hah-ha. \n *The monkey nods, reaching into his robe. He pulls out a map and points to a forest to the north before putting it away.*",
       "firstText": "[1] And I am off.",
       "secondText": "[2] Only nerds have maps.",
-      "thirdText": "[3] So you want a cave hat?",
+      "thirdText": "[3] So you want a cave staff?",
       "next": [1, 5, 6],
       "isQuest": [false, false, true],
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "*The monkey grabs the hat, replacing his old one. Summoning the glow, the hat shoots up into the sky, followed by a faint boom.*",
+      "npcText": "*The monkey grabs the staff, holding it high. Summoning a glow, something shoots up into the sky, followed by a faint boom.*",
       "firstText": "[1] Sounds like it went east.",
       "secondText": "[2] Was that really necessary?",
       "thirdText": "[3] What now nerd?",

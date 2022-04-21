@@ -16,7 +16,8 @@ using UnityEngine;
  * npcUI - UI box housing NPC text
  * playerUI1 - UI box housing player response 1
  * playerUI2 - UI box housing player response 2
- * playerUI3 -UI box housing player response 3
+ * playerUI3 - UI box housing player response 3
+ * progBlocks - array of progress blockers on the level
  * JR - variable referring to the JSON reader script
  */
 public class NPCManager : MonoBehaviour
@@ -25,11 +26,12 @@ public class NPCManager : MonoBehaviour
     public static GameObject playerUI1;
     public static GameObject playerUI2;
     public static GameObject playerUI3;
+    public static GameObject[] progBlocks;
     public static JSONReader JR;
     
     
     /*
-     * Summary: on the first time the script is loaded, set the UI elements to their variables
+     * Summary: on the first time the script is loaded, set the UI elements and progress blockers to their variables
      *
      * Parameters: none
      *
@@ -44,6 +46,8 @@ public class NPCManager : MonoBehaviour
         playerUI2 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(2)").gameObject;
         playerUI3 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(3)").gameObject;
         JR = FindObjectOfType<JSONReader>();
+        progBlocks = GameObject.FindGameObjectsWithTag("ProgBlock");
+        Debug.Log("Prog Blockers" + progBlocks[0]);
     }
     
 }
