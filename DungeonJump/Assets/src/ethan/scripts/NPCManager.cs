@@ -29,6 +29,8 @@ public class NPCManager : MonoBehaviour
     public static GameObject[] progBlocks;
     public static JSONReader JR;
     
+    public static NPCManager NPCM;
+    
     
     /*
      * Summary: on the first time the script is loaded, set the UI elements and progress blockers to their variables
@@ -40,6 +42,9 @@ public class NPCManager : MonoBehaviour
     private void Awake()
     {
         Debug.Log("awaken");
+        
+        if (NPCM != null) NPCM = this;
+        else Destroy(this);        
 
         npcUI = FindObjectOfType<Canvas>().transform.Find("NPCWindow").gameObject;
         playerUI1 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(1)").gameObject;
