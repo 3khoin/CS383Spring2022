@@ -1,26 +1,25 @@
 /* Item Prefab
  * Name: Item
- * Summary: A gameobject that's added to the player's inventory when triggered.
- * Description: The gameobject is inactivated upon contact and added to the player's inventory.
+ * Summary: Requiring a Collider2D that inactivates this script's object if the player comes into contact. 
+ * Description: The gameobject is inactivated upon contact.
  *              Only works if interacting gameobject is tagged "Player".
  */
 
 /*
  * Filename: Item.cs 
  * Developer: Seth Cram
- * Purpose: File requiring a Collider2D that adds this script's GameObject to the LevelManager's 
- *          list of player items if the player comes into contact. 
+ * Purpose: File requiring a Collider2D that inactivates this script's object if the player comes into contact. 
  * 
  */
 
 using UnityEngine;
 
 /*
- * Summary: Class adds this script's GameObject to the LevelManager's list of player items if the player comes into contact.
+ * Summary: Class inactivates this script's object if the player comes into contact.
  * 
  */
 [RequireComponent(typeof(Collider2D))]
-public class Item : MonoBehaviour, Interactable
+public class Item : Interactable
 {
     //public Color highlightColor;
 
@@ -30,7 +29,7 @@ public class Item : MonoBehaviour, Interactable
      * Paramters:
      * collision - Collider2D used to determine what triggered this GameObject. 
      */
-    private void OnTriggerEnter2D(Collider2D collision)
+    override public void OnTriggerEnter2D(Collider2D collision)
     {
         //if collided w/ player:
         if (collision.gameObject.tag == "Player")
@@ -43,7 +42,7 @@ public class Item : MonoBehaviour, Interactable
     /*
      * Summary: Adds this GameObject to the LevelManager's player items and makes it dissapear from the scene. 
      */
-    public void PlayerPickup()
+    override public void PlayerPickup()
     {
         //Add to LevelManager player's currItems:
         //LevelManager.Instance.playerCurrItems.Add(gameObject); 

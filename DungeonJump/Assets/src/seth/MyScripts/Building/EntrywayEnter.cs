@@ -4,6 +4,7 @@
  * description: A trigger that plays music if there's music specified. 
  *              The cieling field must be filled externally to work properly.
  *              Intended to be used in conjunction with "EntrywayExit" prefab.
+ *      
  * 
  */
 
@@ -11,7 +12,12 @@
  * Filename: EntrywayEnter.cs 
  * Developer: Seth Cram 
  * Purpose: File sets cieling to invisible when player exits this GameObject's trigger. 
- * 
+ * Notes:
+ *      My use of building music falls under fair use because:
+ *          Purpose and character of my use is radically different. I use it as a celebratory tune
+ *              in an incredibly small area.
+ *          No effect of my use of copyrighted work upon the Runescape market.
+ *              Even if publish game for commercial use, game genre wildly different.
  */
 
 using UnityEngine;

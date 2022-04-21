@@ -2,6 +2,12 @@
  * Filename: Hazard.cs 
  * Developer: Seth Cram 
  * Purpose: File used to document when player enters and exits a trigger. 
+ * Notes: statically bound: Hazard haz = new Hazard()
+ *        dynamically bound: ResetHazard haz = new ResetHazard()
+ *        Usually, superClass varName = new SubClass or new itsClass
+ *        LHS = static type, RHS = dynamic type
+ *        Change dynamic type: Hazard haz = new ResetHazard(), ResetHazard's method called
+ *        "virtual" means to bind on the dynamic type
  * 
  */
 
@@ -10,13 +16,10 @@ using UnityEngine;
 /*
  * Summary: Superclass requiring a Collider2D used to document when player enters and exits a trigger.
  * 
- * Member Variables:
- * //hazardSound - AudioSource that should be played by sub-classes when something is inflicted upon player.
  */
 [RequireComponent(typeof(Collider2D))]
 public class Hazard : MonoBehaviour
 {
-    //public AudioSource hazardSound;
 
     /*
      * Summary: Displays message on console when player enters trigger.

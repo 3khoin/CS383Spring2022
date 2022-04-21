@@ -1,4 +1,12 @@
 Name: LevelGateParticleSystem
-Summary: A particle system with an upward, constant flow of small particles.
-Description: The particle system particles don't last for very long. 
-	     The particles also come out rather quickly. 
+Summary: A particle system with an upward, looping, random flow of small particles.
+Description: Great for entryway special effects, this standalone particle system can be placed anywhere in the scene.
+		     It consists of and has the following characteristics:
+				 An empty gameobject with a Particle System attached. 
+				 The particles travel just under 2.5 units in the Y-direction before dissipating. 
+				 The particles lose speed due to the system's gravity modifier of 0.5, adjustable under the main "LevelGateParticleSystem".
+				 The particle system doesn't have rigidbody enabled for collisions.
+				 The default particle system material is used and can be adjusted under "Renderer".
+				 Radius is set to 0.5 and can be easily adjusted under "Shape".
+			For more information about Unity's builtin particle system, see the 
+				Unity documentation https://docs.unity3d.com/ScriptReference/ParticleSystem.html.

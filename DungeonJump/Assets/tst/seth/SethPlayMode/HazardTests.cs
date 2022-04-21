@@ -1,7 +1,7 @@
 /*
  * Filename: HazardTests.cs 
  * Developer: Seth Cram
- * Purpose: File tests ResetHazard, StaticDmgHazard, and spawning capabilities of Spawner class.
+ * Purpose: File tests ResetHazard, StaticDmgHazard, and destroying capabilities of Spawner class.
  * 
  */
 
@@ -13,7 +13,7 @@ using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
 /*
- * Summary: Class tests ResetHazard, StaticDmgHazard, and spawning capabilities of Spawner class.
+ * Summary: Class tests ResetHazard, StaticDmgHazard, and destroying capabilities of Spawner class.
  * 
  * Member Variables:
  * testScene - string name of scene being used to test.   

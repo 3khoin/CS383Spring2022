@@ -25,6 +25,7 @@ public class StaticDmgHazard : Hazard
 
     /*
      * Summary: When player enters the trigger, its set as the target and should be damaged.
+     *          Overriden methods use dynamic binding.
      * 
      * Paramters:
      * collision - Collider2D used to determine what triggered this GameObject. 
