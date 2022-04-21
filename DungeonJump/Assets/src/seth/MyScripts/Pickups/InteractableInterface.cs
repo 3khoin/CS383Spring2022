@@ -8,6 +8,8 @@
  *      
  *      If interface classes delegate the creation of their implementation classes (instead of creating/coupling themselves directly), 
  *      then the design usually uses the Abstract Factory pattern to create the implementation objects.
+ *      
+ *      An adaptor is better if the code is already written. Easier plug and play.
  */
 
 /*
