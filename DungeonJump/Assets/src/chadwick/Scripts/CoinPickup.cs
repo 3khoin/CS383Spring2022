@@ -2,6 +2,11 @@
 * Filename: CoinPickup.cs
 * Developer: Chadwick Goodall
 * Purpose: This file contains the code for picking up a coin object
+* Notes: static(superclass) variable =  new dynamic(subclass)
+* as static PlatformerItem dynamic PlatformerItem:
+* PlatformerItem item = new PlatformerItem();
+* as static PlatformerItem dynamic CoinPickup:
+* PlatformerItem item = new CoinPickup();
 */
 
 using System.Collections;
