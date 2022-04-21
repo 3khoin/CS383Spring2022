@@ -56,7 +56,7 @@
       "isComplete": [false, false, false]
     },
     {
-      "npcText": "Aaaaaaah-hah-ha. \n *The monkey nods, reaching into his robe. He pulls out a map and points to a cave before putting it away.*",
+      "npcText": "Aaaaaaah-hah-ha. \n *The monkey nods, reaching into his robe. He pulls out a map and points to a forest to the north before putting it away.*",
       "firstText": "[1] And I am off.",
       "secondText": "[2] Only nerds have maps.",
       "thirdText": "[3] So you want a cave staff?",
