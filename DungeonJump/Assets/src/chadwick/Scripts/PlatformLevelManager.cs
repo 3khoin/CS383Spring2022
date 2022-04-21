@@ -72,6 +72,7 @@ public class PlatformLevelManager : MonoBehaviour
     void Start()
     {
         LevelInit();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
@@ -84,7 +85,7 @@ public class PlatformLevelManager : MonoBehaviour
     * Returns:
     * none
     */
-    void OnSceneLoaded()
+    void OnSceneLoaded(Scene currScene, LoadSceneMode mode)
     {
         LevelInit(); 
     }
