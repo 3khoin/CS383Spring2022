@@ -34,7 +34,7 @@ public class LaunchHazard : Hazard
     */
     
     
-public override void OnTriggerEnter2D(Collider2D collision)
+ override public void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
 
