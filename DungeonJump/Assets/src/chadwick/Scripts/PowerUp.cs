@@ -44,7 +44,8 @@ public class PowerUp :  PlatformerItem
     */
     override public void OnTriggerEnter2D (Collider2D other)
     {
-        if (other.CompareTag("Player")){
+        if (other.CompareTag("Player"))
+        {
             Pickup(other);
         }
     }
@@ -81,8 +82,8 @@ public class PowerUp :  PlatformerItem
         //Instantiate(pickupEffect, transform.position, transform.rotation);
         //Debug.Log("Picked up power up.");
 
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<Collider2D>().enabled = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        this.GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject.GetComponent<ParticleSystem>());
 
         // get the player and modify stats of the player

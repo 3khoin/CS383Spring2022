@@ -3,4 +3,5 @@ Summary: This is an instance of the PlatformerLevelManager singleton
 Description: This prefab can be dragged and dropped onto any scene to create a platformerLevelManager instance within that scene. The manager will then ensure the player
 stays within the specified bounds of the level. Additionally it will persist across scenes. Upon every scene load, the level initialization function is ran in order to 
 identify the player, camera, spawn point, and boundary points. The player's position is then monitored and if it exceeds the x or y position 
-of a boundary point (either left/right or top/bot) the player position will be reset to the spawn point. From here the player will have to replay the level from the beginning. 
+of a boundary point (either left/right or top/bot) the player position will be reset to the spawn point. From here the player will have to replay the level from the beginning.
+Additionally, if the player faints (zero health), the player manager will recognize this and return the player to the start of the level with a reduced score.

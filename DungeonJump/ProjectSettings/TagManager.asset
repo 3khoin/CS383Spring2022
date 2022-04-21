@@ -19,6 +19,9 @@ TagManager:
   - OverworldItem
   - PlayerPos
   - Test
+  - Exit
+  - BouncePlatform
+  - Coin
   layers:
   - Default
   - TransparentFX

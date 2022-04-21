@@ -2,7 +2,7 @@
     "name": "ChadwickSrc",
     "rootNamespace": "",
     "references": [
-        "GUID:9cc802647e071ef409a590fe8f032ddc",
+        "GUID:51dd8503f64507c4483bd7efd890f6cd",
         "GUID:4d3b6b51c29a742438118e263b7b6051"
     ],
     "includePlatforms": [],

@@ -1,3 +1,9 @@
+/*
+* Filename: CGStressTest.cs
+* Developer: Chadwick Goodall
+* Purpose: Stress testing unity with the creation of GameObjects
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
@@ -8,13 +14,19 @@ using UnityEngine.SceneManagement;
 // logged 10545 instances before freezing
 public class CGStressTest
 {
+
+    /*
+    * Summary: Sets up the scene for testing
+    */
     [SetUp]
     public void Setup()
     {   // load dummy scene
         SceneManager.LoadScene("CGStressTest");
     }
 
-    // test should effectively spawn multiple player GameObjects into a dummy platformer level until Unity breaks
+    /*
+    * Summary: test should effectively spawn multiple player GameObjects into a dummy platformer level until Unity breaks
+    */
     [UnityTest]
     public IEnumerator CGStressTestPlayer()
     {   
@@ -36,7 +48,7 @@ public class CGStressTest
     [TearDown]
     public void Teardown()
     {
-        SceneManager.UnloadSceneAsync("CGStressTest");
+        //SceneManager.UnloadSceneAsync("CGStressTest");
     }
 }
 

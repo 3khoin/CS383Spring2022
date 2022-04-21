@@ -99,6 +99,7 @@ public class PlatformLevelManager : MonoBehaviour
     void Update()
     {
         PlayerWithinBounds();
+        CheckPlayerHealth();
     }
 
 
@@ -129,7 +130,7 @@ public class PlatformLevelManager : MonoBehaviour
     * Returns:
     * none
     */
-    void PlayerWithinBounds (){
+    private void PlayerWithinBounds (){
         player = GameObject.FindGameObjectWithTag("Player");
         if (leftPnt != null && rightPnt != null && topPnt != null && botPnt != null)
         {
@@ -167,7 +168,7 @@ public class PlatformLevelManager : MonoBehaviour
     * Returns:
     * none
     */
-    void LevelInit(){
+    private void LevelInit(){
         player = GameObject.FindGameObjectWithTag("Player");
         spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform;
         
@@ -189,5 +190,25 @@ public class PlatformLevelManager : MonoBehaviour
         // find the camera and center it to the player
         cam  = GameObject.FindGameObjectWithTag("MainCamera");
         cam.transform.position = player.transform.position + new Vector3 (0f, 0f, -10f);
+    }
+
+
+/*
+    * Summary: Send the player back to the start of the level if they faint
+    *
+    * Parameters:
+    * none
+    *
+    * Returns:
+    * none
+    */
+    private void CheckPlayerHealth()
+    {
+        if (PlayerManagerTmp.instance.GetPlayerHealth() == 0){
+            // reset player position and health
+            player.transform.position = spawnPnt.position;
+            PlayerManagerTmp.instance.UpdatePlayerHealth(1);
+            PlayerManagerTmp.instance.UpdatePlayerScore(-500);
+        }
     }
 }

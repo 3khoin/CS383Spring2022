@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7382654491764677344}
   m_Layer: 21
   m_Name: BouncePlatform
-  m_TagString: Untagged
+  m_TagString: BouncePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
