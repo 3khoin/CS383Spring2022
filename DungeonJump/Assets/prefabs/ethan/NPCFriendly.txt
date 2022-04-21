@@ -10,3 +10,6 @@ must mirror the dialog class to be able to be properly read without any errors. 
 specified in the dialogue as well as the dialogue path.
 
 Note that all dialogue 1 options will end the interaction, so be aware of that while creating the dialogue trees.
+The pre made check environment script by default returns to the 3nd dialogue option when a quest item has been gathered,
+and returns to the fourth when the tile blocker has been cleared out from the scene. This removes teh need for a 
+separate class to hold the current id.
