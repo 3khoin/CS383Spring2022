@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemCollected : MonoBehaviour
 {
+    // Sets value of the change in health to be enacted
     public float updateHealth = -0.3f;
 
     private void OnTriggerEnter2D(Collider2D collision)

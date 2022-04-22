@@ -1,0 +1,51 @@
+// Name: Canvas
+
+// Summary: The area containing all User Interface elements on the screen.
+
+/* Description:
+This prefab contains all of the textual and graphical elements that comprise the User Interface that displays on screen while in-game, overlaying on top of the camera that displays the player and their surroundings.
+
+Sections of the Canvas prefab:
+- Score: This displays the numerical value of the player's score on screen.
+- Misc items: This displays all of the miscellaneous items that the player can place in their inventory on screen, with each item icon becoming visible as they are collected.
+- Health Bar: This graphically displays the player's HP and changes in fill as the player's health increases or decreases.
+- NPCWindow: Prefab belonging to Ethan Hinkle.
+- PauseMenu: This displays a menu when the game is paused.
+-- Buttons: These buttons can either resume the game, return to the main menu, or exit, depending on which is pressed.
+-- Inventory Bar: This displays all of the quest items the player has collected, with each individual item displaying as they are actually collected.
+- Sounds: These sounds are played when the player accesses a menu or presses a button.
+
+*/
+
+/* Additional Information:
+Test plan
+
+Super Class: KItem
+Sub Class: KQuestItem (also KMiscItem)
+Virtual Function: ClassifyItem()
+
+(DK Rap for Nintendo's Donkey Kong 64)
+Copyright issues: The included songs were copyrighted for games that have already been published commercially, yet we are digitally transmitted them as sound recordings in our game without permission.
+- Integration: I used their MP3s in the Audio Manager.
+- Legal implications: Marketing our code with the given audio may violate copyright, as it will have been a violation of a commercial nature using a creative work in its entirety.
+- Fair use: Even though the audio is identical to the original copyrighted work, this unlicensed use of the song in no way creates competition with the original work. 
+
+===
+
+Patterns:
+- Singleton (PlayerManagerTemp)
+- Decorator (KPickupSmallDecorator)
+
+===
+
+Singleton
+---
+singleton: Singleton
+---
+- Singleton()
+- getInstance(): Singleton
+
+Something better? No
+Bad time? Individual instances
+
+*/
