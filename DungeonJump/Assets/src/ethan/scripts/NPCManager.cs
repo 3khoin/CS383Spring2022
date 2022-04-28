@@ -42,7 +42,7 @@ public class NPCManager : MonoBehaviour
     private void Awake()
     {
         Debug.Log("awaken");
-        
+
         if (NPCM != null) NPCM = this;
         else Destroy(this);        
 
@@ -52,7 +52,8 @@ public class NPCManager : MonoBehaviour
         playerUI3 = FindObjectOfType<Canvas>().transform.Find("PlayerWindow(3)").gameObject;
         JR = FindObjectOfType<JSONReader>();
         progBlocks = GameObject.FindGameObjectsWithTag("ProgBlock");
-        Debug.Log("Prog Blockers" + progBlocks[0]);
+        if (progBlocks.Length == 0) Debug.Log("No prog blocks");
+        else Debug.Log("Prog Blockers" + progBlocks[0]);
     }
     
 }
