@@ -53,7 +53,7 @@ public class Dialogue : FriendlyNPC
         playerUI3 = NPCManager.playerUI3;
         dialogueID = 0;
         conversations = NPCManager.JR.ReadJSON(jsonFile);
-        if (NPCManager.progBlocks[0] != null) blocker = NPCManager.progBlocks[0];
+        if (NPCManager.progBlocks.Length != 0) blocker = NPCManager.progBlocks[0];
         else blocker = null;
     }
     
