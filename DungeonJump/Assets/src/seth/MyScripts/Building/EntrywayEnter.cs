@@ -48,6 +48,8 @@ public class EntrywayEnter : MonoBehaviour
             ClearCieling();
 
             PlayMusic();
+
+            PlayerManagerTmp.instance.WinGame();
         }
     }
 
