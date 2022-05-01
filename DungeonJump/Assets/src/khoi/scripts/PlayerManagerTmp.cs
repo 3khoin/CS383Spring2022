@@ -10,6 +10,8 @@ public class PlayerManagerTmp : MonoBehaviour
     private int playerScore;
     private LinkedList<string> questItems, miscItems;
     private string questItemsList, miscItemsList;
+    private bool gameWon;
+    private string playerTitle;
 
     private void Awake()
     {
@@ -34,6 +36,9 @@ public class PlayerManagerTmp : MonoBehaviour
 
         questItemsList = "List of quest items:";
         miscItemsList = "List of miscellaneous items:";
+
+        gameWon = false;
+        playerTitle = "Little Monkey";
     }
 
     // Start is called before the first frame update
@@ -44,7 +49,24 @@ public class PlayerManagerTmp : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        if (playerScore < 10000) playerTitle = "Little Monkey";
+        else if (playerScore < 15000) playerTitle = "Medium Monkey";
+        else playerTitle = "MONKEY MONKEY!";
+    }
+
+    public string GetPlayerTitle()
+    {
+        return playerTitle;
+    }
+
+    public bool GameIsWon()
+    {
+        return gameWon;
+    }
+
+    public void WinGame()
+    {
+        if (!gameWon) gameWon = true;
     }
 
     public float GetPlayerHealth()
