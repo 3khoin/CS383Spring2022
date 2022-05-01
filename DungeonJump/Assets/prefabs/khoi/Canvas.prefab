@@ -2109,12 +2109,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7462544371873763446}
+      objectReference: {fileID: 7462544371873763403}
     - target: {fileID: 7581483163162908303, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7462544371873763403}
+    - target: {fileID: 7581483163162908303, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581483163162908303, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, KhoiSrc
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581483163162908303, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7581483163762691680, guid: dd78a4a1dd6a84e45a7b44484e9344f0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
