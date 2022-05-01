@@ -18,7 +18,12 @@ public class MainPlayer : MonoBehaviour
 
 	public Animator animator;
 	
+	void Start()
+	{
+	    damage = PlayerManagerTmp.instance.GetPlayerHealth();
+	    damageTmp = PlayerManagerTmp.instance.GetPlayerHealth();
 	
+	}
 	// Update is called once per frame
 	void Update()
 	{
