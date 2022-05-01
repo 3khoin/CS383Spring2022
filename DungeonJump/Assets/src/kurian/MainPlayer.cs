@@ -10,8 +10,15 @@ public class MainPlayer : MonoBehaviour
 
 	private Vector2 movement;
 
-	public Animator animator;
+	private float damageTmp;
+	
+	private float damage;
 
+	private bool dmg;
+
+	public Animator animator;
+	
+	
 	// Update is called once per frame
 	void Update()
 	{
@@ -21,11 +28,21 @@ public class MainPlayer : MonoBehaviour
 		animator.SetFloat("X", movement.x);
 		animator.SetFloat("Y", movement.y);
 		animator.SetFloat("Speed", movement.sqrMagnitude);
-
+		
+		damageTmp = damage;
+		damage = PlayerManagerTmp.instance.GetPlayerHealth();
+		if (damage - damageTmp != 0.0)
+		{
+			dmg = true;
+			Debug.Log("DmgTriggerAnimation");
+		}
+		else dmg = false;
+		animator.SetBool("Dmg", dmg);
 	}
 
 	void FixedUpdate()
 	{
 		rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 	}
+	
 }
