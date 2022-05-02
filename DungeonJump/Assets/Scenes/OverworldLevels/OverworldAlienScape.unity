@@ -47440,6 +47440,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a80943618b69ec4d899467f9177f5da, type: 3}
+--- !u!82 &1499176073 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6255983493303247210, guid: 7a80943618b69ec4d899467f9177f5da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1499176072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1500607917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48404,6 +48410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Moon
+  miscItemSound: {fileID: 1499176073}
 --- !u!114 &1611516956
 MonoBehaviour:
   m_ObjectHideFlags: 0
