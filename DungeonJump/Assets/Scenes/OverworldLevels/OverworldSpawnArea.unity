@@ -6350,6 +6350,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a80943618b69ec4d899467f9177f5da, type: 3}
+--- !u!82 &848184569 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6255983493303247210, guid: 7a80943618b69ec4d899467f9177f5da,
+    type: 3}
+  m_PrefabInstance: {fileID: 744642072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &867944005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6772786674680332317, guid: 5baf20cad3afde846b28e4e39c68beb3,
@@ -7531,6 +7537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Egg
+  miscItemSound: {fileID: 848184569}
 --- !u!114 &979969543
 MonoBehaviour:
   m_ObjectHideFlags: 0

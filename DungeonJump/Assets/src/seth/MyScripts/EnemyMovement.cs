@@ -23,15 +23,18 @@ public class EnemyMovement : MonoBehaviour {
         // public float rotSpeed;
     public float followDistance;
 
-    private Transform target; 
+    private Transform target;
+    private float startingXscale;
 
     // Start is called before the first frame update
     void Start() {
      
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+        startingXscale = transform.localScale.x;
+
         //check what dir to face every 0.5s
-        //InvokeRepeating("FaceDirMoving", 0.5f, 0.5f);
+        InvokeRepeating("FaceDirMoving", 0.5f, 0.5f);
     }
 
     // Update is called once per frame
@@ -58,30 +61,28 @@ public class EnemyMovement : MonoBehaviour {
 
     /*
      * Assumes starting direction is facing left.
+     * Uses scale inversion because assumes rotation is locked. 
      */
     void FaceDirMoving()
     {
-        /*
+        
         if (target.position.x < transform.position.x)
         {
-            print("target x " + target.position.x + " is less than " + transform.position.x);
+            //print("target x " + target.position.x + " is less than " + transform.position.x);
 
             //face left
-            transform.eulerAngles = new Vector3(
-                transform.eulerAngles.x,
-                0,
-                transform.eulerAngles.y);
+            //flip over x-axis
+            transform.localScale = new Vector3(startingXscale, transform.localScale.y, transform.localScale.z);
         }
         else if (target.position.x > transform.position.x)
         {
-            print("target x " + target.position.x + " is greater than " + transform.position.x);
+            //print("target x " + target.position.x + " is greater than " + transform.position.x);
 
             //face right
-            transform.eulerAngles = new Vector3(
-            transform.eulerAngles.x,
-            180,
-            transform.eulerAngles.y);
+
+            //flip over x-axis
+            transform.localScale = new Vector3(-startingXscale, transform.localScale.y, transform.localScale.z);
         }
-        */
+        
     }
 }
