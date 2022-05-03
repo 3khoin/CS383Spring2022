@@ -107599,6 +107599,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: A_
       objectReference: {fileID: 0}
+    - target: {fileID: 1705090055040005082, guid: 9d195cc4d54321a45b5d4c3a8c193f39,
+        type: 3}
+      propertyPath: logPathResults
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705090055040005082, guid: 9d195cc4d54321a45b5d4c3a8c193f39,
+        type: 3}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAACAn+tQ/N2vcQIAACYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxHQKht9YQ0gMJE9LJxRdZWmMNsuTRR4Bk+O+VZBs7lAvye/t2367W/kJM6BqIkWqtGN1ICujnCPkz+jHqySc44b0UO/YJXcw7o6b0QTjEvGLDpMNjL9OyAqMY+SX23AdHDrSCFVJVK7qHVGqjHVxgrsFRShqvFg76GqGT+xsvvOTsTsncnz7daRGNLu5IQBhQfWgcTSeR/z20inE0uWsljcIKwnFVA/X2e2EyX7SK2XxyHyKF660NiiaeJZJzpltryJzr0HqKa21dYy6AMuxaDX585yWwfWl88qH4pSg0mHYOCp+XTLmJNVnRb9mMscL60Jj7wNz6Okm0mMf3SXDWJN78FzOOA10oWT11tePI1zElI4dXfCZYm8Gsh/Dyu3krjpgfcM7hvQTxLNdKWkEdaZT1UqshWfaP1/bSEsihxxurN6Ct+8F3V9tdrO/hEiZwSjmr8jD9aQPsuAwzD/sAyt3PH2c4bItuUzjUu/ir4Q3vh2vVEo9MaeOotkvh7eXSKh+KVmFmvhtrUqkEBLg1XYPA3Jy3Lo25vcYbblD2hnnE/gVqi7dc917cSALcx0fRDbWVx+tl6VIeN6DLF2s4E9Cb9sSzm1MqhWi2TH8nvWpnVYHJQLW3jH7fLERyoJSQaAYwu5vS2TiaJjmN76Y5iZP8AU9RWD0mXJuYbxuf7XTcpYk+uXBr1n1WRmuF67DwVOHjmn1WcuCPiULuiAIQL02GbkIalCviXk26oszNZwfGMBGuG31liEtyAJpdE2Wh09XJKJz1WTJUsw9pPJKhNHxHMuTh6ypvFXwwOPriXbILuvwDUEsDBBQAAAgIAACAn+sXauwPbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSclJqSkpysoFZaqqZsUmKma6BiVFSiqGxSVKyoVGSRaKJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACAn+tQ/N2vcQIAACYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACAn+sXauwPbQAAAHgAAAAJACQAAAAAAAAAAAAAAL4CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
+      objectReference: {fileID: 0}
     - target: {fileID: 1705090055040005083, guid: 9d195cc4d54321a45b5d4c3a8c193f39,
         type: 3}
       propertyPath: m_RootOrder
@@ -107829,20 +107839,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1743797257}
     m_Modifications:
-    - target: {fileID: -4120972929899301334, guid: 67a7ea119d801824d8bc206caf829902,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1837581239635884545, guid: 67a7ea119d801824d8bc206caf829902,
         type: 3}
       propertyPath: m_Name
       value: opossum-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1837581239635884667, guid: 67a7ea119d801824d8bc206caf829902,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1837581239635884670, guid: 67a7ea119d801824d8bc206caf829902,
         type: 3}
@@ -107852,12 +107852,12 @@ PrefabInstance:
     - target: {fileID: 1837581239635884670, guid: 67a7ea119d801824d8bc206caf829902,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.5
+      value: 25.17
       objectReference: {fileID: 0}
     - target: {fileID: 1837581239635884670, guid: 67a7ea119d801824d8bc206caf829902,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.58
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1837581239635884670, guid: 67a7ea119d801824d8bc206caf829902,
         type: 3}
@@ -107898,6 +107898,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213484513683444669, guid: 67a7ea119d801824d8bc206caf829902,
+        type: 3}
+      propertyPath: radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213484513683444669, guid: 67a7ea119d801824d8bc206caf829902,
+        type: 3}
+      propertyPath: pickNextWaypointDist
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4217235116192211907, guid: 67a7ea119d801824d8bc206caf829902,
         type: 3}

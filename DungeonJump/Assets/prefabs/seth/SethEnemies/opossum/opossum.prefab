@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1814804787049195172}
   - component: {fileID: 3213484513683444669}
   - component: {fileID: 4217235116192211907}
-  m_Layer: 21
+  m_Layer: 0
   m_Name: opossum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837581239635884545}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c7108b4001be5a4586223941406c34f, type: 3}
   m_Name: 
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.1
+  radius: 0.2
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -257,7 +257,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0
-  pickNextWaypointDist: 1.2
+  pickNextWaypointDist: 1.5
   endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
