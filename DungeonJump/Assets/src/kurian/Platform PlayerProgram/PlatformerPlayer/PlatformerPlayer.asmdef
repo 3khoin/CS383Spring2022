@@ -1,3 +1,16 @@
 {
-	"name": "PlatformerPlayer"
+    "name": "PlatformerPlayer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4d3b6b51c29a742438118e263b7b6051"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
