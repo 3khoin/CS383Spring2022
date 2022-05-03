@@ -38,13 +38,13 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    /*void Update() {
         
         if(Vector2.Distance(transform.position, target.position) > followDistance) {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
             //rotate in direction traveling
-            /*
+            
             var targetPoint = new Vector3(target.position.x, transform.position.y, target.position.z);
 
             //store direction calc'd from target + curr pos's (normalized so 0-1)
@@ -55,9 +55,9 @@ public class EnemyMovement : MonoBehaviour {
 
             //apply rot to target dir
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRot, 360);
-            */
+            
         }     
-    }
+    }*/
 
     /*
      * Assumes starting direction is facing left.
