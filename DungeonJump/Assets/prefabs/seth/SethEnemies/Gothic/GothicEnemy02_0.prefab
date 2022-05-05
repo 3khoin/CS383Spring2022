@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4481243170736538867}
   - component: {fileID: 7872426663502854862}
   - component: {fileID: 3017236803411844722}
-  m_Layer: 21
+  m_Layer: 0
   m_Name: GothicEnemy02_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
