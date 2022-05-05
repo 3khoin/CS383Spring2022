@@ -19,14 +19,14 @@ EditorBuildSettings:
     guid: e604313ded906914c96b9962329337df
   - enabled: 0
     path: 
-    guid: 3ef346042d3607542b1662962243c584
-  - enabled: 1
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/OverworldLevels/StressTest.unity
     guid: 2eee2196adc6da942b04b2fe63efccb1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Platformer Levels/CGStressTest.unity
     guid: ad27350f1d1aaf547853078f4ccc1bdb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OverworldLevels/UIStressTest.unity
     guid: 5f12ebd9d8f078140b1ca9a79a1ffb09
   - enabled: 1
