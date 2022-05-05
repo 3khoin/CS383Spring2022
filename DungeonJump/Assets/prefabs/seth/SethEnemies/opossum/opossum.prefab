@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 1837581239635884544}
   - component: {fileID: 1837581239635884667}
   - component: {fileID: 4774119048605241379}
+  - component: {fileID: -4120972929899301334}
   - component: {fileID: -297403806940628698}
   - component: {fileID: 1814804787049195172}
   - component: {fileID: 3213484513683444669}
   - component: {fileID: 4217235116192211907}
-  - component: {fileID: -1886575884683920579}
   m_Layer: 0
   m_Name: opossum
   m_TagString: Untagged
@@ -155,21 +155,29 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-<<<<<<< Updated upstream
   m_Mass: 8
   m_LinearDrag: 1
   m_AngularDrag: 0
-=======
-  m_Mass: 10
-  m_LinearDrag: 2
-  m_AngularDrag: 2
->>>>>>> Stashed changes
   m_GravityScale: 25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-4120972929899301334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837581239635884545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7108b4001be5a4586223941406c34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  followDistance: 0
 --- !u!114 &-297403806940628698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,11 +237,7 @@ MonoBehaviour:
   radius: 0.2
   height: 2
   canMove: 1
-<<<<<<< Updated upstream
   maxSpeed: 3.75
-=======
-  maxSpeed: 3.5
->>>>>>> Stashed changes
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -273,16 +277,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &-1886575884683920579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837581239635884545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f49e60edc4181e4cac7c897313484f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiPath: {fileID: 3213484513683444669}

@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    /*void Update() {
         
         if(Vector2.Distance(transform.position, target.position) > followDistance) {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRot, 360);
             
         }     
-    }
+    }*/
 
     /*
      * Assumes starting direction is facing left.
