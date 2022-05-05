@@ -134,15 +134,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.14999999, y: 0.14}
-      - {x: -0.17, y: 0.13}
-      - {x: -0.17999999, y: 0.11}
-      - {x: -0.17999999, y: -0.12}
-      - {x: -0.16, y: -0.14}
+    - - {x: -0.030323401, y: 0.026022114}
+      - {x: -0.041775063, y: 0.06446271}
+      - {x: -0.16005409, y: 0.061559387}
+      - {x: -0.16209228, y: -0.08418509}
+      - {x: -0.13492942, y: -0.13462776}
       - {x: 0.06, y: -0.14}
       - {x: 0.13, y: -0.099999994}
-      - {x: 0.13, y: 0.11}
-      - {x: 0.12, y: 0.14}
+      - {x: 0.11461846, y: 0.055820715}
+      - {x: 0.09973343, y: 0.13870995}
+      - {x: 0.04602182, y: 0.119116776}
+      - {x: 0.04591438, y: 0.028871566}
 --- !u!50 &4774119048605241379
 Rigidbody2D:
   serializedVersion: 4
@@ -237,7 +239,7 @@ MonoBehaviour:
     mode: 2
     interval: 0.5
     sensitivity: 10
-    maximumInterval: 2
+    maximumInterval: 0.2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5

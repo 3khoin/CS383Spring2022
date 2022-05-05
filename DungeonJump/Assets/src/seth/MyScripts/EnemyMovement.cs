@@ -43,6 +43,7 @@ public class EnemyMovement : MonoBehaviour {
         if(Vector2.Distance(transform.position, target.position) > followDistance) {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+            /*
             //rotate in direction traveling
             
             var targetPoint = new Vector3(target.position.x, transform.position.y, target.position.z);
@@ -55,7 +56,7 @@ public class EnemyMovement : MonoBehaviour {
 
             //apply rot to target dir
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRot, 360);
-            
+            */
         }     
     }
 
