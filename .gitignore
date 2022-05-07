@@ -78,3 +78,12 @@ crashlytics-build.properties
 [Pp]refabs/*.meta
 [Ss]rc/*.meta
 [Tt]st/*.meta
+
+#unignore build files
+
+#include everything in /Builds/
+!/Builds/
+!/Builds/*
+
+#include subdirs inside /Builds/
+!/Builds/**/*
