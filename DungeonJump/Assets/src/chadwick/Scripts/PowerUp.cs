@@ -62,7 +62,9 @@ public class PowerUp :  PlatformerItem
     */
     override public void Pickup (Collider2D player)
     {
-        FindObjectOfType<AudioManager>().Play("PowerUpPickup");
+        //use the singleton as a singleton
+        AudioManager.instance.Play("PowerUpPickup");
+
         StartCoroutine(PickupPowerUp(player));
     }
 

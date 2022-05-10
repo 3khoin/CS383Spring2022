@@ -30,14 +30,25 @@ public class BouncePlatform : MonoBehaviour
     * Returns:
     * none
     */
-    void OnTriggerEnter2D(Collider2D other)
+    //void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
+        print("collided with " + other.gameObject.name);
+
         // check if collided with player
-        if(other.CompareTag("Player"))
-        {
-            // play SFX and launch the player
-            FindObjectOfType<AudioManager>().Play("Bounce");
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounceHeight, ForceMode2D.Impulse);
-        }
+        //if(other.CompareTag("Player"))
+        //if (other.gameObject.tag == "Player")
+        //{
+        // play SFX and launch the player
+        //FindObjectOfType<AudioManager>().Play("Bounce");
+
+        Rigidbody2D otherRB = other.gameObject.GetComponent<Rigidbody2D>();
+
+        AudioManager.instance.Play("Bounce");
+
+        //launch colliding obj taking into account mass (and x scale * other.gameObject.transform.localScale.x?)
+        otherRB.AddForce(Vector2.up * bounceHeight * otherRB.mass , ForceMode2D.Impulse); 
+
+       // }
     }
 }
