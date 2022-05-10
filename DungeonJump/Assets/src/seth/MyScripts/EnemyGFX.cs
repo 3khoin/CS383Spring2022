@@ -20,7 +20,7 @@ public class EnemyGFX : MonoBehaviour
         //if moving to right
         if (aiPath.desiredVelocity.x >= 0.005f)
         {
-            print("Scale should be flipped");
+            //print("Scale should be flipped");
 
             //flip over x-axis
             transform.localScale = new Vector3(-startingXscale, transform.localScale.y, transform.localScale.z);
@@ -28,7 +28,7 @@ public class EnemyGFX : MonoBehaviour
         //if moving to left
         else if (aiPath.desiredVelocity.x <= -0.005f)
         {
-            print("Scale should be flipped");
+            //print("Scale should be flipped");
 
             //revert over x-axis
             transform.localScale = new Vector3(startingXscale, transform.localScale.y, transform.localScale.z);

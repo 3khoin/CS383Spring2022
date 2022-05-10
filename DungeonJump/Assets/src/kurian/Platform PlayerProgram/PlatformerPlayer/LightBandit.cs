@@ -62,15 +62,29 @@ public class LightBandit : MonoBehaviour {
         //Set AirSpeed in animator
         m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
 
+        //if player dead
+        if (m_isDead)
+        {
+            //animate recovery
+            m_animator.SetTrigger("Recover");
+
+            print("Recovery anim should play");
+
+            m_isDead = false;
+        }
+
         // -- Handle Animations --
         //Death
-        if (Input.GetKeyDown("e")) {
+        //if player health below 0
+        if ( PlayerManagerTmp.instance.GetPlayerHealth() <= 0)
+        { 
+            //if player not already dead
             if(!m_isDead)
+            {
+                //kill player
                 m_animator.SetTrigger("Death");
-            else
-                m_animator.SetTrigger("Recover");
-
-            m_isDead = !m_isDead;
+                m_isDead = true;
+            }
         }
             
         //Hurt
@@ -80,15 +94,18 @@ public class LightBandit : MonoBehaviour {
         {
             m_animator.SetTrigger("Hurt");
         }
+
         /*
         else if (Input.GetKeyDown("q"))
             m_animator.SetTrigger("Hurt");*/
 
         //Attack
+        /*
         else if(Input.GetMouseButtonDown(0)) {
             m_animator.SetTrigger("Attack");
             Attack();
         }
+        */
 
         //Change between idle and combat idle
         else if (Input.GetKeyDown("f"))
