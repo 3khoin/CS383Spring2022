@@ -230,6 +230,9 @@ public class PlatformLevelManager : MonoBehaviour
 			player.transform.position = spawnPnt.position;
 			PlayerManagerTmp.instance.UpdatePlayerHealth(1);
 			PlayerManagerTmp.instance.UpdatePlayerScore(-500);
+
+			//animate player death
+			GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetTrigger("Die");
 		}
 	}
 }

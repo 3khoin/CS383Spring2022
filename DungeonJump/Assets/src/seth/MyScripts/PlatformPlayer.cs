@@ -19,14 +19,12 @@ public class PlatformPlayer : MonoBehaviour
 
 	//Vars taken from LightBandit
 
-	//public float m_speed = 4.0f;
 	public float m_jumpForce = 7.5f;
-
 	private Sensor_Bandit m_groundSensor;
-
 	private bool m_grounded = false;
-	//private bool m_combatIdle = false;
-	private bool m_isDead = false;
+		//private bool m_combatIdle = false;
+		//private bool m_isDead = false;
+
 	private bool isJumping = false;
 	private BoxCollider2D playerCollider;
 	private Vector2 ogColliderOffset;
@@ -62,33 +60,20 @@ public class PlatformPlayer : MonoBehaviour
 		}
 
 		movement.x = Input.GetAxisRaw("Horizontal");
-		//movement.y = Input.GetAxisRaw("Vertical");
 
 		animator.SetFloat("X", movement.x);
-		//animator.SetFloat("Y", movement.y);
 		animator.SetFloat("Speed", movement.sqrMagnitude);
 
-		// Move
-		//rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
-
-		//Set AirSpeed in animator
-		//animator.SetFloat("AirSpeed", rb.velocity.y);
-
+		/*
 		//if player dead
 		if (m_isDead)
 		{
-			//animator.SetBool("Die", false);
-
-				//animate recovery
-				//animator.SetTrigger("Recover");
-
-				//print("Recovery anim should play");
-
 			m_isDead = false;
 		}
 
 		// -- Handle Animations --
 
+		
 		//Death
 		// if player health below 0
 		if (PlayerManagerTmp.instance.GetPlayerHealth() <= 0)
@@ -101,8 +86,10 @@ public class PlatformPlayer : MonoBehaviour
 				m_isDead = true;
 			}
 		}
+		*/
+
 		//Jump
-		else if (Input.GetKeyDown("space") && m_grounded)
+		if (Input.GetKeyDown("space") && m_grounded)
 		{
 			animator.SetTrigger("Jump");
 			m_grounded = false;

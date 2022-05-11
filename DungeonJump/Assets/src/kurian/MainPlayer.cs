@@ -17,8 +17,9 @@ public class MainPlayer : MonoBehaviour
 	private bool dmg;
 
 	public Animator animator;
-	
-	void Start()
+    private bool m_isDead;
+
+    void Start()
 	{
 	    damage = PlayerManagerTmp.instance.GetPlayerHealth();
 	    damageTmp = PlayerManagerTmp.instance.GetPlayerHealth();
@@ -33,7 +34,30 @@ public class MainPlayer : MonoBehaviour
 		animator.SetFloat("X", movement.x);
 		animator.SetFloat("Y", movement.y);
 		animator.SetFloat("Speed", movement.sqrMagnitude);
-		
+
+		/*
+		//if player dead
+		if (m_isDead)
+		{
+			m_isDead = false;
+		}
+
+		//Death
+		// if player health below 0
+		if (PlayerManagerTmp.instance.GetPlayerHealth() <= 0)
+		{
+			//if player not already dead
+			if (!m_isDead)
+			{
+				print("player should die");
+
+				//kill player
+				animator.SetTrigger("Die");
+				m_isDead = true;
+			}
+		}
+		*/
+
 		damageTmp = damage;
 		damage = PlayerManagerTmp.instance.GetPlayerHealth();
 		if (damage - damageTmp != 0.0)
