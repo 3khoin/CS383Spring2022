@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformPlayer : MonoBehaviour
 {
-	public float moveSpeed = 5f;
+	public float moveSpeed = PlayerManagerTmp.instance.GetPlayerSpeed();
 
 	public Rigidbody2D rb;
 
@@ -19,7 +19,7 @@ public class PlatformPlayer : MonoBehaviour
 
 	//Vars taken from LightBandit
 
-	public float m_jumpForce = 7.5f;
+	public float playerJumpForce = PlayerManagerTmp.instance.GetPlayerJump();
 	private Sensor_Bandit m_groundSensor;
 	private bool m_grounded = false;
 		//private bool m_combatIdle = false;
@@ -94,7 +94,7 @@ public class PlatformPlayer : MonoBehaviour
 			animator.SetTrigger("Jump");
 			m_grounded = false;
 			animator.SetBool("Grounded", m_grounded);
-			rb.velocity = new Vector2(rb.velocity.x, m_jumpForce);
+			rb.velocity = new Vector2(rb.velocity.x, playerJumpForce);
 			m_groundSensor.Disable(0.2f);
 
 			isJumping = true;
@@ -109,6 +109,9 @@ public class PlatformPlayer : MonoBehaviour
 		}
 		else dmg = false;
 		animator.SetBool("Dmg", dmg);
+
+		moveSpeed = PlayerManagerTmp.instance.GetPlayerSpeed();
+		playerJumpForce = PlayerManagerTmp.instance.GetPlayerJump();
 	}
 
 	void FixedUpdate()

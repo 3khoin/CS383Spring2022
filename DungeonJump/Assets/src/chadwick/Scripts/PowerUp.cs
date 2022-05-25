@@ -95,12 +95,12 @@ public class PowerUp :  PlatformerItem
         switch(powerUpType)
         {
             case powerUpTypes.Speed : 
-                stats.m_speed *= multiplier;
+                PlayerManagerTmp.instance.UpdatePlayerSpeed(multiplier,0);
             break;
             case powerUpTypes.Jump :
-                stats.m_jumpForce *= multiplier - jumpBalancer;
+                PlayerManagerTmp.instance.UpdatePlayerJump(multiplier,jumpBalancer);
                 // modify speed as well to add a balanced feel of movement
-                stats.m_speed *= (multiplier - speedBalancer);
+                PlayerManagerTmp.instance.UpdatePlayerSpeed(multiplier,speedBalancer);
             break;
             case powerUpTypes.Health :
                 PlayerManagerTmp.instance.UpdatePlayerHealth(.30f);
@@ -114,11 +114,11 @@ public class PowerUp :  PlatformerItem
         switch(powerUpType)
         {
             case powerUpTypes.Speed : 
-                stats.m_speed /= multiplier;
+                PlayerManagerTmp.instance.UpdatePlayerSpeed((1f/multiplier),0);
             break;
             case powerUpTypes.Jump :
-                stats.m_jumpForce /= multiplier - jumpBalancer;
-                stats.m_speed /= (multiplier - speedBalancer);
+                PlayerManagerTmp.instance.UpdatePlayerJump((1f/multiplier),jumpBalancer);
+                PlayerManagerTmp.instance.UpdatePlayerSpeed((1f/multiplier),speedBalancer);
             break;
             case powerUpTypes.Health :
                 // do nothing
