@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformPlayer : MonoBehaviour
 {
-	public float moveSpeed = PlayerManagerTmp.instance.GetPlayerSpeed();
+	public float moveSpeed;
 
 	public Rigidbody2D rb;
 
@@ -19,7 +19,7 @@ public class PlatformPlayer : MonoBehaviour
 
 	//Vars taken from LightBandit
 
-	public float playerJumpForce = PlayerManagerTmp.instance.GetPlayerJump();
+	public float playerJumpForce; //= PlayerManagerTmp.instance.GetPlayerJump();
 	private Sensor_Bandit m_groundSensor;
 	private bool m_grounded = false;
 		//private bool m_combatIdle = false;
@@ -36,6 +36,8 @@ public class PlatformPlayer : MonoBehaviour
 		m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
 		playerCollider = GetComponent<BoxCollider2D>();
 		ogColliderOffset = playerCollider.offset;
+
+		moveSpeed = PlayerManagerTmp.instance.GetPlayerSpeed();
 	}
 	// Update is called once per frame
 	void Update()
