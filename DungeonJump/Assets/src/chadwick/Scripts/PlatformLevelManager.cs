@@ -26,14 +26,13 @@ using UnityEngine.SceneManagement;
 public class PlatformLevelManager : MonoBehaviour
 {
 	public static PlatformLevelManager instance; //singleton
-	public GameObject player;
+	private GameObject player;
 	public GameObject cam;
-	private Transform spawnPnt;
-	private Transform topPnt;
-	private Transform botPnt;
-	private Transform leftPnt;
-	private Transform rightPnt;
-
+	private GameObject spawnPnt;
+	private GameObject topPnt;
+	private GameObject botPnt;
+	private GameObject leftPnt;
+	private GameObject rightPnt;
 
 	/*
     * Summary: Initialize a PlatformLevelManager singleton
@@ -118,11 +117,13 @@ public class PlatformLevelManager : MonoBehaviour
     */
 	void LateUpdate()
 	{
+		/* dont do this
 		player = GameObject.FindGameObjectWithTag("Player");
 		if (player.GetComponent<AudioListener>() == null)
 		{
 			player.AddComponent<AudioListener>();
 		}
+		*/
 	}
 
 	/*
@@ -136,32 +137,32 @@ public class PlatformLevelManager : MonoBehaviour
     */
 	private void PlayerWithinBounds()
 	{
-		player = GameObject.FindGameObjectWithTag("Player");
-		if (leftPnt != null && rightPnt != null && topPnt != null && botPnt != null)
+		//*already found player when scene loaded* player = GameObject.FindGameObjectWithTag("Player");
+		if (leftPnt != null && rightPnt != null && topPnt != null && botPnt != null && spawnPnt != null)
 		{
-			if (leftPnt.position.x > player.transform.position.x)
+			if (leftPnt.transform.position.x > player.transform.position.x)
 			{
 				Debug.Log("Player exceeded level boundary: " + leftPnt.transform.position);
 				//tele player to spawn
-				player.transform.position = spawnPnt.position;
+				player.transform.position = spawnPnt.transform.position;
 				Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
 			}
-			else if (rightPnt.position.x < player.transform.position.x)
+			else if (rightPnt.transform.position.x < player.transform.position.x)
 			{
 				Debug.Log("Player exceeded level boundary: " + rightPnt.transform.position);
-				player.transform.position = spawnPnt.position;
+				player.transform.position = spawnPnt.transform.position;
 				Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
 			}
-			else if (topPnt.position.y < player.transform.position.y)
+			else if (topPnt.transform.position.y < player.transform.position.y)
 			{
 				Debug.Log("Player exceeded level boundary: " + topPnt.transform.position);
-				player.transform.position = spawnPnt.position;
+				player.transform.position = spawnPnt.transform.position;
 				Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
 			}
-			else if (botPnt.position.y > player.transform.position.y)
+			else if (botPnt.transform.position.y > player.transform.position.y)
 			{
 				Debug.Log("Player exceeded level boundary: " + botPnt.transform.position);
-				player.transform.position = spawnPnt.position;
+				player.transform.position = spawnPnt.transform.position;
 				Debug.Log("Player reset to spawn position: " + spawnPnt.transform.position);
 			}
 		}
@@ -180,12 +181,12 @@ public class PlatformLevelManager : MonoBehaviour
 	private void LevelInit()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
-		spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform;
+		spawnPnt = GameObject.FindGameObjectWithTag("Spawn");
 
-		topPnt = GameObject.FindGameObjectWithTag("top").transform;
-		botPnt = GameObject.FindGameObjectWithTag("bot").transform;
-		leftPnt = GameObject.FindGameObjectWithTag("left").transform;
-		rightPnt = GameObject.FindGameObjectWithTag("right").transform;
+		topPnt = GameObject.FindGameObjectWithTag("top");
+		botPnt = GameObject.FindGameObjectWithTag("bot");
+		leftPnt = GameObject.FindGameObjectWithTag("left");
+		rightPnt = GameObject.FindGameObjectWithTag("right");
 
 		/*
         * The below AudioListener component is added in order to interact with spatial audio attached
@@ -200,16 +201,24 @@ public class PlatformLevelManager : MonoBehaviour
         * potential market for Jagex, the creators of Runescape, would be innocuous. This is such that the unlicensed use of this music
         * would not have the opportunity to inflict any kind of financial harm to Jagex as a company. 
         */
-		player.AddComponent<AudioListener>();
+		//DONT ADD, ALREADY ADDED BY DEFAULT player.AddComponent<AudioListener>();
 
 
 		// find the player and set the position to the spawn point
-		player = GameObject.FindGameObjectWithTag("Player");
+		//WHY R U FINDING THE PLAYER AGAIN, YOU JUST DID ABOVE player = GameObject.FindGameObjectWithTag("Player");
 		//player.transform.position = spawnPnt.position;
 
 		// find the camera and center it to the player
 		cam = GameObject.FindGameObjectWithTag("MainCamera");
-		cam.transform.position = player.transform.position + new Vector3(0f, 0f, -10f);
+		if( cam != null && player != null) //wont have a camera and player on every level
+        {
+			cam.transform.position = player.transform.position + new Vector3(0f, 0f, -10f);
+		}
+		else
+        {
+			Debug.LogWarning("Couldn't find main camera to reset transform");
+        }
+		
 	}
 
 
@@ -224,15 +233,42 @@ public class PlatformLevelManager : MonoBehaviour
 		*/
 	private void CheckPlayerHealth()
 	{
-		if (PlayerManagerTmp.instance.GetPlayerHealth() == 0)
+		if(PlayerManagerTmp.instance == null)
+        {
+			Debug.LogError("Player manager instance is null");
+			return;
+        }
+
+		if (PlayerManagerTmp.instance.GetPlayerHealth() <= 0)
 		{
+			if(player == null)
+            {
+				Debug.LogError("Player couldn't be found.");
+				return;
+			}
+
+			if(spawnPnt == null)
+            {
+				Debug.LogError("Spawn point is null.");
+				return;
+			}
+
 			// reset player position and health
-			player.transform.position = spawnPnt.position;
+			player.transform.position = spawnPnt.transform.position;
 			PlayerManagerTmp.instance.UpdatePlayerHealth(1);
 			PlayerManagerTmp.instance.UpdatePlayerScore(-500);
 
 			//animate player death
-			GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetTrigger("Die");
+			// player should already be found again GameObject.FindGameObjectWithTag("Player").
+			Animator playerAnim = player.GetComponentInChildren<Animator>();
+
+			if( playerAnim == null)
+            {
+				Debug.LogError("Player animator couldn't be found");
+				return;
+			}
+
+			playerAnim.SetTrigger("Die");
 		}
 	}
 }
