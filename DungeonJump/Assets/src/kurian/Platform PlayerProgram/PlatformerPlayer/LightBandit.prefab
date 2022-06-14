@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 212259381048184306}
   - component: {fileID: 50512961935941442}
   - component: {fileID: 61252362154681264}
+  - component: {fileID: 6460740280260311803}
   m_Layer: 21
   m_Name: LightBandit
   m_TagString: Player
@@ -173,6 +174,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59838516, y: 0.93397546}
   m_EdgeRadius: 0
+--- !u!81 &6460740280260311803
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
 --- !u!1 &1943394156383696
 GameObject:
   m_ObjectHideFlags: 0

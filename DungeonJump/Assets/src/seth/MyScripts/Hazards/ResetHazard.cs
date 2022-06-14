@@ -38,7 +38,10 @@ public class ResetHazard : Hazard
             Vector3 spawnPnt = GameObject.FindGameObjectWithTag("Spawn").transform.position;
 
             //reset player to spawn point:
-            collision.gameObject.transform.position = spawnPnt;
+            //collision.gameObject.transform.position = spawnPnt;
+
+            //kill player:
+            PlayerManagerTmp.instance.UpdatePlayerHealth(-1);
 
             //reset main camera to spawn point:
             GameObject.FindGameObjectWithTag("MainCamera").transform.position = spawnPnt;

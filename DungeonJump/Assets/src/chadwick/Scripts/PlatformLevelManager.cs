@@ -25,8 +25,10 @@ using UnityEngine.SceneManagement;
 */
 public class PlatformLevelManager : MonoBehaviour
 {
-	public static PlatformLevelManager instance; //singleton
+	//public static PlatformLevelManager instance; //singleton
 	private GameObject player;
+	private SetAnimatorParameter setAnimatorParameter;
+	private Animator playerAnim;
 	public GameObject cam;
 	private GameObject spawnPnt;
 	private GameObject topPnt;
@@ -43,6 +45,7 @@ public class PlatformLevelManager : MonoBehaviour
     * Returns:
     * none
     */
+	/*
 	void Awake()
 	{
 		// Singleton code
@@ -55,9 +58,9 @@ public class PlatformLevelManager : MonoBehaviour
 			Destroy(gameObject);
 		}
 
-		DontDestroyOnLoad(gameObject);
+		//DontDestroyOnLoad(gameObject);
 	}
-
+	*/
 
 	/*
     * Summary: Run level initialization
@@ -71,7 +74,7 @@ public class PlatformLevelManager : MonoBehaviour
 	void Start()
 	{
 		LevelInit();
-		SceneManager.sceneLoaded += OnSceneLoaded;
+		//SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
 
@@ -84,10 +87,12 @@ public class PlatformLevelManager : MonoBehaviour
 		* Returns:
 		* none
 		*/
+	/*
 	void OnSceneLoaded(Scene currScene, LoadSceneMode mode)
 	{
 		LevelInit();
 	}
+	*/
 
 
 	/*
@@ -101,7 +106,7 @@ public class PlatformLevelManager : MonoBehaviour
     */
 	void Update()
 	{
-		PlayerWithinBounds();
+		//PlayerWithinBounds();
 		CheckPlayerHealth();
 	}
 
@@ -218,6 +223,27 @@ public class PlatformLevelManager : MonoBehaviour
         {
 			Debug.LogWarning("Couldn't find main camera to reset transform");
         }
+
+		//find player animator 
+		if( player != null )
+        {
+            //playerAnim = player.GetComponentInChildren<Animator>();
+            //playerAnim = player.GetComponent<SetAnimatorParameter>().animator;
+            try
+            {
+				setAnimatorParameter = player.GetComponent<SetAnimatorParameter>();
+				playerAnim = setAnimatorParameter.animator;
+			}
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+		}
+		else
+        {
+			Debug.LogError("Couldn't find animator because player field null.");
+        }
 		
 	}
 
@@ -260,9 +286,11 @@ public class PlatformLevelManager : MonoBehaviour
 
 			//animate player death
 			// player should already be found again GameObject.FindGameObjectWithTag("Player").
-			Animator playerAnim = player.GetComponentInChildren<Animator>();
+			//Animator playerAnim = player.GetComponentInChildren<Animator>();
 
-			if( playerAnim == null)
+			playerAnim = setAnimatorParameter.animator;
+
+			if ( playerAnim == null)
             {
 				Debug.LogError("Player animator couldn't be found");
 				return;

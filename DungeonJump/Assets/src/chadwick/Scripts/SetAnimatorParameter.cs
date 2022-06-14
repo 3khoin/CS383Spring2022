@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SetAnimatorParameter : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
 
     public string parameterName = "Idle";
     public float x = 1;

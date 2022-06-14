@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 876041850}
   m_Layer: 21
   m_Name: GroundSensor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,6 @@ GameObject:
   - component: {fileID: 6866369490772160694}
   - component: {fileID: 1521781521795773141}
   - component: {fileID: 283673015}
-  - component: {fileID: 6534844828667210973}
   m_Layer: 21
   m_Name: 'PlatformHuman '
   m_TagString: Player
@@ -121,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e111c683281b341af63c495831914d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   parameterName: Idle
   x: 0
   y: 0
@@ -212,49 +212,7 @@ MonoBehaviour:
   moveSpeed: 10
   rb: {fileID: 8714851397566166948}
   animator: {fileID: 1852395101503492854}
-  m_jumpForce: 10
---- !u!60 &6534844828667210973
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852395100589839593}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 60f745f9df6a02a44b54dbb67cf8681e, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.030117035, y: 0.37958908}
-      - {x: -0.24268103, y: 0.3790443}
-      - {x: -0.25492477, y: 0.008413434}
-      - {x: -0.26150274, y: 0.002306819}
-      - {x: -0.2631359, y: -0.11895621}
-      - {x: -0.3853402, y: -0.12389505}
-      - {x: -0.38052565, y: -0.2627394}
-      - {x: -0.25398493, y: -0.26670802}
-      - {x: -0.2512622, y: -0.3841133}
-      - {x: 0.11957073, y: -0.38180625}
-      - {x: 0.118925154, y: -0.26259148}
-      - {x: 0.25264466, y: -0.26259136}
-      - {x: 0.25607395, y: -0.11819422}
-      - {x: 0.13143778, y: -0.12381697}
-      - {x: 0.13472939, y: -0.015297294}
-      - {x: 0.25613594, y: -0.008991241}
-      - {x: 0.25891733, y: 0.3745882}
+  playerJumpForce: 0
 --- !u!1 &1852395101503492851
 GameObject:
   m_ObjectHideFlags: 0
